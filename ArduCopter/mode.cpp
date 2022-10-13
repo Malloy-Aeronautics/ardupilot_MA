@@ -169,6 +169,22 @@ Mode *Copter::mode_from_mode_num(const Mode::Number mode)
             break;
 #endif
 
+        case Mode::Number::PLANCKTRACK:
+            ret = &mode_plancktracking;
+            break;
+
+        case Mode::Number::PLANCKRTB:
+            ret = &mode_planckrtb;
+            break;
+
+        case Mode::Number::PLANCKLAND:
+            ret = &mode_planckland;
+            break;
+
+        case Mode::Number::PLANCKWINGMAN:
+            ret = &mode_planckwingman;
+            break;
+
         default:
             break;
     }
