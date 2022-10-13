@@ -64,6 +64,7 @@
 #include <AP_SmartRTL/AP_SmartRTL.h>        // ArduPilot Smart Return To Launch Mode (SRTL) library
 #include <AP_TempCalibration/AP_TempCalibration.h>  // temperature calibration library
 #include <AC_AutoTune/AC_AutoTune.h>        // ArduCopter autotune library. support for autotune of multirotors.
+#include <AC_Planck/AC_Planck.h>
 #include <AP_Parachute/AP_Parachute.h>      // ArduPilot parachute release library
 #include <AC_Sprayer/AC_Sprayer.h>          // Crop sprayer library
 #include <AP_ADSB/AP_ADSB.h>                // ADS-B RF based collision avoidance module library
@@ -220,6 +221,10 @@ public:
     friend class ModeThrow;
     friend class ModeZigZag;
     friend class ModeAutorotate;
+    friend class ModePlanckTracking;
+    friend class ModePlanckRTB;
+    friend class ModePlanckLand;
+    friend class ModePlanckWingman;
 
     Copter(void);
 
@@ -579,6 +584,8 @@ private:
     static const AP_Param::Info var_info[];
     static const struct LogStructure log_structure[];
 
+	AC_Planck planck_interface;
+
     // enum for ESC CALIBRATION
     enum ESCCalibrationModes : uint8_t {
         ESCCAL_NONE = 0,
@@ -594,7 +601,8 @@ private:
         Failsafe_Action_RTL            = 2,
         Failsafe_Action_SmartRTL       = 3,
         Failsafe_Action_SmartRTL_Land  = 4,
-        Failsafe_Action_Terminate      = 5
+        Failsafe_Action_Terminate      = 5,
+		Failsafe_Action_Planck_Track_Land     = 6
     };
 
     enum class FailsafeOption {
@@ -738,6 +746,7 @@ private:
     void set_mode_RTL_or_land_with_pause(ModeReason reason);
     void set_mode_SmartRTL_or_RTL(ModeReason reason);
     void set_mode_SmartRTL_or_land_with_pause(ModeReason reason);
+	void set_mode_planck_RTB_or_planck_land(ModeReason reason);
     bool should_disarm_on_failsafe();
     void do_failsafe_action(Failsafe_Action action, ModeReason reason);
 
@@ -986,6 +995,11 @@ private:
     ModeAutorotate mode_autorotate;
 #endif
 
+     ModePlanckTracking mode_plancktracking;
+     ModePlanckRTB mode_planckrtb;
+     ModePlanckLand mode_planckland;
+     ModePlanckWingman mode_planckwingman;
+ 
     // mode.cpp
     Mode *mode_from_mode_num(const Mode::Number mode);
     void exit_mode(Mode *&old_flightmode, Mode *&new_flightmode);
