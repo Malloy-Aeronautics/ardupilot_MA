@@ -93,6 +93,7 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
     SCHED_TASK(rc_loop,              100,    130),
     SCHED_TASK(throttle_loop,         50,     75),
     SCHED_TASK_CLASS(AP_GPS, &copter.gps, update, 50, 200),
+	SCHED_TASK_CLASS(GCS,                  (GCS*)&copter._gcs,          send_planck_stateinfo,    100, 100),
 #if OPTFLOW == ENABLED
     SCHED_TASK_CLASS(OpticalFlow,          &copter.optflow,             update,         200, 160),
 #endif
@@ -216,7 +217,7 @@ void Copter::get_scheduler_tasks(const AP_Scheduler::Task *&tasks,
     log_bit = MASK_LOG_PM;
 }
 
-constexpr int8_t Copter::_failsafe_priorities[7];
+constexpr int8_t Copter::_failsafe_priorities[8];
 
 // Main loop - 400hz
 void Copter::fast_loop()
