@@ -437,6 +437,15 @@ const AP_Param::GroupInfo GCS_MAVLINK_Parameters::var_info[] = {
     // @Increment: 1
     // @User: Advanced
     AP_GROUPINFO("ADSB",   9, GCS_MAVLINK_Parameters, streamRates[9],  0),
+
+     // @Param: PLANCK_STATE
+     // @DisplayName: PLANCK_STATE stream rate to planck device
+     // @Description: PLANCK_STATE stream rate to planck device
+     // @Units: Hz
+     // @Range: 0 50
+     // @Increment: 1
+     // @User: Advanced
+     AP_GROUPINFO("PLANCK_STATE",   10, GCS_MAVLINK_Parameters, streamRates[10],  0),
 AP_GROUPEND
 };
 
@@ -510,6 +519,9 @@ static const ap_message STREAM_PARAMS_msgs[] = {
 static const ap_message STREAM_ADSB_msgs[] = {
     MSG_ADSB_VEHICLE
 };
+static const ap_message STREAM_PLANCK_msgs[] = {
+    MSG_PLANCK_STATEINFO
+};
 
 const struct GCS_MAVLINK::stream_entries GCS_MAVLINK::all_stream_entries[] = {
     MAV_STREAM_ENTRY(STREAM_RAW_SENSORS),
@@ -521,6 +533,7 @@ const struct GCS_MAVLINK::stream_entries GCS_MAVLINK::all_stream_entries[] = {
     MAV_STREAM_ENTRY(STREAM_EXTRA3),
     MAV_STREAM_ENTRY(STREAM_ADSB),
     MAV_STREAM_ENTRY(STREAM_PARAMS),
+	MAV_STREAM_ENTRY(STREAM_PLANCK),
     MAV_STREAM_TERMINATOR // must have this at end of stream_entries
 };
 
@@ -743,7 +756,7 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_long_packet(const mavlink_command_
         if (!copter.flightmode->do_user_takeoff(takeoff_alt, is_zero(packet.param3))) {
             return MAV_RESULT_FAILED;
         }
-        return MAV_RESULT_ACCEPTED;
+        eenurn MAV_RESULT_ACCEPTED;
     }
 
 #if MODE_AUTO_ENABLED == ENABLED
@@ -970,6 +983,18 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_long_packet(const mavlink_command_
         return MAV_RESULT_ACCEPTED;
     }
 
+    case MAV_CMD_NAV_PLANCK_WINGMAN: {
+        if (copter.set_mode(Mode::Number::PLANCKWINGMAN, ModeReason::GCS_COMMAND)) {
+            //Offset parameters are: param1: N, param2: E, param3: Up
+            float north = packet.param1;
+            float east = packet.param2;
+            float up = packet.param3 + (copter.inertial_nav.get_position().z / 100.);
+            copter.planck_interface.request_move_target(Vector3f(north,east,up),false,copter.pos_control->get_max_speed_up(),copter.pos_control->get_max_speed_down());
+            return MAV_RESULT_ACCEPTED;
+        }
+        return MAV_RESULT_FAILED;
+    }
+
     default:
         return GCS_MAVLINK::handle_command_long_packet(packet);
     }
@@ -1018,6 +1043,12 @@ void GCS_MAVLINK_Copter::handleMessage(const mavlink_message_t &msg)
         POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE;
 
     switch (msg.msgid) {
+
+    //Handle any messages coming from planck's software
+    case MAVLINK_MSG_ID_PLANCK_STATUS:
+    case MAVLINK_MSG_ID_PLANCK_CMD_MSG:
+        copter.planck_interface.handle_planck_mavlink_msg(chan, &msg, copter.ahrs);
+        break;
 
     case MAVLINK_MSG_ID_MANUAL_CONTROL:
     {
