@@ -290,6 +290,15 @@ const AP_Param::GroupInfo AC_PosControl::var_info[] = {
     // @User: Advanced
     AP_GROUPINFO("_JERK_Z", 11, AC_PosControl, _shaping_jerk_z, POSCONTROL_JERK_Z),
 
+    // @Param: _HIGH_JERK_RATIO
+    // @DisplayName: High jerk ratio
+    // @Description: Defines the time (delta_T) it takes to reach the requested acceleration as ratio = (1/delta_T), higher to allow more agressive changes in z position target
+    // @Units: 1/s
+    // @Range: 1 10
+    // @Increment: 1
+    // @User: Advanced
+    AP_GROUPINFO("_HIGH_JERK",  8, AC_PosControl, _poscontrol_high_jerkratio, POSCONTROL_HIGH_JERK_RATIO),
+
     AP_GROUPEND
 };
 
