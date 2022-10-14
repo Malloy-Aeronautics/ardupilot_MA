@@ -73,7 +73,7 @@ void gcs_out_of_space_to_send_count(mavlink_channel_t chan);
     }
 #define MAV_STREAM_TERMINATOR { (streams)0, nullptr, 0 }
 
-#define GCS_MAVLINK_NUM_STREAM_RATES 10
+#define GCS_MAVLINK_NUM_STREAM_RATES 11
 class GCS_MAVLINK_Parameters
 {
 public:
@@ -183,6 +183,7 @@ public:
         STREAM_EXTRA3,
         STREAM_PARAMS,
         STREAM_ADSB,
+		STREAM_PLANCK,
         NUM_STREAMS
     };
 
@@ -266,6 +267,7 @@ public:
     void send_sys_status();
     void send_set_position_target_global_int(uint8_t target_system, uint8_t target_component, const Location& loc);
     void send_rpm() const;
+	void send_planck_stateinfo();
     void send_generator_status() const;
     virtual void send_winch_status() const {};
     void send_water_depth() const;
@@ -613,6 +615,9 @@ private:
     uint8_t sending_bucket_id = no_bucket_to_send;
     Bitmask<MSG_LAST> bucket_message_ids_to_send;
 
+    //Last time we sent a planck_stateinfo
+    uint64_t last_planck_stateinfo_sent_ms = 0;
+
     ap_message next_deferred_bucket_message_to_send(uint16_t now16_ms);
     void find_next_bucket_to_send(uint16_t now16_ms);
     void remove_message_from_bucket(int8_t bucket, ap_message id);
@@ -939,6 +944,7 @@ public:
     void send_message(enum ap_message id);
     void send_mission_item_reached_message(uint16_t mission_index);
     void send_named_float(const char *name, float value) const;
+	void send_planck_stateinfo();
 
     void send_parameter_value(const char *param_name,
                               ap_var_type param_type,
