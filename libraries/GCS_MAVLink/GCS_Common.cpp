@@ -2405,6 +2405,111 @@ void GCS_MAVLINK::send_local_position() const
         velocity.z);
 }
 
+void GCS::send_planck_stateinfo()
+{
+    for(uint8_t i=0; i<num_gcs(); i++) {
+        chan(i)->send_planck_stateinfo();
+    }
+}
+
+void GCS_MAVLINK::send_planck_stateinfo()
+{
+    //Sanity check
+    uint64_t now = AP_HAL::millis64();
+    if(now <= last_planck_stateinfo_sent_ms) {
+        last_planck_stateinfo_sent_ms = now;
+        return;
+    }
+
+    //Don't send if its too soon
+    uint64_t interval = get_interval_for_stream(STREAM_PLANCK);
+    uint64_t dt = now - last_planck_stateinfo_sent_ms;
+    if((interval == 0) || (dt < (interval - interval/10))) { //within 10%
+        return;
+    }
+
+    //Make sure theres space
+    if(!HAVE_PAYLOAD_SPACE(chan,PLANCK_STATEINFO)) {
+        return;
+    }
+
+    uint8_t status = 0x00;
+    if(AP::arming().is_armed())
+      status |= 0x01;
+
+    if(landed_state() != MAV_LANDED_STATE_ON_GROUND)
+      status |= 0x02;
+
+    if(vehicle_system_status() == MAV_STATE_CRITICAL)
+      status |= 0x04;
+
+    const AP_AHRS &ahrs = AP::ahrs();
+
+    Vector3f accel;
+
+    if(!ahrs.get_accel_NED_Current(accel))
+    {
+        accel.zero();
+    }
+
+    Vector3f gyro = ahrs.get_gyro_latest();
+
+    Vector3f vel;
+    if(!ahrs.get_velocity_NED(vel))
+    {
+        vel.zero();
+    }
+
+    Location current_loc;
+    int32_t alt_above_home_cm = 0;
+    int32_t alt_above_sea_level_cm = 0;
+    int32_t alt_above_terrain_cm = 0;
+    ahrs.get_position(current_loc);
+
+    if(current_loc.initialised()) {
+        if(!current_loc.get_alt_cm(Location::AltFrame::ABOVE_HOME, alt_above_home_cm))
+        {
+            alt_above_home_cm = global_position_int_relative_alt()/10;
+        }
+        if(!current_loc.get_alt_cm(Location::AltFrame::ABSOLUTE, alt_above_sea_level_cm))
+        {
+            alt_above_sea_level_cm = alt_above_home_cm;
+        }
+        if(!current_loc.get_alt_cm(Location::AltFrame::ABOVE_TERRAIN, alt_above_terrain_cm))
+        {
+            alt_above_terrain_cm = alt_above_home_cm;
+        }
+    }
+
+    last_planck_stateinfo_sent_ms = now;
+
+    mavlink_msg_planck_stateinfo_send(
+      	chan,
+     	 mavlink_system.sysid,
+      	PLANCK_CTRL_COMP_ID,
+      	AP_HAL::micros64(),
+      	AP::gps().time_epoch_usec(),
+      	gcs().custom_mode(),
+      	status,
+     	ahrs.roll,
+      	ahrs.pitch,
+      	ahrs.yaw,
+      	gyro.x,
+      	gyro.y,
+      	gyro.z,
+      	accel.x,
+      	accel.y,
+      	accel.z,
+      	current_loc.lat,                // in 1E7 degrees
+      	current_loc.lng,                // in 1E7 degrees
+      	alt_above_sea_level_cm * 10UL,  // millimeters above sea level
+      	alt_above_home_cm * 10UL,       // millimeters above ground
+      	alt_above_terrain_cm * 10UL,    // millimeters above terrain
+      	vel.x,                          // X speed m/s (+ve North)
+      	vel.y,                          // Y speed m/s (+ve East)
+      	vel.z);                         // Z speed m/s (+ve up)
+}
+
 /*
   send VIBRATION message
  */
@@ -2809,6 +2914,16 @@ MAV_RESULT GCS_MAVLINK::handle_preflight_reboot(const mavlink_command_long_t &pa
 
     // send ack before we reboot
     mavlink_msg_command_ack_send(chan, packet.command, MAV_RESULT_ACCEPTED);
+
+    //Forward this message to ACE by finding the channel that ACE is connected to
+    for(int i=0; i<GCS::get_singleton()->num_gcs(); ++i) {
+        GCS_MAVLINK* chan_ = GCS::get_singleton()->chan(i);
+        if(chan_->get_interval_for_stream(STREAM_PLANCK) > 0) {
+            mavlink_command_long_t packet_to_ace = packet;
+            packet_to_ace.target_component = PLANCK_CTRL_COMP_ID;
+            mavlink_msg_command_long_send_struct(chan_->get_chan(),&packet_to_ace);
+        }
+    }
 
     // when packet.param1 == 3 we reboot to hold in bootloader
     const bool hold_in_bootloader = is_equal(packet.param1, 3.0f);
@@ -5112,6 +5227,11 @@ bool GCS_MAVLINK::try_send_message(const enum ap_message id)
         CHECK_PAYLOAD_SIZE(WATER_DEPTH);
         send_water_depth();
         break;
+
+    case MSG_PLANCK_STATEINFO: {
+        //Don't do anything, as this is run in its own task
+        break;
+    }
 
     default:
         // try_send_message must always at some stage return true for
