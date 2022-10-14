@@ -71,6 +71,7 @@ MOT_PWM_MIN     1000
 MOT_PWM_MAX     2000
 MOT_BAT_VOLT_MIN 9.6
 MOT_BAT_VOLT_MAX 12.8
+SERIAL1_PROTOCOL 2
 # flightmodes
 # switch 1 Circle
 # switch 2 LAND
