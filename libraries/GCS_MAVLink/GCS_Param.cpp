@@ -148,6 +148,10 @@ void GCS_MAVLINK::handle_request_data_stream(const mavlink_message_t &msg)
                 // considered "internal".
                 continue;
             }
+            if (i == STREAM_PLANCK) {
+                // don't touch planck_stateinfo
+                continue;
+            }
             if (persist_streamrates()) {
                 streamRates[i].set_and_save_ifchanged(freq);
             } else {
@@ -179,6 +183,9 @@ void GCS_MAVLINK::handle_request_data_stream(const mavlink_message_t &msg)
         break;
     case MAV_DATA_STREAM_EXTRA3:
         stream_id = STREAM_EXTRA3;
+        break;
+    case MAV_DATA_STREAM_PLANCK_STATEINFO:
+        stream_id = STREAM_PLANCK;
         break;
     }
 
