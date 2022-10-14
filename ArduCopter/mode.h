@@ -36,6 +36,10 @@ public:
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
         SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
         AUTOROTATE =   26,  // Autonomous autorotation
+        PLANCKTRACK  = 27,  //Planck-specific tracking mode, used in takeoff and tracking
+        PLANCKRTB    = 28,  //Planck-specific RTB mode
+        PLANCKLAND  =  29,  //Planck-specific land mode
+        PLANCKWINGMAN = 30, //Planck-specific wingman mode
     };
 
     // constructor
@@ -64,6 +68,9 @@ public:
     virtual bool allows_save_trim() const { return false; }
     virtual bool allows_autotune() const { return false; }
     virtual bool allows_flip() const { return false; }
+
+    //Does the mode require planck commands
+    virtual bool requires_planck() const { return false; };
 
     // return a string for this flightmode
     virtual const char *name() const = 0;
@@ -394,6 +401,11 @@ public:
     void circle_start();
     void nav_guided_start();
 
+    void planck_takeoff_start(const float alt);
+    void planck_rtb_start();
+    void planck_wingman_start();
+    bool requires_planck() const override { return _planck_used; }
+
     bool is_landing() const override;
 
     bool is_taking_off() const override;
@@ -448,6 +460,10 @@ private:
     void loiter_run();
     void loiter_to_alt_run();
 
+    void planck_takeoff_run();
+    void planck_rtb_run();
+    void planck_wingman_run();
+
     Location loc_from_cmd(const AP_Mission::Mission_Command& cmd, const Location& default_loc) const;
 
     void payload_place_start(const Vector2f& destination);
@@ -492,6 +508,10 @@ private:
     void do_payload_place(const AP_Mission::Mission_Command& cmd);
     void do_RTL(void);
 
+    void do_planck_takeoff(const AP_Mission::Mission_Command& cmd);
+    void do_planck_rtb(const AP_Mission::Mission_Command& cmd);
+    void do_planck_wingman(const AP_Mission::Mission_Command& cmd);
+
     bool verify_takeoff();
     bool verify_land();
     bool verify_payload_place();
@@ -509,6 +529,10 @@ private:
     bool verify_nav_guided_enable(const AP_Mission::Mission_Command& cmd);
 #endif
     bool verify_nav_delay(const AP_Mission::Mission_Command& cmd);
+
+    bool verify_planck_takeoff();
+    bool verify_planck_rtb();
+    bool verify_planck_wingman();
 
     // Loiter control
     uint16_t loiter_time_max;                // How long we should stay in Loiter Mode for mission scripting (time in seconds)
@@ -548,6 +572,8 @@ private:
     } nav_payload_place;
 
     bool waiting_to_start;  // true if waiting for vehicle to be armed or EKF origin before starting mission
+
+	bool _planck_used; //If planck is being used currently
 
     // variables to detect mission changes
     static const uint8_t mis_change_detect_cmd_max = 3;
@@ -589,7 +615,8 @@ public:
 
     bool init(bool ignore_checks) override;
     void exit() override;
-    void run() override;
+    void run() override { this->run(false); };
+    void run(bool high_jerk_z);
 
     bool requires_GPS() const override { return false; }
     bool has_manual_throttle() const override { return false; }
@@ -892,7 +919,7 @@ public:
     SubMode submode() const { return guided_mode; }
 
     void angle_control_start();
-    void angle_control_run();
+	void angle_control_run(bool high_jerk_z = false);
 
     // return guided mode timeout in milliseconds.  Only used for velocity, acceleration and angle control
     uint32_t get_timeout_ms() const;
@@ -1722,3 +1749,100 @@ private:
 
 };
 #endif
+
+class ModePlanckTracking : public ModeGuided {
+
+public:
+
+    // inherit constructor
+    using ModeGuided::Mode;
+
+    bool init(bool ignore_checks) override;
+    bool init_without_RTB_request(bool ignore_checks);
+    void run() override;
+    bool requires_GPS() const override { return false; }
+    bool has_manual_throttle() const override { return false; }
+    bool allows_arming(bool from_gcs) const override;
+    bool is_autopilot() const override { return true; }
+    virtual bool has_user_takeoff(bool must_navigate) const override { return true; }
+    bool do_user_takeoff_start(float final_alt_above_home) override;
+    bool requires_planck() const override { return true; }
+
+protected:
+
+    const char *name() const override { return "PLANCKTRACKING"; }
+    const char *name4() const override { return "PLTR"; }
+
+    //if we want to land or transition to planck_land when we get back
+    bool _land_when_ready = false;
+};
+
+class ModePlanckRTB : public ModeGuided {
+
+public:
+
+    // inherit constructor
+    using ModeGuided::Mode;
+
+    bool init(bool ignore_checks) override;
+    void run() override;
+    bool requires_GPS() const override { return true; }
+    bool has_manual_throttle() const override { return false; }
+    bool allows_arming(bool from_gcs) const override { return false; }
+    bool is_autopilot() const override { return true; }
+    bool requires_planck() const override { return true; }
+
+protected:
+
+    const char *name() const override { return "PLANCKRTB"; }
+    const char *name4() const override { return "PRTB"; }
+
+    bool _is_landing = false;
+};
+
+class ModePlanckLand : public ModeGuidedNoGPS {
+
+public:
+
+    // inherit constructor
+    using ModeGuided::Mode;
+
+    bool init(bool ignore_checks) override;
+    void run() override;
+    bool requires_GPS() const override { return false; }
+    bool has_manual_throttle() const override { return false; }
+    bool allows_arming(bool from_gcs) const override { return false; }
+    bool is_autopilot() const override { return true; }
+    bool requires_planck() const override { return true; }
+
+protected:
+
+    const char *name() const override { return "PLANCKLAND"; }
+    const char *name4() const override { return "PLND"; }
+};
+
+class ModePlanckWingman : public ModeGuided {
+
+public:
+
+    // inherit constructor
+    using ModeGuided::Mode;
+
+    bool init(bool ignore_checks) override;
+    void run() override;
+    bool requires_GPS() const override { return true; }
+    bool has_manual_throttle() const override { return false; }
+    bool allows_arming(bool from_gcs) const override { return false; }
+    bool is_autopilot() const override { return true; }
+    bool requires_planck() const override { return true; }
+
+protected:
+
+    const char *name() const override { return "PLANCKWINGMAN"; }
+    const char *name4() const override { return "PLWM"; }
+
+private:  
+
+    uint32_t _next_req_send_t_ms = 0; //For sending new targets at a fixed rate
+    const int8_t _send_rate_ms = 100; //10hz, 100ms
+};
