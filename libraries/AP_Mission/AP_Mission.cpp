@@ -152,6 +152,9 @@ void AP_Mission::resume()
 /// check mission starts with a takeoff command
 bool AP_Mission::starts_with_takeoff_cmd()
 {
+    if(starts_with_planck_takeoff_cmd())
+      	return true;
+
     Mission_Command cmd = {};
     uint16_t cmd_index = _restart ? AP_MISSION_CMD_INDEX_NONE : _nav_cmd.index;
     if (cmd_index == AP_MISSION_CMD_INDEX_NONE) {
@@ -175,6 +178,29 @@ bool AP_Mission::starts_with_takeoff_cmd()
             continue;
         default:
             return false;
+        }
+    }
+    return false;
+}
+
+/// check mission starts with a Planck takeoff command
+bool AP_Mission::starts_with_planck_takeoff_cmd()
+{
+    Mission_Command cmd = {};
+    uint16_t cmd_index = _restart ? AP_MISSION_CMD_INDEX_NONE : _nav_cmd.index;
+    if (cmd_index == AP_MISSION_CMD_INDEX_NONE) {
+        cmd_index = AP_MISSION_FIRST_REAL_COMMAND;
+    }
+
+    // check a maximum of 16 items, remembering that missions can have
+    // loops in them
+    for (uint8_t i=0; i<16; i++, cmd_index++) {
+        if (!get_next_nav_cmd(cmd_index, cmd)) {
+            return false;
+        }
+
+        if(cmd.id == MAV_CMD_NAV_PLANCK_TAKEOFF) {
+            return true;
         }
     }
     return false;
@@ -385,7 +411,10 @@ bool AP_Mission::replace_cmd(uint16_t index, const Mission_Command& cmd)
 bool AP_Mission::is_nav_cmd(const Mission_Command& cmd)
 {
     // NAV commands all have ids below MAV_CMD_NAV_LAST except NAV_SET_YAW_SPEED
-    return (cmd.id <= MAV_CMD_NAV_LAST || cmd.id == MAV_CMD_NAV_SET_YAW_SPEED);
+    // and planck commands
+    return (cmd.id <= MAV_CMD_NAV_LAST || cmd.id == MAV_CMD_NAV_SET_YAW_SPEED ||
+      	cmd.id == MAV_CMD_NAV_PLANCK_RTB || cmd.id == MAV_CMD_NAV_PLANCK_TAKEOFF ||
+      	cmd.id == MAV_CMD_NAV_PLANCK_WINGMAN);
 }
 
 /// get_next_nav_cmd - gets next "navigation" command found at or after start_index
@@ -1140,6 +1169,19 @@ MAV_MISSION_RESULT AP_Mission::mavlink_int_to_mission_cmd(const mavlink_mission_
         cmd.content.scripting.p3 = packet.param4;
         break;
 
+    case MAV_CMD_NAV_PLANCK_TAKEOFF:
+        cmd.content.planck_takeoff.alt = packet.param1;  //takeoff altitude
+        break;
+
+    case MAV_CMD_NAV_PLANCK_RTB:
+        break;
+
+    case MAV_CMD_NAV_PLANCK_WINGMAN:
+        cmd.content.planck_wingman.x = packet.param1;
+        cmd.content.planck_wingman.y = packet.param2;
+        cmd.content.planck_wingman.z_cm = (int16_t)(packet.param3*100);
+        break;
+
     default:
         // unrecognised command
         return MAV_MISSION_UNSUPPORTED;
@@ -1594,6 +1636,19 @@ bool AP_Mission::mission_cmd_to_mavlink_int(const AP_Mission::Mission_Command& c
         packet.param2 = cmd.content.scripting.p1;
         packet.param3 = cmd.content.scripting.p2;
         packet.param4 = cmd.content.scripting.p3;
+        break;
+
+    case MAV_CMD_NAV_PLANCK_TAKEOFF:
+        packet.param1 = cmd.content.planck_takeoff.alt;
+        break;
+
+    case MAV_CMD_NAV_PLANCK_RTB:
+        break;
+
+    case MAV_CMD_NAV_PLANCK_WINGMAN:
+        packet.param1 = cmd.content.planck_wingman.x;
+        packet.param2 = cmd.content.planck_wingman.y;
+        packet.param3 = (float)cmd.content.planck_wingman.z_cm/100.;
         break;
 
     default:
@@ -2305,6 +2360,12 @@ const char *AP_Mission::Mission_Command::type() const
         return "Winch";
     case MAV_CMD_DO_SEND_SCRIPT_MESSAGE:
         return "Scripting";
+    case MAV_CMD_NAV_PLANCK_TAKEOFF:
+        return "PlanckTakeoff";
+    case MAV_CMD_NAV_PLANCK_RTB:
+        return "PlanckRTB";
+    case MAV_CMD_NAV_PLANCK_WINGMAN:
+        return "PlanckWingman";
 
     default:
 #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
