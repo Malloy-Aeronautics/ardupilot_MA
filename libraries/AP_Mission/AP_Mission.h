@@ -215,6 +215,18 @@ public:
         float p3;
     };
 
+    //Planck takeoff structure
+    struct PACKED Planck_Takeoff_Command{
+        float alt;              //Takeoff altitude
+    };
+
+    //Planck wingman structure 
+    struct PACKED Planck_Wingman_Command{
+        float x;
+        float y;
+        int16_t z_cm;
+    };
+
     union Content {
         // jump structure
         Jump_Command jump;
@@ -284,6 +296,10 @@ public:
 
         // do scripting
         scripting_Command scripting;
+
+        // Planck commands
+        Planck_Takeoff_Command planck_takeoff;
+        Planck_Wingman_Command planck_wingman;
 
         // location
         Location location{};      // Waypoint location
@@ -389,6 +405,9 @@ public:
 
     /// check mission starts with a takeoff command
     bool starts_with_takeoff_cmd();
+
+    /// check mission starts with a Planck takeoff command
+    bool starts_with_planck_takeoff_cmd();
 
     /// reset - reset mission to the first command
     void reset();
