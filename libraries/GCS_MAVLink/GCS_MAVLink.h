@@ -73,4 +73,7 @@ uint16_t comm_get_txspace(mavlink_channel_t chan);
 void comm_send_lock(mavlink_channel_t chan);
 void comm_send_unlock(mavlink_channel_t chan);
 
+// added by BJ as a quick fix
+#define MAVLINK_MSG_ID_PLANCK_STATUS 9003
+
 #pragma GCC diagnostic pop
