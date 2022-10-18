@@ -626,6 +626,7 @@ private:
                                                       Failsafe_Action_RTL,
                                                       Failsafe_Action_SmartRTL_Land,
                                                       Failsafe_Action_SmartRTL,
+													  Failsafe_Action_Planck_Track_Land,
                                                       Failsafe_Action_None,
                                                       -1 // the priority list must end with a sentinel of -1
                                                      };

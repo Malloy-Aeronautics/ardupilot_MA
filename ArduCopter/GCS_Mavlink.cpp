@@ -1218,7 +1218,28 @@ void GCS_MAVLINK_Copter::handleMessage(const mavlink_message_t &msg)
         } else if (pos_ignore && vel_ignore && !acc_ignore) {
             copter.mode_guided.set_accel(accel_vector, !yaw_ignore, yaw_cd, !yaw_rate_ignore, yaw_rate_cds, yaw_relative);
         } else if (!pos_ignore && vel_ignore && acc_ignore) {
-            copter.mode_guided.set_destination(pos_vector, !yaw_ignore, yaw_cd, !yaw_rate_ignore, yaw_rate_cds, yaw_relative, false);
+            //If we get a MAV_FRAME_LOCAL_OFFSET_NED command with zero x/y and
+            //an altitude value, this is a "change altitude" command.  If in
+            //planck tracking or planck_wingman, adjust the tracking altitude
+            //with a new target shift cmd
+            if(packet.coordinate_frame == MAV_FRAME_LOCAL_OFFSET_NED &&
+            	is_equal(packet.x,0.0f) && is_equal(packet.y,0.0f) &&
+               	(copter.flightmode == &copter.mode_plancktracking ||
+                copter.flightmode == &copter.mode_planckwingman))
+            {
+                //Don't allow if we don't have a good tag or commbox track or
+                //if we are not currently flying
+                if((copter.planck_interface.get_tag_tracking_state() ||
+                    copter.planck_interface.get_commbox_state()) &&
+                    !copter.ap.land_complete)
+                {
+                    copter.planck_interface.request_alt_change(pos_vector.z / 100.,copter.pos_control->get_max_speed_up(),copter.pos_control->get_max_speed_down());
+                }
+            }
+            else
+            {
+                copter.mode_guided.set_destination(pos_vector, !yaw_ignore, yaw_cd, !yaw_rate_ignore, yaw_rate_cds, yaw_relative);
+            }
         } else {
             // input is not valid so stop
             copter.mode_guided.init(true);
