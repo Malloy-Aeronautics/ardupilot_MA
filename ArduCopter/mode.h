@@ -386,6 +386,9 @@ public:
         LOITER,
         LOITER_TO_ALT,
         NAV_PAYLOAD_PLACE,
+    	PLANCK_TAKEOFF,		// originally defined in defines.h as 'Auto_PlanckTakeoff'
+    	PLANCK_RTB,			// originally defined in defines.h as 'Auto_PlanckRTB'
+    	PLANCK_WINGMAN		// originally defined in defines.h as 'Auto_PlanckWingman'
     };
 
     // Auto
