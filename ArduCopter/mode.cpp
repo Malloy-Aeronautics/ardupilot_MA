@@ -374,6 +374,11 @@ void Copter::exit_mode(Mode *&old_flightmode,
         }
     }
 #endif //HELI_FRAME
+
+    //If the new flight mode does not require planck commands, tell planck to stop commanding
+    if(!new_flightmode->requires_planck()) {
+        planck_interface.stop_commanding();
+    }
 }
 
 // notify_flight_mode - sets notify object based on current flight mode.  Only used for OreoLED notify device
