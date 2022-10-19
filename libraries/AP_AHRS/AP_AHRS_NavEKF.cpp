@@ -1071,15 +1071,15 @@ bool AP_AHRS_NavEKF::get_velocity_NED(Vector3f &vec) const
 bool AP_AHRS_NavEKF::get_accel_NED_Current(Vector3f &vec) const
 {
     switch (active_EKF_type()) {
-    case EKF_TYPE_NONE:
+    case EKFType::NONE:
         return false;
 
-    case EKF_TYPE2:
+    case EKFType::TWO:
     default:
         EKF2.getAccelNEDCurrent(vec);
         return true;
 
-    case EKF_TYPE3:
+    case EKFType::THREE:
         EKF3.getAccelNEDCurrent(vec);
         return true;
     }
