@@ -1765,7 +1765,7 @@ public:
     void run() override;
     bool requires_GPS() const override { return false; }
     bool has_manual_throttle() const override { return false; }
-    bool allows_arming(bool from_gcs) const override;
+	bool allows_arming(AP_Arming::Method method) const override { return true; };
     bool is_autopilot() const override { return true; }
     virtual bool has_user_takeoff(bool must_navigate) const override { return true; }
     bool do_user_takeoff_start(float final_alt_above_home) override;
@@ -1791,7 +1791,7 @@ public:
     void run() override;
     bool requires_GPS() const override { return true; }
     bool has_manual_throttle() const override { return false; }
-    bool allows_arming(bool from_gcs) const override { return false; }
+	bool allows_arming(AP_Arming::Method method) const override { return true; };
     bool is_autopilot() const override { return true; }
     bool requires_planck() const override { return true; }
 
@@ -1814,7 +1814,7 @@ public:
     void run() override;
     bool requires_GPS() const override { return false; }
     bool has_manual_throttle() const override { return false; }
-    bool allows_arming(bool from_gcs) const override { return false; }
+	bool allows_arming(AP_Arming::Method method) const override { return true; };
     bool is_autopilot() const override { return true; }
     bool requires_planck() const override { return true; }
 
@@ -1835,7 +1835,7 @@ public:
     void run() override;
     bool requires_GPS() const override { return true; }
     bool has_manual_throttle() const override { return false; }
-    bool allows_arming(bool from_gcs) const override { return false; }
+	bool allows_arming(AP_Arming::Method method) const override { return true; };
     bool is_autopilot() const override { return true; }
     bool requires_planck() const override { return true; }
 
