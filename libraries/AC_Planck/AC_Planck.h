@@ -7,6 +7,8 @@
 #include <AP_InertialNav/AP_InertialNav.h>
 #include <AP_GPS/AP_GPS.h>
 
+#include "include/mavlink/v2.0/planckAero/planckAero.h"
+
 //Defines the interface to Planck's control software
 
 class AC_Planck {

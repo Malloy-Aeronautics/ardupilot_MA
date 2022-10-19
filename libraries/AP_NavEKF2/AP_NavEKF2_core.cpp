@@ -745,7 +745,10 @@ void NavEKF2_core::calcOutputStates()
     delVelNav.z += GRAVITY_MSS*imuDataNew.delVelDT;
 
     // calculate the rate of change of velocity (used as corrected raw acel)
-    delNavDownSampled +=  delVelNav;
+    //delNavDownSampled +=  delVelNav;
+	delNavDownSampled.x +=  static_cast<float>(delVelNav.x);
+	delNavDownSampled.y +=  static_cast<float>(delVelNav.y);
+	delNavDownSampled.z +=  static_cast<float>(delVelNav.z);
     delVelDTDownSampled += imuDataNew.delVelDT;
 
     if (delVelDTDownSampled > 0.010f){
