@@ -2464,9 +2464,9 @@ void GCS_MAVLINK::send_planck_stateinfo()
     int32_t alt_above_home_cm = 0;
     int32_t alt_above_sea_level_cm = 0;
     int32_t alt_above_terrain_cm = 0;
-    ahrs.get_position(current_loc);
+    bool get_pos_result = ahrs.get_position(current_loc);
 
-    if(current_loc.initialised()) {
+    if(current_loc.initialised() && get_pos_result) {
         if(!current_loc.get_alt_cm(Location::AltFrame::ABOVE_HOME, alt_above_home_cm))
         {
             alt_above_home_cm = global_position_int_relative_alt()/10;

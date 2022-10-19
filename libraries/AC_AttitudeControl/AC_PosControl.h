@@ -441,6 +441,7 @@ protected:
     AC_PID_2D       _pid_vel_xy;        // XY axis velocity controller to convert velocity error to desired acceleration
     AC_PID_Basic    _pid_vel_z;         // Z axis velocity controller to convert climb rate error to desired acceleration
     AC_PID          _pid_accel_z;       // Z axis acceleration controller to convert desired acceleration to throttle output
+	AP_Float    	_poscontrol_high_jerkratio; // Defines the time it takes to reach the requested acceleration in z: higher to allow more agressive changes in z position target
 
     // internal variables
     float       _dt;                    // time difference (in seconds) between calls from the main program

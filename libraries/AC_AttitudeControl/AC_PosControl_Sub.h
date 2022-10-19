@@ -2,7 +2,8 @@
 
 #include "AC_PosControl.h"
 
-#define POSCONTROL_JERK_RATIO                   1.0f    // Defines the time it takes to reach the requested acceleration
+#define POSCONTROL_JERK_RATIO                   1.0f    // Defines the time (delta_T) it takes to reach the requested acceleration as ratio = (1/delta_T)
+#define POSCONTROL_HIGH_JERK_RATIO              1.0f   // Defines the time (delta_T) it takes to reach the requested acceleration as ratio = (1/delta_T), higher to allow more agressive changes in z position target
 
 class AC_PosControl_Sub : public AC_PosControl {
 public:
