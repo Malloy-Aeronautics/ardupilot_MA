@@ -6,7 +6,7 @@ bool ModePlanckTracking::init_without_RTB_request(bool ignore_checks) {
     //GPS-denied operation.  Subsequent commands will be accel/attitude based.
     if(!copter.position_ok() && copter.planck_interface.get_tag_tracking_state()) {
       //Set the angle to zero and a zero z rate; this prevents an initial drop
-      ModeGuided::set_angle(Quaternion(),0,true,0);
+      ModeGuided::set_angle(Quaternion(),0,true,0,false);
       return copter.mode_guided_nogps.init(ignore_checks);
     }
 
@@ -24,8 +24,8 @@ bool ModePlanckTracking::init(bool ignore_checks){
 
         copter.planck_interface.request_rtb(
           (float)copter.g.rtl_altitude/100.,
-          copter.pos_control->get_max_speed_up()_cms/100.,
-          copter.pos_control->get_max_speed_down()_cms/100.,
+          copter.pos_control->get_max_speed_up_cms()/100.,
+          copter.pos_control->get_max_speed_down_cms()/100.,
           rate_xy_cms/100.);
     }
 
@@ -79,7 +79,7 @@ void ModePlanckTracking::run() {
               float yaw_rate_rads = ToRad(yaw_cd / 100.);
 
               //Update the GUIDED mode controller
-              ModeGuided::set_angle(q,vz_cms,is_yaw_rate,yaw_rate_rads);
+              ModeGuided::set_angle(q,vz_cms,is_yaw_rate,yaw_rate_rads,false);
               break;
           }
 
@@ -114,7 +114,7 @@ void ModePlanckTracking::run() {
               float yaw_rate_rads = ToRad(att_cd.z / 100.);
 
               //Update the GUIDED mode controller
-              ModeGuided::set_angle(q,vz_cms,is_yaw_rate,yaw_rate_rads);
+              ModeGuided::set_angle(q,vz_cms,is_yaw_rate,yaw_rate_rads,false);
               break;
           }
 
@@ -216,9 +216,10 @@ bool ModePlanckTracking::do_user_takeoff_start(float final_alt_above_home)
 }
 
 //Allow arming if planck is ready for takeooff and this is a GCS command
-bool ModePlanckTracking::allows_arming(bool from_gcs) const
+bool ModePlanckTracking::allows_arming(AP_Arming::Method from_gcs) const
 {
-    if(!from_gcs) return false;
+	// This is a question for Planck
+    //if(!from_gcs) return false;
     if(!copter.planck_interface.ready_for_takeoff())
     {
         if(!copter.planck_interface.get_tag_tracking_state())

@@ -161,15 +161,15 @@ void ModeAuto::run()
         payload_place_run();
         break;
     
-    case Auto_PlanckTakeoff:
+    case SubMode::PLANCK_TAKEOFF:
         planck_takeoff_run();
         break;
 
-    case Auto_PlanckRTB:
+    case SubMode::PLANCK_RTB:
         planck_rtb_run();
         break;
 
-    case Auto_PlanckWingman:
+    case SubMode::PLANCK_WINGMAN:
         planck_wingman_run();
         break;
     }
@@ -440,7 +440,7 @@ bool ModeAuto::use_pilot_yaw(void) const
 //Planck start methods
 void ModeAuto::planck_takeoff_start(const float alt_target)
 {
-    _mode = Auto_PlanckTakeoff;
+    _mode = SubMode::PLANCK_TAKEOFF;
 
     //Tell planck to takeoff
     copter.planck_interface.request_takeoff(alt_target);
@@ -454,7 +454,7 @@ void ModeAuto::planck_takeoff_start(const float alt_target)
 
 void ModeAuto::planck_rtb_start()
 {
-    _mode = Auto_PlanckRTB;
+    _mode = SubMode::PLANCK_RTB;
 
     //Tell planck to RTB 
     copter.mode_planckrtb.init(true);
@@ -463,10 +463,10 @@ void ModeAuto::planck_rtb_start()
 void ModeAuto::planck_wingman_start()
 {
     //Don't re-initialize planck wingman unnecessarily
-    if(_mode == Auto_PlanckWingman)
+    if(_mode == SubMode::PLANCK_WINGMAN)
       return;
 
-    _mode = Auto_PlanckWingman;
+    _mode = SubMode::PLANCK_WINGMAN;
 
     //Tell planck to start tracking
     copter.mode_planckwingman.init(true);
@@ -624,7 +624,7 @@ void ModeAuto::exit_mission()
     // if we are not on the ground switch to loiter or land
     if (!copter.ap.land_complete) {
         //If the last waypoint was NOT a planck takeoff or wingman waypoint
-        if (!(mode() == Auto_PlanckWingman || mode() == Auto_PlanckTakeoff)) {
+        if (!(mode() == SubMode::PLANCK_WINGMAN || mode() == SubMode::PLANCK_TAKEOFF)) {
             // try to enter loiter but if that fails land
             if (!loiter_start()) {
                 set_mode(Mode::Number::LAND, ModeReason::MISSION_END);
@@ -1180,7 +1180,7 @@ void ModeAuto::planck_takeoff_run()
     // if not auto armed or motor interlock not enabled set throttle to zero and exit immediately
     if (!motors->armed() || !copter.ap.auto_armed || !motors->get_interlock()) {
         // initialise wpnav targets
-        wp_nav->shift_wp_origin_to_current_pos();
+        wp_nav->shift_wp_origin_and_destination_to_current_pos_xy();
         // clear i term when we're taking off
         set_throttle_takeoff();
         return;
@@ -1192,7 +1192,7 @@ void ModeAuto::planck_takeoff_run()
         set_land_complete(false);
     } else {
         // initialise wpnav targets
-        wp_nav->shift_wp_origin_to_current_pos();
+        wp_nav->shift_wp_origin_and_destination_to_current_pos_xy();
     }
 #else
     set_land_complete(false);
