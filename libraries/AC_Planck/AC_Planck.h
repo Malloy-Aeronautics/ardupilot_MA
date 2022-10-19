@@ -2,12 +2,11 @@
 
 #include <AP_Common/AP_Common.h>
 #include <GCS_MAVLink/GCS_MAVLink.h>
+#include <GCS_MAVLink/GCS.h>
 #include <AP_Common/Location.h>
 #include <AP_AHRS/AP_AHRS.h>
 #include <AP_InertialNav/AP_InertialNav.h>
 #include <AP_GPS/AP_GPS.h>
-
-#include "include/mavlink/v2.0/planckAero/planckAero.h"
 
 //Defines the interface to Planck's control software
 

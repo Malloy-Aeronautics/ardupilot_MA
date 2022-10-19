@@ -20,8 +20,6 @@
 #include <AP_Logger/AP_Logger.h>
 #include <AP_BoardConfig/AP_BoardConfig.h>
 
-#include "include/mavlink/v2.0/planckAero/planckAero.h"
-
 extern const AP_HAL::HAL& hal;
 
 // queue of pending parameter requests and replies
