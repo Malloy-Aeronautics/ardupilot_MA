@@ -24,8 +24,8 @@ bool ModePlanckTracking::init(bool ignore_checks){
 
         copter.planck_interface.request_rtb(
           (float)copter.g.rtl_altitude/100.,
-          copter.pos_control->get_max_speed_up()/100.,
-          copter.pos_control->get_max_speed_down()/100.,
+          copter.pos_control->get_max_speed_up()_cms/100.,
+          copter.pos_control->get_max_speed_down()_cms/100.,
           rate_xy_cms/100.);
     }
 

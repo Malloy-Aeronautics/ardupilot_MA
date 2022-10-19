@@ -756,7 +756,7 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_long_packet(const mavlink_command_
         if (!copter.flightmode->do_user_takeoff(takeoff_alt, is_zero(packet.param3))) {
             return MAV_RESULT_FAILED;
         }
-        eenurn MAV_RESULT_ACCEPTED;
+        return MAV_RESULT_ACCEPTED;
     }
 
 #if MODE_AUTO_ENABLED == ENABLED
@@ -989,7 +989,7 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_long_packet(const mavlink_command_
             float north = packet.param1;
             float east = packet.param2;
             float up = packet.param3 + (copter.inertial_nav.get_position().z / 100.);
-            copter.planck_interface.request_move_target(Vector3f(north,east,up),false,copter.pos_control->get_max_speed_up(),copter.pos_control->get_max_speed_down());
+            copter.planck_interface.request_move_target(Vector3f(north,east,up),false,copter.pos_control->get_max_speed_up_cms(),copter.pos_control->get_max_speed_down_cms());
             return MAV_RESULT_ACCEPTED;
         }
         return MAV_RESULT_FAILED;
@@ -1233,7 +1233,7 @@ void GCS_MAVLINK_Copter::handleMessage(const mavlink_message_t &msg)
                     copter.planck_interface.get_commbox_state()) &&
                     !copter.ap.land_complete)
                 {
-                    copter.planck_interface.request_alt_change(pos_vector.z / 100.,copter.pos_control->get_max_speed_up(),copter.pos_control->get_max_speed_down());
+                    copter.planck_interface.request_alt_change(pos_vector.z / 100.,copter.pos_control->get_max_speed_up_cms(),copter.pos_control->get_max_speed_down_cms());
                 }
             }
             else
