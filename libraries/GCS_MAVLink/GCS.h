@@ -25,8 +25,6 @@
 #include "MissionItemProtocol_Fence.h"
 #include "ap_message.h"
 
-#include "include/mavlink/v2.0/planckAero/planckAero.h"
-
 #define GCS_DEBUG_SEND_MESSAGE_TIMINGS 0
 
 #ifndef HAL_NO_GCS
