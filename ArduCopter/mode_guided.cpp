@@ -92,6 +92,52 @@ void ModeGuided::run(bool high_jerk_z)
     }
  }
 
+// run - runs the guided controller
+// should be called at 100hz or more
+void ModeGuided::run()
+{
+    // call the correct auto controller
+    switch (guided_mode) {
+
+    case SubMode::TakeOff:
+        // run takeoff controller
+        takeoff_run();
+        break;
+
+    case SubMode::WP:
+        // run waypoint controller
+        wp_control_run();
+        if (send_notification && wp_nav->reached_wp_destination()) {
+            send_notification = false;
+            gcs().send_mission_item_reached_message(0);
+        }
+        break;
+
+    case SubMode::Pos:
+        // run position controller
+        pos_control_run();
+        break;
+
+    case SubMode::Accel:
+        accel_control_run();
+        break;
+
+    case SubMode::VelAccel:
+        velaccel_control_run();
+        break;
+
+    case SubMode::PosVelAccel:
+        posvelaccel_control_run();
+        break;
+
+    case SubMode::Angle:
+		angle_control_run(false);
+        break;
+    }
+ }
+
+
+
 bool ModeGuided::allows_arming(AP_Arming::Method method) const
 {
     // always allow arming from the ground station

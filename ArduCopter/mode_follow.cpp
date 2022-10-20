@@ -152,7 +152,7 @@ void ModeFollow::run()
     // re-use guided mode's velocity controller (takes NEU)
     ModeGuided::set_velocity(desired_velocity_neu_cms, use_yaw, yaw_cd, false, 0.0f, false, log_request);
 
-    ModeGuided::run();
+    ModeGuided::run(false);
 }
 
 uint32_t ModeFollow::wp_distance() const
