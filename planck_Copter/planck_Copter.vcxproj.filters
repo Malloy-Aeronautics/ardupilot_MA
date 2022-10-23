@@ -1221,6 +1221,1872 @@
     <ClCompile Include="..\libraries\AP_Filesystem\posix_compat.cpp">
       <Filter>libraries\AP_Filesystem</Filter>
     </ClCompile>
+    <ClCompile Include="..\libraries\AP_FlashStorage\AP_FlashStorage.cpp">
+      <Filter>libraries\AP_FlashStorage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Follow\AP_Follow.cpp">
+      <Filter>libraries\AP_Follow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Backend.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_D.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_MAVliteToSPort.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_Message.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_SPortToMAVlite.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVliteMsgHandler.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Parameters.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_SPort.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_SPort_Passthrough.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Telem.cpp">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator_Backend.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator_IE_650_800.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator_IE_2400.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator_IE_FuelCell.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Generator\AP_Generator_RichenPower.cpp">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_ERB.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_ExternalAHRS.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_GSOF.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_MAV.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_MSP.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_MTK.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_MTK19.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_NMEA.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_NOVA.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_SBF.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_SBP.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_SBP2.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_SIRF.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_UAVCAN.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\AP_GPS_UBLOX.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\GPS_Backend.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\MovingBase.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GPS\RTCM3_Parser.cpp">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Gripper\AP_Gripper.cpp">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Gripper\AP_Gripper_Backend.cpp">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Gripper\AP_Gripper_EPM.cpp">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Gripper\AP_Gripper_Servo.cpp">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_GyroFFT\AP_GyroFFT.cpp">
+      <Filter>libraries\AP_GyroFFT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\CANIface.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\Device.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\DSP.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\EventHandle.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\GPIO.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\HAL.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\RCOutput.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\Scheduler.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\Semaphores.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\Storage.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\system.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL\Util.cpp">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\AnalogIn.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\CANFDIface.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\CanIface.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\Device.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\DSP.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\EventSource.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\GPIO.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\HAL_ChibiOS_Class.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\I2CDevice.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\RCInput.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\RCOutput.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\RCOutput_bdshot.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\RCOutput_serial.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\Scheduler.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\sdcard.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\Semaphores.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\shared_dma.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\SoftSigReader.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\SoftSigReaderInt.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\SPIDevice.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\stdio.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\Storage.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\system.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\UARTDriver.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_ChibiOS\Util.cpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\AnalogIn.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\GPIO.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\HAL_Empty_Class.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\RCInput.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\RCOutput.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\Scheduler.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\Semaphores.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\Storage.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Empty\UARTDriver.cpp">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\AnalogIn_ADS1115.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\AnalogIn_IIO.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\AnalogIn_Navio2.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\CameraSensor.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\CameraSensor_Mt9v117.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\CameraSensor_Mt9v117_Patches.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\CANSocketIface.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\ConsoleDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Flow_PX4.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Aero.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_BBB.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Bebop.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Disco.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Edge.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Navio.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Navio2.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_RPI.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\GPIO_Sysfs.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\HAL_Linux_Class.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Heat_Pwm.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\I2CDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Led_Sysfs.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\OpticalFlow_Onboard.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Poller.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\PollerThread.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\PWM_Sysfs.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_AioPRU.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_Multi.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_Navio2.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_PRU.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_RCProtocol.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_RPI.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_SoloLink.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_UART.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_UDP.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCInput_ZYNQ.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_AeroIO.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_AioPRU.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_Bebop.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_Disco.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_PCA9685.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_PRU.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_Sysfs.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\RCOutput_ZYNQ.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\sbus.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Scheduler.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Semaphores.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\SPIDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\SPIUARTDriver.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Storage.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\system.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\TCPServerDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Thread.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\ToneAlarm.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\ToneAlarm_Disco.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\UARTDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\UARTDriver.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\UDPDevice.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Util.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\Util_RPI.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_Linux\VideoIn.cpp">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\AnalogIn.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\CANSocketIface.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\DSP.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\GPIO.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\HAL_SITL_Class.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\I2CDevice.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\RCInput.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\RCOutput.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\Scheduler.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\Semaphores.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\sitl_airspeed.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\SITL_cmdline.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\sitl_gps.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\SITL_Periph_State.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\sitl_rangefinder.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\SITL_State.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\Storage.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\system.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\ToneAlarm_SF.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\UART_utils.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\UARTDriver.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_HAL_SITL\Util.cpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Hott_Telem\AP_Hott_Telem.cpp">
+      <Filter>libraries\AP_Hott_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ICEngine\AP_ICEngine.cpp">
+      <Filter>libraries\AP_ICEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialNav\AP_InertialNav_NavEKF.cpp">
+      <Filter>libraries\AP_InertialNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_ADIS1647x.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Backend.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI055.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI088.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI160.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_ExternalAHRS.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensense.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensensev2.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensensev3.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_L3G4200D.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Logging.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_LSM9DS0.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_LSM9DS1.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_RST.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_SITL.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AP_InertialSensor_tempcal.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\AuxiliaryBus.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InertialSensor\BatchSampler.cpp">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_InternalError\AP_InternalError.cpp">
+      <Filter>libraries\AP_InternalError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IOMCU\AP_IOMCU.cpp">
+      <Filter>libraries\AP_IOMCU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IOMCU\fw_uploader.cpp">
+      <Filter>libraries\AP_IOMCU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IRLock\AP_IRLock_I2C.cpp">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IRLock\AP_IRLock_SITL.cpp">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IRLock\AP_IRLock_SITL_Gazebo.cpp">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_IRLock\IRLock.cpp">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_JSButton\AP_JSButton.cpp">
+      <Filter>libraries\AP_JSButton</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_KDECAN\AP_KDECAN.cpp">
+      <Filter>libraries\AP_KDECAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_L1_Control\AP_L1_Control.cpp">
+      <Filter>libraries\AP_L1_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Landing\AP_Landing.cpp">
+      <Filter>libraries\AP_Landing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Landing\AP_Landing_Deepstall.cpp">
+      <Filter>libraries\AP_Landing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Landing\AP_Landing_Slope.cpp">
+      <Filter>libraries\AP_Landing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LandingGear\AP_LandingGear.cpp">
+      <Filter>libraries\AP_LandingGear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LeakDetector\AP_LeakDetector.cpp">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Analog.cpp">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Backend.cpp">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Digital.cpp">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_Backend.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_Block.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_DataFlash.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_File.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_MAVLink.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_MAVLinkLogTransfer.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\AP_Logger_SITL.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\LogFile.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Logger\LoggerMessageWriter.cpp">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_LTM_Telem\AP_LTM_Telem.cpp">
+      <Filter>libraries\AP_LTM_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\AP_GeodesicGrid.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\AP_Math.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\control.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\crc.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\location.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\location_double.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\matrix_alg.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\matrix3.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\matrixN.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\polyfit.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\polygon.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\quaternion.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\SCurve.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\spline5.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\SplineCurve.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\vector2.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Math\vector3.cpp">
+      <Filter>libraries\AP_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Menu\AP_Menu.cpp">
+      <Filter>libraries\AP_Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mission\AP_Mission.cpp">
+      <Filter>libraries\AP_Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mission\AP_Mission_Commands.cpp">
+      <Filter>libraries\AP_Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Module\AP_Module.cpp">
+      <Filter>libraries\AP_Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_Motors_Class.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_Motors6DOF.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsCoax.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli_Dual.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli_Quad.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli_RSC.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli_Single.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsHeli_Swash.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsMatrix.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsMatrix_6DoF_Scripting.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsMulticopter.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsSingle.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsTailsitter.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsTri.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Motors\AP_MotorsUGV.cpp">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_Alexmos.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_Backend.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_Servo.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_SoloGimbal.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_SToRM32.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\AP_Mount_SToRM32_serial.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\SoloGimbal.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\SoloGimbal_Parameters.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Mount\SoloGimbalEKF.cpp">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\AP_MSP.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\AP_MSP_Telem_Backend.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\AP_MSP_Telem_DJI.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\AP_MSP_Telem_Generic.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\msp.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_MSP\msp_sbuf.cpp">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF\AP_NavEKF_core_common.cpp">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF\AP_NavEKF_Source.cpp">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF\EKF_Buffer.cpp">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF\EKFGSF_Logging.cpp">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF\EKFGSF_yaw.cpp">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF_GyroBias.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_AirDataFusion.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_Control.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_core.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_Logging.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_MagFusion.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_Measurements.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_OptFlowFusion.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_Outputs.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_PosVelFusion.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_RngBcnFusion.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF2\AP_NavEKF2_VehicleStatus.cpp">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_AirDataFusion.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_Control.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_core.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_GyroBias.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_Logging.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_MagFusion.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_Measurements.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_OptFlowFusion.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_Outputs.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_PosVelFusion.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_RngBcnFusion.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NavEKF3\AP_NavEKF3_VehicleStatus.cpp">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_NMEA_Output\AP_NMEA_Output.cpp">
+      <Filter>libraries\AP_NMEA_Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\AP_BoardLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\AP_BoardLED2.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\AP_Notify.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Buzzer.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\DiscoLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\DiscreteRGBLed.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Display.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Display_SH1106_I2C.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Display_SITL.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Display_SSD1306_I2C.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\DShotLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\ExternalLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\Led_Sysfs.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\MMLPlayer.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\NavigatorLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\NCP5623.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\NeoPixel.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\OreoLED_I2C.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\PCA9685LED_I2C.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\PixRacerLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\ProfiLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\RCOutputRGBLed.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\RGBLed.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\ScriptingLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\SerialLED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\SITL_SFML_LED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\ToneAlarm.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\ToshibaLED_I2C.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\UAVCAN_RGB_LED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Notify\VRBoard_LED.cpp">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OLC\AP_OLC.cpp">
+      <Filter>libraries\AP_OLC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_CXOF.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_HereFlow.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_MAV.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_MSP.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_Onboard.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_Pixart.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_PX4Flow.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_SITL.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_UPFLOW.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\OpticalFlow.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OpticalFlow\OpticalFlow_backend.cpp">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_Backend.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_MAX7456.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_MSP.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_ParamScreen.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_ParamSetting.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_Screen.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_Setting.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_OSD\AP_OSD_SITL.cpp">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Parachute\AP_Parachute.cpp">
+      <Filter>libraries\AP_Parachute</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Param\AP_Param.cpp">
+      <Filter>libraries\AP_Param</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_PiccoloCAN\AP_PiccoloCAN.cpp">
+      <Filter>libraries\AP_PiccoloCAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_AirSimSITL.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_Backend.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_Backend_Serial.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_Boundary_3D.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSerial.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF40C.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF40C_v09.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF45B.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_MAV.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_RangeFinder.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_RPLidarA2.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_SITL.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_TeraRangerTower.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Proximity\AP_Proximity_TeraRangerTowerEvo.cpp">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\AP_Radio.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\AP_Radio_backend.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\AP_Radio_bk2425.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\AP_Radio_cc2500.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\AP_Radio_cypress.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\driver_bk2425.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Radio\driver_cc2500.cpp">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Rally\AP_Rally.cpp">
+      <Filter>libraries\AP_Rally</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RAMTRON\AP_RAMTRON.cpp">
+      <Filter>libraries\AP_RAMTRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_analog.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Backend.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Backend_Serial.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_BBB_PRU.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Bebop.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake_TFMiniPlus.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_BLPing.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_GYUS42v2.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_HC_SR04.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Lanbao.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LeddarOne.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LeddarVu8.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LightWareI2C.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LightWareSerial.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MAVLink.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MaxsonarI2CXL.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MaxsonarSerialLV.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MSP.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_NMEA.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Params.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_PulsedLightLRF.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_PWM.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_SITL.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_TeraRangerI2C.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_UAVCAN.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_uLanding.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_USD1_CAN.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_VL53L0X.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_VL53L1X.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Wasp.cpp">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCMapper\AP_RCMapper.cpp">
+      <Filter>libraries\AP_RCMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_Backend.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_CRSF.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_DSM.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_FPort.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_FPort2.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_IBUS.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_PPMSum.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SBUS.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SRXL.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SRXL2.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_ST24.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SUMD.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\SoftSerial.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCProtocol\spm_srxl.cpp">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCTelemetry\AP_CRSF_Telem.cpp">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCTelemetry\AP_RCTelemetry.cpp">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RCTelemetry\AP_Spektrum_Telem.cpp">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Relay\AP_Relay.cpp">
+      <Filter>libraries\AP_Relay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RobotisServo\AP_RobotisServo.cpp">
+      <Filter>libraries\AP_RobotisServo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ROMFS\AP_ROMFS.cpp">
+      <Filter>libraries\AP_ROMFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ROMFS\tinfgzip.cpp">
+      <Filter>libraries\AP_ROMFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ROMFS\tinflate.cpp">
+      <Filter>libraries\AP_ROMFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\AP_RPM.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\RPM_Backend.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\RPM_EFI.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\RPM_HarmonicNotch.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\RPM_Pin.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RPM\RPM_SITL.cpp">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RSSI\AP_RSSI.cpp">
+      <Filter>libraries\AP_RSSI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RTC\AP_RTC.cpp">
+      <Filter>libraries\AP_RTC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_RTC\JitterCorrection.cpp">
+      <Filter>libraries\AP_RTC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_SBusOut\AP_SBusOut.cpp">
+      <Filter>libraries\AP_SBusOut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scheduler\AP_Scheduler.cpp">
+      <Filter>libraries\AP_Scheduler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scheduler\PerfInfo.cpp">
+      <Filter>libraries\AP_Scheduler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\AP_Scripting.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\AP_Scripting_helpers.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\lua_bindings.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\lua_boxed_numerics.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\lua_repl.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Scripting\lua_scripts.cpp">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_SerialLED\AP_SerialLED.cpp">
+      <Filter>libraries\AP_SerialLED</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_SerialManager\AP_SerialManager.cpp">
+      <Filter>libraries\AP_SerialManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ServoRelayEvents\AP_ServoRelayEvents.cpp">
+      <Filter>libraries\AP_ServoRelayEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_SmartRTL\AP_SmartRTL.cpp">
+      <Filter>libraries\AP_SmartRTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Soaring\AP_Soaring.cpp">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Soaring\ExtendedKalmanFilter.cpp">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Soaring\Variometer.cpp">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Stats\AP_Stats.cpp">
+      <Filter>libraries\AP_Stats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_TECS\AP_TECS.cpp">
+      <Filter>libraries\AP_TECS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_TempCalibration\AP_TempCalibration.cpp">
+      <Filter>libraries\AP_TempCalibration</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_TemperatureSensor\TSYS01.cpp">
+      <Filter>libraries\AP_TemperatureSensor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Terrain\AP_Terrain.cpp">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Terrain\TerrainGCS.cpp">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Terrain\TerrainIO.cpp">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Terrain\TerrainMission.cpp">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Terrain\TerrainUtil.cpp">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ToshibaCAN\AP_ToshibaCAN.cpp">
+      <Filter>libraries\AP_ToshibaCAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Tuning\AP_Tuning.cpp">
+      <Filter>libraries\AP_Tuning</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_UAVCAN\AP_UAVCAN.cpp">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_UAVCAN\AP_UAVCAN_DNA_Server.cpp">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_UAVCAN\AP_UAVCAN_IfaceMgr.cpp">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Vehicle\AP_Vehicle.cpp">
+      <Filter>libraries\AP_Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VideoTX\AP_SmartAudio.cpp">
+      <Filter>libraries\AP_VideoTX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VideoTX\AP_VideoTX.cpp">
+      <Filter>libraries\AP_VideoTX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VisualOdom\AP_VisualOdom.cpp">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VisualOdom\AP_VisualOdom_Backend.cpp">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VisualOdom\AP_VisualOdom_IntelT265.cpp">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VisualOdom\AP_VisualOdom_Logging.cpp">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_VisualOdom\AP_VisualOdom_MAV.cpp">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Volz_Protocol\AP_Volz_Protocol.cpp">
+      <Filter>libraries\AP_Volz_Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WheelEncoder\AP_WheelEncoder.cpp">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WheelEncoder\AP_WheelRateControl.cpp">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WheelEncoder\WheelEncoder_Backend.cpp">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WheelEncoder\WheelEncoder_Quadrature.cpp">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WheelEncoder\WheelEncoder_SITL_Quadrature.cpp">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Winch\AP_Winch.cpp">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Winch\AP_Winch_Backend.cpp">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Winch\AP_Winch_Daiwa.cpp">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Winch\AP_Winch_PWM.cpp">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_Airspeed.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_Analog.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_Backend.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_Home.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_ModernDevice.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_NMEA.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_RPM.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_WindVane\AP_WindVane_SITL.cpp">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AR_WPNav\AR_WPNav.cpp">
+      <Filter>libraries\AR_WPNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\DerivativeFilter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\HarmonicNotchFilter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\LowPassFilter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\LowPassFilter2p.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\ModeFilter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\NotchFilter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\Filter\SlewLimiter.cpp">
+      <Filter>libraries\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Common.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_DeviceOp.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Dummy.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Fence.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_FTP.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_MAVLink.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Param.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Rally.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_serial_control.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_ServoRelay.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\GCS_Signing.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\MAVLink_routing.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\MissionItemProtocol.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Fence.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Rally.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Waypoints.cpp">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\PID\PID.cpp">
+      <Filter>libraries\PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RC_Channel\RC_Channel.cpp">
+      <Filter>libraries\RC_Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\RC_Channel\RC_Channels.cpp">
+      <Filter>libraries\RC_Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_ADSB.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Aircraft.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_AirSim.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Airspeed_DLVR.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_BalanceBot.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Balloon.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Battery.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_BattMonitor_SMBus.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Generic.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Maxell.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Rotoye.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Blimp.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Buzzer.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Calibration.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_CRRCSim.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_CRSF.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_EFI_MegaSquirt.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_FlightAxis.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Frame.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Frsky.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Frsky_D.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Gazebo.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Gimbal.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Gripper_EPM.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Gripper_Servo.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Helicopter.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_I2C.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_I2CDevice.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_ICEngine.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_IntelligentEnergy.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_IntelligentEnergy24.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Invensense_v3.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_JSBSim.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_JSON.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_last_letter.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Morse.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Motor.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Multicopter.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Parachute.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Plane.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Precland.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_PS_LightWare_SF45B.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_PS_RPLidarA2.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_PS_TeraRangerTower.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_QuadPlane.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_Benewake.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_BLping.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_GYUS42v2.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_Lanbao.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_LeddarOne.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_LightWareSerial.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_LightWareSerialBinary.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_MAVLink.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_MaxsonarSerialLV.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_NMEA.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_uLanding.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_uLanding_v0.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_uLanding_v1.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RF_Wasp.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_RichenPower.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Rover.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Sailboat.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Scrimmage.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SerialDevice.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SerialProximitySensor.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SerialRangeFinder.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Ship.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SilentWings.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SingleCopter.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_SMBusDevice.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Sprayer.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Submarine.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Temperature_TSYS01.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_ToneAlarm.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_ToshibaLED.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Tracker.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_VectorNav.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Vicon.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_Webots.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SIM_XPlane.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SITL\SITL.cpp">
+      <Filter>libraries\SITL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SRV_Channel\SRV_Channel.cpp">
+      <Filter>libraries\SRV_Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SRV_Channel\SRV_Channel_aux.cpp">
+      <Filter>libraries\SRV_Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\SRV_Channel\SRV_Channels.cpp">
+      <Filter>libraries\SRV_Channel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\StorageManager\StorageManager.cpp">
+      <Filter>libraries\StorageManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ArduCopter\afs_copter.h">
@@ -1880,6 +3746,1944 @@
     <ClInclude Include="..\libraries\AP_Filesystem\posix_compat.h">
       <Filter>libraries\AP_Filesystem</Filter>
     </ClInclude>
+    <ClInclude Include="..\libraries\AP_FlashStorage\AP_FlashStorage.h">
+      <Filter>libraries\AP_FlashStorage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Follow\AP_Follow.h">
+      <Filter>libraries\AP_Follow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Backend.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_D.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_MAVliteToSPort.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_Message.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVlite_SPortToMAVlite.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_MAVliteMsgHandler.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Parameters.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_SPort.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_SPort_Passthrough.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_SPortParser.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Frsky_Telem\AP_Frsky_Telem.h">
+      <Filter>libraries\AP_Frsky_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator_Backend.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator_IE_650_800.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator_IE_2400.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator_IE_FuelCell.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Generator\AP_Generator_RichenPower.h">
+      <Filter>libraries\AP_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_ERB.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_ExternalAHRS.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_GSOF.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_MAV.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_MSP.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_MTK.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_MTK_Common.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_MTK19.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_NMEA.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_NOVA.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_SBF.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_SBP.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_SBP2.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_SIRF.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_UAVCAN.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\AP_GPS_UBLOX.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\GPS_Backend.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\GPS_detect_state.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\LogStructure.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\MovingBase.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GPS\RTCM3_Parser.h">
+      <Filter>libraries\AP_GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Gripper\AP_Gripper.h">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Gripper\AP_Gripper_Backend.h">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Gripper\AP_Gripper_EPM.h">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Gripper\AP_Gripper_Servo.h">
+      <Filter>libraries\AP_Gripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_GyroFFT\AP_GyroFFT.h">
+      <Filter>libraries\AP_GyroFFT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AnalogIn.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AP_HAL.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AP_HAL_Boards.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AP_HAL_Macros.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AP_HAL_Main.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\AP_HAL_Namespace.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\CANIface.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Device.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\DSP.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\EventHandle.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Flash.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\GPIO.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\HAL.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\I2CDevice.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\OpticalFlow.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\RCInput.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\RCOutput.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Scheduler.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Semaphores.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\SPIDevice.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Storage.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\system.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\UARTDriver.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL\Util.h">
+      <Filter>libraries\AP_HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\AnalogIn.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\AP_HAL_ChibiOS.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\AP_HAL_ChibiOS_Namespace.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\AP_HAL_ChibiOS_Private.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\bxcan.hpp">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\CANFDIface.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\CANIface.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Device.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\DSP.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\EventSource.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Flash.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\GPIO.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\HAL_ChibiOS_Class.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\I2CDevice.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\RCInput.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\RCOutput.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Scheduler.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\sdcard.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Semaphores.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\shared_dma.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\SoftSigReader.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\SoftSigReaderInt.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\SPIDevice.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Storage.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\UARTDriver.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_ChibiOS\Util.h">
+      <Filter>libraries\AP_HAL_ChibiOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\AnalogIn.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\AP_HAL_Empty.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\AP_HAL_Empty_Namespace.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\AP_HAL_Empty_Private.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\DSP.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\Flash.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\GPIO.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\HAL_Empty_Class.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\I2CDevice.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\OpticalFlow.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\RCInput.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\RCOutput.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\Scheduler.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\Semaphores.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\SPIDevice.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\Storage.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\UARTDriver.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Empty\Util.h">
+      <Filter>libraries\AP_HAL_Empty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\AnalogIn_ADS1115.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\AnalogIn_IIO.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\AnalogIn_Navio2.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\AP_HAL_Linux.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\CameraSensor.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\CameraSensor_Mt9v117.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\CANSocketIface.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\ConsoleDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Flow_PX4.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Aero.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_BBB.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Bebop.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Disco.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Edge.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Navio.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Navio2.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_RPI.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\GPIO_Sysfs.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\HAL_Linux_Class.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Heat.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Heat_Pwm.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\I2CDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Led_Sysfs.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\OpticalFlow_Onboard.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Poller.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\PollerThread.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\PWM_Sysfs.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_AioPRU.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_Multi.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_Navio2.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_PRU.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_RCProtocol.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_RPI.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_SoloLink.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_UART.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_UDP.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_UDP_Protocol.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCInput_ZYNQ.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_AeroIO.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_AioPRU.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_Bebop.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_Disco.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_PCA9685.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_PRU.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_Sysfs.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\RCOutput_ZYNQ.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\sbus.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Scheduler.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Semaphores.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\SerialDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\SPIDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\SPIUARTDriver.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Storage.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\TCPServerDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Thread.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\ToneAlarm.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\ToneAlarm_Disco.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\UARTDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\UARTDriver.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\UDPDevice.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Util.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\Util_RPI.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_Linux\VideoIn.h">
+      <Filter>libraries\AP_HAL_Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\AnalogIn.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\AP_HAL_SITL.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\AP_HAL_SITL_Namespace.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\AP_HAL_SITL_Private.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\CANSocketIface.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\DSP.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\GPIO.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\HAL_SITL_Class.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\I2CDevice.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\RCInput.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\RCOutput.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\Scheduler.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\Semaphores.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\SITL_Periph_State.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\SITL_State.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\Storage.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\Synth.hpp">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\ToneAlarm_SF.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\UARTDriver.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_HAL_SITL\Util.h">
+      <Filter>libraries\AP_HAL_SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Hott_Telem\AP_Hott_Telem.h">
+      <Filter>libraries\AP_Hott_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ICEngine\AP_ICEngine.h">
+      <Filter>libraries\AP_ICEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialNav\AP_InertialNav.h">
+      <Filter>libraries\AP_InertialNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialNav\AP_InertialNav_NavEKF.h">
+      <Filter>libraries\AP_InertialNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_ADIS1647x.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Backend.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI055.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI088.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_BMI160.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_ExternalAHRS.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensense.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensense_registers.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensensev2.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensensev2_registers.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_Invensensev3.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_L3G4200D.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_LSM9DS0.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_LSM9DS1.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_RST.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AP_InertialSensor_SITL.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\AuxiliaryBus.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InertialSensor\LogStructure.h">
+      <Filter>libraries\AP_InertialSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_InternalError\AP_InternalError.h">
+      <Filter>libraries\AP_InternalError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IOMCU\AP_IOMCU.h">
+      <Filter>libraries\AP_IOMCU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IRLock\AP_IRLock.h">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IRLock\AP_IRLock_I2C.h">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IRLock\AP_IRLock_SITL.h">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IRLock\AP_IRLock_SITL_Gazebo.h">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_IRLock\IRLock.h">
+      <Filter>libraries\AP_IRLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_JSButton\AP_JSButton.h">
+      <Filter>libraries\AP_JSButton</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_KDECAN\AP_KDECAN.h">
+      <Filter>libraries\AP_KDECAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_L1_Control\AP_L1_Control.h">
+      <Filter>libraries\AP_L1_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Landing\AP_Landing.h">
+      <Filter>libraries\AP_Landing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Landing\AP_Landing_Deepstall.h">
+      <Filter>libraries\AP_Landing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LandingGear\AP_LandingGear.h">
+      <Filter>libraries\AP_LandingGear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LeakDetector\AP_LeakDetector.h">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Analog.h">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Backend.h">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LeakDetector\AP_LeakDetector_Digital.h">
+      <Filter>libraries\AP_LeakDetector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_Backend.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_Block.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_DataFlash.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_File.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_MAVLink.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\AP_Logger_SITL.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\LoggerMessageWriter.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Logger\LogStructure.h">
+      <Filter>libraries\AP_Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_LTM_Telem\AP_LTM_Telem.h">
+      <Filter>libraries\AP_LTM_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\AP_GeodesicGrid.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\AP_Math.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\control.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\crc.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\definitions.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\ftype.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\location.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\matrix3.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\matrixN.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\polyfit.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\polygon.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\quaternion.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\rotations.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\SCurve.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\spline5.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\SplineCurve.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\vector2.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\vector3.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Math\vectorN.h">
+      <Filter>libraries\AP_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Menu\AP_Menu.h">
+      <Filter>libraries\AP_Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mission\AP_Mission.h">
+      <Filter>libraries\AP_Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Module\AP_Module.h">
+      <Filter>libraries\AP_Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Module\AP_Module_Structures.h">
+      <Filter>libraries\AP_Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_Motors.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_Motors_Class.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_Motors6DOF.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsCoax.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli_Dual.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli_Quad.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli_RSC.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli_Single.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsHeli_Swash.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsMatrix.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsMatrix_6DoF_Scripting.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsMulticopter.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsSingle.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsTailsitter.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsTri.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Motors\AP_MotorsUGV.h">
+      <Filter>libraries\AP_Motors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_Alexmos.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_Backend.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_Servo.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_SoloGimbal.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_SToRM32.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\AP_Mount_SToRM32_serial.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\SoloGimbal.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\SoloGimbal_Parameters.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Mount\SoloGimbalEKF.h">
+      <Filter>libraries\AP_Mount</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\AP_MSP.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\AP_MSP_Telem_Backend.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\AP_MSP_Telem_DJI.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\AP_MSP_Telem_Generic.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp_osd.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp_protocol.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp_sbuf.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp_sensors.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_MSP\msp_version.h">
+      <Filter>libraries\AP_MSP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\AP_Nav_Common.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\AP_NavEKF_core_common.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\AP_NavEKF_Source.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\EKF_Buffer.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\EKFGSF_yaw.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF\LogStructure.h">
+      <Filter>libraries\AP_NavEKF</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF2\AP_NavEKF2.h">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF2\AP_NavEKF2_core.h">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF2\LogStructure.h">
+      <Filter>libraries\AP_NavEKF2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF3\AP_NavEKF3.h">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF3\AP_NavEKF3_core.h">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF3\AP_NavEKF3_feature.h">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NavEKF3\LogStructure.h">
+      <Filter>libraries\AP_NavEKF3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Navigation\AP_Navigation.h">
+      <Filter>libraries\AP_Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_NMEA_Output\AP_NMEA_Output.h">
+      <Filter>libraries\AP_NMEA_Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\AP_BoardLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\AP_BoardLED2.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\AP_Notify.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Buzzer.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\DiscoLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\DiscreteRGBLed.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Display.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Display_Backend.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Display_SH1106_I2C.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Display_SITL.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Display_SSD1306_I2C.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\DShotLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\ExternalLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\Led_Sysfs.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\MMLPlayer.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\NavigatorLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\NCP5623.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\NeoPixel.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\NotifyDevice.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\OreoLED_I2C.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\PCA9685LED_I2C.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\PixRacerLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\ProfiLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\RCOutputRGBLed.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\RGBLed.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\ScriptingLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\SerialLED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\SITL_SFML_LED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\ToneAlarm.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\ToshibaLED_I2C.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\UAVCAN_RGB_LED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Notify\VRBoard_LED.h">
+      <Filter>libraries\AP_Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OLC\AP_OLC.h">
+      <Filter>libraries\AP_OLC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_CXOF.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_HereFlow.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_MAV.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_MSP.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_Onboard.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_Pixart.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_Pixart_SROM.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_PX4Flow.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_SITL.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\AP_OpticalFlow_UPFLOW.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\OpticalFlow.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OpticalFlow\OpticalFlow_backend.h">
+      <Filter>libraries\AP_OpticalFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OSD\AP_OSD.h">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OSD\AP_OSD_Backend.h">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OSD\AP_OSD_MAX7456.h">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OSD\AP_OSD_MSP.h">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_OSD\AP_OSD_SITL.h">
+      <Filter>libraries\AP_OSD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Parachute\AP_Parachute.h">
+      <Filter>libraries\AP_Parachute</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Param\AP_Param.h">
+      <Filter>libraries\AP_Param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_PiccoloCAN\AP_PiccoloCAN.h">
+      <Filter>libraries\AP_PiccoloCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_AirSimSITL.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_Backend.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_Backend_Serial.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_Boundary_3D.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSerial.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF40C.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF40C_v09.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_LightWareSF45B.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_MAV.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_RangeFinder.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_RPLidarA2.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_SITL.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_TeraRangerTower.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Proximity\AP_Proximity_TeraRangerTowerEvo.h">
+      <Filter>libraries\AP_Proximity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\AP_Radio.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\AP_Radio_backend.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\AP_Radio_bk2425.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\AP_Radio_cc2500.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\AP_Radio_cypress.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\driver_bk2425.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\driver_cc2500.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Radio\telem_structure.h">
+      <Filter>libraries\AP_Radio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Rally\AP_Rally.h">
+      <Filter>libraries\AP_Rally</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RAMTRON\AP_RAMTRON.h">
+      <Filter>libraries\AP_RAMTRON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_analog.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Backend.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Backend_Serial.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_BBB_PRU.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Bebop.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake_TF02.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake_TF03.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake_TFMini.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Benewake_TFMiniPlus.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_BLPing.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_GYUS42v2.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_HC_SR04.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Lanbao.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LeddarOne.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LeddarVu8.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LightWareI2C.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_LightWareSerial.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MAVLink.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MaxsonarI2CXL.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MaxsonarSerialLV.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_MSP.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_NMEA.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Params.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_PulsedLightLRF.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_PWM.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_SITL.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_TeraRangerI2C.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_UAVCAN.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_uLanding.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_USD1_CAN.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_VL53L0X.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_VL53L1X.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RangeFinder\AP_RangeFinder_Wasp.h">
+      <Filter>libraries\AP_RangeFinder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCMapper\AP_RCMapper.h">
+      <Filter>libraries\AP_RCMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_Backend.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_CRSF.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_DSM.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_FPort.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_FPort2.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_IBUS.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_PPMSum.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SBUS.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SRXL.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SRXL2.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_ST24.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\AP_RCProtocol_SUMD.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\SoftSerial.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\spm_srxl.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCProtocol\spm_srxl_config.h">
+      <Filter>libraries\AP_RCProtocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCTelemetry\AP_CRSF_Telem.h">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCTelemetry\AP_RCTelemetry.h">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCTelemetry\AP_Spektrum_Telem.h">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RCTelemetry\spektrumTelemetrySensors.h">
+      <Filter>libraries\AP_RCTelemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Relay\AP_Relay.h">
+      <Filter>libraries\AP_Relay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RobotisServo\AP_RobotisServo.h">
+      <Filter>libraries\AP_RobotisServo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ROMFS\AP_ROMFS.h">
+      <Filter>libraries\AP_ROMFS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ROMFS\tinf.h">
+      <Filter>libraries\AP_ROMFS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\AP_RPM.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\RPM_Backend.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\RPM_EFI.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\RPM_HarmonicNotch.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\RPM_Pin.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RPM\RPM_SITL.h">
+      <Filter>libraries\AP_RPM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RSSI\AP_RSSI.h">
+      <Filter>libraries\AP_RSSI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RTC\AP_RTC.h">
+      <Filter>libraries\AP_RTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_RTC\JitterCorrection.h">
+      <Filter>libraries\AP_RTC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_SBusOut\AP_SBusOut.h">
+      <Filter>libraries\AP_SBusOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scheduler\AP_Scheduler.h">
+      <Filter>libraries\AP_Scheduler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scheduler\PerfInfo.h">
+      <Filter>libraries\AP_Scheduler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scripting\AP_Scripting.h">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scripting\AP_Scripting_helpers.h">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scripting\lua_bindings.h">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scripting\lua_boxed_numerics.h">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Scripting\lua_scripts.h">
+      <Filter>libraries\AP_Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_SerialLED\AP_SerialLED.h">
+      <Filter>libraries\AP_SerialLED</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_SerialManager\AP_SerialManager.h">
+      <Filter>libraries\AP_SerialManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ServoRelayEvents\AP_ServoRelayEvents.h">
+      <Filter>libraries\AP_ServoRelayEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_SmartRTL\AP_SmartRTL.h">
+      <Filter>libraries\AP_SmartRTL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Soaring\AP_Soaring.h">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Soaring\ExtendedKalmanFilter.h">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Soaring\Variometer.h">
+      <Filter>libraries\AP_Soaring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_SpdHgtControl\AP_SpdHgtControl.h">
+      <Filter>libraries\AP_SpdHgtControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Stats\AP_Stats.h">
+      <Filter>libraries\AP_Stats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_TECS\AP_TECS.h">
+      <Filter>libraries\AP_TECS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_TempCalibration\AP_TempCalibration.h">
+      <Filter>libraries\AP_TempCalibration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_TemperatureSensor\TSYS01.h">
+      <Filter>libraries\AP_TemperatureSensor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Terrain\AP_Terrain.h">
+      <Filter>libraries\AP_Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ToshibaCAN\AP_ToshibaCAN.h">
+      <Filter>libraries\AP_ToshibaCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Tuning\AP_Tuning.h">
+      <Filter>libraries\AP_Tuning</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_UAVCAN\AP_UAVCAN.h">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_UAVCAN\AP_UAVCAN_Clock.h">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_UAVCAN\AP_UAVCAN_DNA_Server.h">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_UAVCAN\AP_UAVCAN_IfaceMgr.h">
+      <Filter>libraries\AP_UAVCAN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Vehicle\AP_Vehicle.h">
+      <Filter>libraries\AP_Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Vehicle\AP_Vehicle_Type.h">
+      <Filter>libraries\AP_Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Vehicle\ModeReason.h">
+      <Filter>libraries\AP_Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VideoTX\AP_SmartAudio.h">
+      <Filter>libraries\AP_VideoTX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VideoTX\AP_VideoTX.h">
+      <Filter>libraries\AP_VideoTX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VisualOdom\AP_VisualOdom.h">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VisualOdom\AP_VisualOdom_Backend.h">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VisualOdom\AP_VisualOdom_IntelT265.h">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VisualOdom\AP_VisualOdom_MAV.h">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_VisualOdom\LogStructure.h">
+      <Filter>libraries\AP_VisualOdom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Volz_Protocol\AP_Volz_Protocol.h">
+      <Filter>libraries\AP_Volz_Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WheelEncoder\AP_WheelEncoder.h">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WheelEncoder\AP_WheelRateControl.h">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WheelEncoder\WheelEncoder_Backend.h">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WheelEncoder\WheelEncoder_Quadrature.h">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WheelEncoder\WheelEncoder_SITL_Quadrature.h">
+      <Filter>libraries\AP_WheelEncoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Winch\AP_Winch.h">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Winch\AP_Winch_Backend.h">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Winch\AP_Winch_Daiwa.h">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Winch\AP_Winch_PWM.h">
+      <Filter>libraries\AP_Winch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_Airspeed.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_Analog.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_Backend.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_Home.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_ModernDevice.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_NMEA.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_RPM.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_WindVane\AP_WindVane_SITL.h">
+      <Filter>libraries\AP_WindVane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AR_WPNav\AR_WPNav.h">
+      <Filter>libraries\AR_WPNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\AverageFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\Butter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\DerivativeFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\Filter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\FilterClass.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\FilterWithBuffer.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\HarmonicNotchFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\LowPassFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\LowPassFilter2p.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\ModeFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\NotchFilter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\Filter\SlewLimiter.h">
+      <Filter>libraries\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\ap_message.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\GCS.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\GCS_Dummy.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\GCS_MAVLink.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\MAVLink_routing.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\MissionItemProtocol.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Fence.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Rally.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\GCS_MAVLink\MissionItemProtocol_Waypoints.h">
+      <Filter>libraries\GCS_MAVLink</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\PID\PID.h">
+      <Filter>libraries\PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RC_Channel\RC_Channel.h">
+      <Filter>libraries\RC_Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\RC_Channel\RC_Channels_VarInfo.h">
+      <Filter>libraries\RC_Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\picojson.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_ADSB.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Aircraft.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_AirSim.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Airspeed_DLVR.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_BalanceBot.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Balloon.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Battery.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_BattMonitor_SMBus.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Generic.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Maxell.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_BattMonitor_SMBus_Rotoye.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Blimp.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Buzzer.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Calibration.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_CRRCSim.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_CRSF.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_EFI_MegaSquirt.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_FlightAxis.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Frame.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Frsky.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Frsky_D.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Gazebo.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Gimbal.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Gripper_EPM.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Gripper_Servo.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Helicopter.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_I2C.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_I2CDevice.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_ICEngine.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_ICM40609.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_IntelligentEnergy.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_IntelligentEnergy24.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Invensense_v3.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_JSBSim.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_JSON.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_last_letter.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_MaxSonarI2CXL.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Morse.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Motor.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_MotorBoat.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Multicopter.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Parachute.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Plane.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Precland.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_PS_LightWare.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_PS_LightWare_SF45B.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_PS_RPLidarA2.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_PS_TeraRangerTower.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_QuadPlane.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Benewake.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Benewake_TF02.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Benewake_TF03.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Benewake_TFmini.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_BLping.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_GYUS42v2.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Lanbao.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_LeddarOne.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_LightWareSerial.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_LightWareSerialBinary.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_MAVLink.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_MaxsonarSerialLV.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_NMEA.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_uLanding.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_uLanding_v0.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_uLanding_v1.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RF_Wasp.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_RichenPower.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Rover.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Sailboat.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Scrimmage.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SerialDevice.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SerialProximitySensor.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SerialRangeFinder.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Ship.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SilentWings.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SingleCopter.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_SMBusDevice.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Sprayer.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Submarine.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Temperature_TSYS01.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_ToneAlarm.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_ToshibaLED.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Tracker.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_VectorNav.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Vicon.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_Webots.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SIM_XPlane.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SITL.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SITL\SITL_Input.h">
+      <Filter>libraries\SITL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\SRV_Channel\SRV_Channel.h">
+      <Filter>libraries\SRV_Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\StorageManager\StorageManager.h">
+      <Filter>libraries\StorageManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ArduCopter\Makefile.waf">
@@ -1893,6 +5697,30 @@
     </None>
     <None Include="..\libraries\AP_Filesystem\README.md">
       <Filter>libraries\AP_Filesystem</Filter>
+    </None>
+    <None Include="..\libraries\AP_GPS\wscript">
+      <Filter>libraries\AP_GPS</Filter>
+    </None>
+    <None Include="..\libraries\AP_Logger\README.md">
+      <Filter>libraries\AP_Logger</Filter>
+    </None>
+    <None Include="..\libraries\AP_Scripting\.gitignore">
+      <Filter>libraries\AP_Scripting</Filter>
+    </None>
+    <None Include="..\libraries\AP_Scripting\README.md">
+      <Filter>libraries\AP_Scripting</Filter>
+    </None>
+    <None Include="..\libraries\AP_Scripting\wscript">
+      <Filter>libraries\AP_Scripting</Filter>
+    </None>
+    <None Include="..\libraries\doc\Doxyfile">
+      <Filter>libraries\doc</Filter>
+    </None>
+    <None Include="..\libraries\doc\updateDocs">
+      <Filter>libraries\doc</Filter>
+    </None>
+    <None Include="..\libraries\GCS_MAVLink\.gitignore">
+      <Filter>libraries\GCS_MAVLink</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
