@@ -1,17 +1,1906 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="ArduCopter">
+      <UniqueIdentifier>{db2dbdd6-f810-4a15-b0c9-c8b6833f80da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="libraries">
+      <UniqueIdentifier>{7f810b12-1cf9-4c39-a83d-9f79b6a4d0f7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="libraries\AC_AttitudeControl">
+      <UniqueIdentifier>{51eb8fa2-bc67-4344-9e95-0edc59d70300}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libraries\AC_AutoTune">
+      <UniqueIdentifier>{d7d21d96-e157-44da-a5fb-8b2b221fb118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_Autorotation">
+      <UniqueIdentifier>{ff6abb6e-4bbc-4808-97f7-faffc8edacd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_Avoidance">
+      <UniqueIdentifier>{6d309ec9-9b1b-4d61-af67-ccd9031f325a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_Fence">
+      <UniqueIdentifier>{2cab425a-d11e-4a61-b640-54cbacdf5795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_InputManager">
+      <UniqueIdentifier>{7b1b6e5a-60ee-441d-a721-9c2c3ea8c003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_PID">
+      <UniqueIdentifier>{5566a354-72f6-44de-abcb-f58c3dc946a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_Planck">
+      <UniqueIdentifier>{663ccf52-203b-4dfc-95dc-73bb9ed9f8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_PrecLand">
+      <UniqueIdentifier>{d79b2672-0e79-4a5c-a358-049fe9e195e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_Sprayer">
+      <UniqueIdentifier>{226493a3-6431-4e21-ba27-9e26bf65237f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AC_WPNav">
+      <UniqueIdentifier>{bbcf7b32-3614-4ae3-b79b-526b76de8c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\APM_Control">
+      <UniqueIdentifier>{90475a1e-24cd-4bbc-9c4c-ced71a1b6510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ADC">
+      <UniqueIdentifier>{72cea00d-ecd6-4896-aed9-0528423c46b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ADSB">
+      <UniqueIdentifier>{f03d787f-5a38-4c18-a5aa-49c65757dfce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_AHRS">
+      <UniqueIdentifier>{c7a31eb2-ed3f-4699-97fc-9b7aef65eaa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_AccelCal">
+      <UniqueIdentifier>{61eab56d-e39a-47a1-980b-c15b4d8f86a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_AdvancedFailsafe">
+      <UniqueIdentifier>{5d6cf027-de6e-4b84-bf89-940900a1d468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Airspeed">
+      <UniqueIdentifier>{2f1f44bc-bfa5-4a54-8ba6-e2734980cb8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Arming">
+      <UniqueIdentifier>{998c41cd-05d0-440e-9e9d-ef24c8e10b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Avoidance">
+      <UniqueIdentifier>{e5149c0a-426f-4bed-a7ba-a038690b2b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_BLHeli">
+      <UniqueIdentifier>{823c611e-58a2-4667-bc1d-59c32de780fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Baro">
+      <UniqueIdentifier>{c0e27be7-2eba-4164-bb14-3544da399cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_BattMonitor">
+      <UniqueIdentifier>{75c6c374-97bb-4944-a075-b0453569cab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Beacon">
+      <UniqueIdentifier>{65352ad0-92e2-4c8a-a3f3-24dcb95e008d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_BoardConfig">
+      <UniqueIdentifier>{88da3c62-344d-47b3-8b69-12ce68a5af51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Button">
+      <UniqueIdentifier>{44a24021-5bc4-437d-a17c-24527693c2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_CANManager">
+      <UniqueIdentifier>{4429bb46-72a3-430f-a026-5c737db51349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Camera">
+      <UniqueIdentifier>{1f11fdb5-1fb5-47af-84a3-0ae45e73e83a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Common">
+      <UniqueIdentifier>{0214573d-7399-46bb-a144-0ae3566c570b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Compass">
+      <UniqueIdentifier>{2d3ac2f0-e43f-4697-ad4d-8b08ca115a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_DAL">
+      <UniqueIdentifier>{3baed61b-01b7-4e8e-9226-8cfd6ac0adbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Declination">
+      <UniqueIdentifier>{09ad3559-39a2-4ca3-b073-0d0c3dd114ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Devo_Telem">
+      <UniqueIdentifier>{6e0bc9df-6844-4b13-a760-fbf0ec69da22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_EFI">
+      <UniqueIdentifier>{b4c6407e-dc36-4fc5-a908-38d2650fa8ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ESC_Telem">
+      <UniqueIdentifier>{6a1dbba4-a677-4a46-81e6-d16a567b6ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ExternalAHRS">
+      <UniqueIdentifier>{4bf9d1d7-702f-4421-a80a-b8680342980a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Filesystem">
+      <UniqueIdentifier>{e1f31332-a424-4417-afb0-3f65ac56d2e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_FlashStorage">
+      <UniqueIdentifier>{c1d5fd52-a864-4d86-adf1-09035a3cff3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Follow">
+      <UniqueIdentifier>{ae1078f7-67d8-4ef1-912f-05a08d39ed6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Frsky_Telem">
+      <UniqueIdentifier>{ca0890d2-4372-4dd9-b32f-29d600142b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_GPS">
+      <UniqueIdentifier>{6ea9236f-2f77-4ef3-94e6-9ba1714bc52e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Generator">
+      <UniqueIdentifier>{af8438db-29c3-470f-81a7-a273543d5c10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Gripper">
+      <UniqueIdentifier>{0de41496-a172-4094-b750-253cb2749e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_GyroFFT">
+      <UniqueIdentifier>{d99f73b8-2a13-4188-a4d5-8738c07acd90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_HAL">
+      <UniqueIdentifier>{53824683-0c0b-46e1-9088-5e4f086013f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_HAL_ChibiOS">
+      <UniqueIdentifier>{3673b316-f2d2-495e-9993-a1133238a5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_HAL_Empty">
+      <UniqueIdentifier>{cec6422e-6a80-499b-9ddc-5bf095897f6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_HAL_Linux">
+      <UniqueIdentifier>{e1447721-b1c3-4145-9d62-2b03b995a8d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_HAL_SITL">
+      <UniqueIdentifier>{6825a3bd-3c8d-4bde-bcea-8b55c503f9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Hott_Telem">
+      <UniqueIdentifier>{e5593ce7-902e-4478-8d9f-8798d467d80c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ICEngine">
+      <UniqueIdentifier>{2f2aac0f-b50d-48de-97a1-e7d22752d1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_IOMCU">
+      <UniqueIdentifier>{c2d253b0-a672-4c27-9891-23fd64187c14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_IRLock">
+      <UniqueIdentifier>{6ac9a076-0ad0-4e56-bcff-59e1bdae5489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_InertialNav">
+      <UniqueIdentifier>{8de991af-887c-46c3-8461-162680da62c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_InertialSensor">
+      <UniqueIdentifier>{3e075dbd-9e28-49ea-904d-d46d9b4acb72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_InternalError">
+      <UniqueIdentifier>{faab9578-6924-4d0d-819a-ce3130aedd1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_JSButton">
+      <UniqueIdentifier>{b436bb74-6ad8-43ae-8549-d20ea045650d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_KDECAN">
+      <UniqueIdentifier>{147559f4-8986-4e35-950f-579148ab5165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_L1_Control">
+      <UniqueIdentifier>{dbb06320-7578-4195-9208-d17c10aac44a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_LTM_Telem">
+      <UniqueIdentifier>{c67be4e0-1ee3-4ee4-bf21-5e475390b639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Landing">
+      <UniqueIdentifier>{ca77144a-2cef-4a15-8f5f-b3a7471d44a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_LandingGear">
+      <UniqueIdentifier>{d233c482-f3e7-439e-9c03-2546ea911344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_LeakDetector">
+      <UniqueIdentifier>{e4c0774a-8b5c-4f66-ac87-3e84d10beeea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Logger">
+      <UniqueIdentifier>{5f18271c-b7a0-478c-8aa8-91cc6abd7876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_MSP">
+      <UniqueIdentifier>{d820ed1a-6819-485b-83f3-be4f5703bf57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Math">
+      <UniqueIdentifier>{97febb9b-20a2-4e79-899a-688ec1e34bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Menu">
+      <UniqueIdentifier>{bc96d419-597b-4dae-b9e3-66b27cc5f125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Mission">
+      <UniqueIdentifier>{0d7abf3b-b481-40a5-a449-60a98de72d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Module">
+      <UniqueIdentifier>{5b3bbf64-7908-4c86-8271-dd4a9dada31a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Motors">
+      <UniqueIdentifier>{34aae3a1-d9d5-4097-8a63-503ceb1715e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Mount">
+      <UniqueIdentifier>{7d6132bd-8369-4b26-9743-bcdc1177270c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_NMEA_Output">
+      <UniqueIdentifier>{71b0b200-04ae-4ca8-8317-714082968343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_NavEKF">
+      <UniqueIdentifier>{e6084812-7f6b-4428-9cd5-d434215ce73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_NavEKF2">
+      <UniqueIdentifier>{375d3b1e-ce9e-4d8a-9e7f-e06da6d4c300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_NavEKF3">
+      <UniqueIdentifier>{c2169438-808f-4c27-a367-a731e2dc3d77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Navigation">
+      <UniqueIdentifier>{ca9a3c08-2a6b-40f3-9979-ac4283fc7bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Notify">
+      <UniqueIdentifier>{8ba18302-e549-4337-824c-4fc692fbb372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_OLC">
+      <UniqueIdentifier>{60ec80f9-ff52-407e-993a-79fbf9de4028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_OSD">
+      <UniqueIdentifier>{401d39a4-3bf5-4cee-9f38-117b48620f34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_OpticalFlow">
+      <UniqueIdentifier>{2e007aba-63dd-476b-baf8-a54f0c13eaa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Parachute">
+      <UniqueIdentifier>{0ee49843-d0a4-4002-aeed-dbf5b7a20171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Param">
+      <UniqueIdentifier>{8a035f0d-77ad-4953-8e56-4b8e7f001be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_PiccoloCAN">
+      <UniqueIdentifier>{1a5e2a0f-d828-419b-9e76-b82c248ff1ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Proximity">
+      <UniqueIdentifier>{6bbba710-e16b-4117-aad1-4db9c197f48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RAMTRON">
+      <UniqueIdentifier>{dec0da4c-6396-48b9-82cb-08c958174c4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RCMapper">
+      <UniqueIdentifier>{d8eabc48-bda3-499d-ba42-bf9b1f75c34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RCProtocol">
+      <UniqueIdentifier>{1cd49c4d-d078-4047-9fa4-dfd92925ec41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RCTelemetry">
+      <UniqueIdentifier>{1a4bd080-eb00-469e-b362-acc15c852014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ROMFS">
+      <UniqueIdentifier>{48b4f2db-a08b-4020-8d4b-ec56a731bc94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RPM">
+      <UniqueIdentifier>{055cd1f5-29f3-4dcd-9fd3-688e68eb563c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RSSI">
+      <UniqueIdentifier>{241f1f4e-33fa-4435-932c-f4b3867377a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RTC">
+      <UniqueIdentifier>{12b44504-506a-4b07-85bf-2c953b511d1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Radio">
+      <UniqueIdentifier>{f70eba72-8eff-436b-a04e-1918b3f9026f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Rally">
+      <UniqueIdentifier>{c8877dfb-7b58-4b32-b5a9-96928fa41ba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RangeFinder">
+      <UniqueIdentifier>{6e806f8f-9822-4087-9765-eae0a03832de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Relay">
+      <UniqueIdentifier>{42c5307e-1dc3-4d8c-a022-0f66b4a725fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_RobotisServo">
+      <UniqueIdentifier>{7c85644f-5a94-4936-b73b-24e4a4835ed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_SBusOut">
+      <UniqueIdentifier>{f85c4b6a-11ba-4435-9d41-7d2d4dc5079d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Scheduler">
+      <UniqueIdentifier>{8493e1a0-319b-4cb2-bc33-535c555a7994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Scripting">
+      <UniqueIdentifier>{8eb0ea9b-7cd5-46fb-93ed-7a0547f04c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_SerialLED">
+      <UniqueIdentifier>{0eb1324f-414d-4bf5-9807-c012e78ba2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_SerialManager">
+      <UniqueIdentifier>{975fc572-2930-4e0b-b44e-7b5805a0b77b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ServoRelayEvents">
+      <UniqueIdentifier>{9ea66c38-12d6-4cfc-a380-23f87f9417d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_SmartRTL">
+      <UniqueIdentifier>{f01e1455-aa75-4790-894f-2e5e2535ef72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Soaring">
+      <UniqueIdentifier>{729514dc-baf5-4a1e-b4d6-3b4277ec753a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_SpdHgtControl">
+      <UniqueIdentifier>{87bb9cc6-2016-41ab-a6aa-670c9cf4be68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Stats">
+      <UniqueIdentifier>{1c487a41-9c85-49fc-a9e2-7c13c99d2dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_TECS">
+      <UniqueIdentifier>{41cbe237-ae22-4869-bd15-7bdd573654c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_TempCalibration">
+      <UniqueIdentifier>{c4bf84a0-5e98-4eb8-9af8-314fdbb37a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_TemperatureSensor">
+      <UniqueIdentifier>{77a9f548-2063-4164-84e1-743431968646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Terrain">
+      <UniqueIdentifier>{99031b37-2da0-4ce2-bc31-c9161a69332a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_ToshibaCAN">
+      <UniqueIdentifier>{aca2df27-4d1f-4b09-b396-4c7e9d932d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Tuning">
+      <UniqueIdentifier>{99967447-07b9-4bef-ba9a-f5c64dd27249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_UAVCAN">
+      <UniqueIdentifier>{10f24d5f-98dc-4d92-9385-13d0dac3ad3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Vehicle">
+      <UniqueIdentifier>{660dac4e-d95a-43dc-b88b-d0036b9e868d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_VideoTX">
+      <UniqueIdentifier>{9b834936-ac17-4c00-9fb7-779278c5f5a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_VisualOdom">
+      <UniqueIdentifier>{0d27b213-8089-4fe9-9112-09900bb2f514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Volz_Protocol">
+      <UniqueIdentifier>{464470f6-46b9-4d00-8031-1de31fa7c705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_WheelEncoder">
+      <UniqueIdentifier>{ad45ddfd-c354-4dc3-98be-7b64344ee8d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_Winch">
+      <UniqueIdentifier>{b6579980-df9a-4588-9b7d-20c58bbe1449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AP_WindVane">
+      <UniqueIdentifier>{77458477-d49d-4fc9-b6ba-bd55c38134ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\AR_WPNav">
+      <UniqueIdentifier>{44765ffd-85fc-4698-a49d-f8a6b331080f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\Filter">
+      <UniqueIdentifier>{21282f60-32f3-4637-9127-fc50fbd2fcf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\GCS_MAVLink">
+      <UniqueIdentifier>{71cacf61-54f3-4c01-a088-96ae41f85d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\PID">
+      <UniqueIdentifier>{5c693f4b-c7fd-4b45-8429-83e1593416c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\RC_Channel">
+      <UniqueIdentifier>{97445590-c134-41fc-82db-fd80af7eafc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\SITL">
+      <UniqueIdentifier>{7e445383-c220-4f8b-afd5-65f4a7394301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\SRV_Channel">
+      <UniqueIdentifier>{94c917e3-ec23-4da7-b0fa-f87a0cf12255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\StorageManager">
+      <UniqueIdentifier>{4ffd3d3b-56bb-4795-9199-25fff88851f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libraries\doc">
+      <UniqueIdentifier>{f549faac-75ce-4b7a-95d3-b977dd704ce2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ArduCopter\afs_copter.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\AP_Arming.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\AP_Rally.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\AP_State.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\Attitude.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\autoyaw.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\avoidance.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\avoidance_adsb.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\baro_ground_effect.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\commands.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\compassmot.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\Copter.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\crash_check.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\ekf_check.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\esc_calibration.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\events.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\failsafe.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\fence.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\GCS_Copter.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\GCS_Mavlink.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\heli.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\inertia.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\land_detector.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\landing_gear.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\leds.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\Log.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_acro.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_acro_heli.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_althold.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_auto.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_autorotate.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_autotune.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_avoid_adsb.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_brake.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_circle.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_drift.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_flip.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_flowhold.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_follow.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_guided.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_guided_nogps.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_land.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_loiter.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_planckland.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_planckrtb.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_plancktracking.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_planckwingman.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_poshold.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_rtl.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_smart_rtl.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_sport.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_stabilize.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_stabilize_heli.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_systemid.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_throw.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\mode_zigzag.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\motor_test.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\motors.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\navigation.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\Parameters.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\precision_landing.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\radio.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\RC_Channel.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\sensors.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\standby.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\surface_tracking.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\system.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\takeoff.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\terrain.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\toy_mode.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\tuning.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\UserCode.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ArduCopter\UserParameters.cpp">
+      <Filter>ArduCopter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Heli.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Multi.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Multi_6DoF.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Sub.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_TS.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_PosControl.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\AC_PosControl_Sub.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AttitudeControl\ControlMonitor.cpp">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_AutoTune\AC_AutoTune.cpp">
+      <Filter>libraries\AC_AutoTune</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Autorotation\AC_Autorotation.cpp">
+      <Filter>libraries\AC_Autorotation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AC_Avoid.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AC_Avoidance_Logging.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AP_OABendyRuler.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AP_OADatabase.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AP_OADijkstra.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AP_OAPathPlanner.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Avoidance\AP_OAVisGraph.cpp">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Fence\AC_Fence.cpp">
+      <Filter>libraries\AC_Fence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Fence\AC_PolyFence_loader.cpp">
+      <Filter>libraries\AC_Fence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_InputManager\AC_InputManager.cpp">
+      <Filter>libraries\AC_InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_InputManager\AC_InputManager_Heli.cpp">
+      <Filter>libraries\AC_InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_HELI_PID.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_P.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_P_1D.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_P_2D.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_PI.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_PI_2D.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_PID.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_PID_2D.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PID\AC_PID_Basic.cpp">
+      <Filter>libraries\AC_PID</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Planck\AC_Planck.cpp">
+      <Filter>libraries\AC_Planck</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\AC_PrecLand.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\AC_PrecLand_Companion.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\AC_PrecLand_IRLock.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\AC_PrecLand_SITL.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\AC_PrecLand_SITL_Gazebo.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_PrecLand\PosVelEKF.cpp">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_Sprayer\AC_Sprayer.cpp">
+      <Filter>libraries\AC_Sprayer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_WPNav\AC_Circle.cpp">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_WPNav\AC_Loiter.cpp">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_WPNav\AC_WPNav.cpp">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AC_WPNav\AC_WPNav_OA.cpp">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AP_AutoTune.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AP_PitchController.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AP_RollController.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AP_SteerController.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AP_YawController.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\APM_Control\AR_AttitudeControl.cpp">
+      <Filter>libraries\APM_Control</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ADC\AP_ADC_ADS1115.cpp">
+      <Filter>libraries\AP_ADC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ADSB\AP_ADSB.cpp">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ADSB\AP_ADSB_Backend.cpp">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ADSB\AP_ADSB_Sagetech.cpp">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ADSB\AP_ADSB_uAvionix_MAVLink.cpp">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AHRS\AP_AHRS.cpp">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AHRS\AP_AHRS_DCM.cpp">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AHRS\AP_AHRS_Logging.cpp">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AHRS\AP_AHRS_NavEKF.cpp">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AHRS\AP_AHRS_View.cpp">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AccelCal\AccelCalibrator.cpp">
+      <Filter>libraries\AP_AccelCal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AccelCal\AP_AccelCal.cpp">
+      <Filter>libraries\AP_AccelCal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_AdvancedFailsafe\AP_AdvancedFailsafe.cpp">
+      <Filter>libraries\AP_AdvancedFailsafe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\Airspeed_Calibration.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_analog.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_ASP5033.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_Backend.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_DLVR.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_Health.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_MS4525.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_MS5525.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_MSP.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_NMEA.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_SDP3X.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Airspeed\AP_Airspeed_UAVCAN.cpp">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Arming\AP_Arming.cpp">
+      <Filter>libraries\AP_Arming</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Avoidance\AP_Avoidance.cpp">
+      <Filter>libraries\AP_Avoidance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BLHeli\AP_BLHeli.cpp">
+      <Filter>libraries\AP_BLHeli</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_Backend.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_BMP085.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_BMP280.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_BMP388.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_DPS280.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_Dummy.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_ExternalAHRS.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_FBM320.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_HIL.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_ICM20789.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_KellerLD.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_Logging.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_LPS2XH.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_MS5611.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_MSP.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_SITL.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_SPL06.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_UAVCAN.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Baro\AP_Baro_Wind.cpp">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Analog.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Backend.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Bebop.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_ESC.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_FuelFlow.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_FuelLevel_PWM.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Generator.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Logging.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_MPPT_PacketDigital.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Params.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Generic.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_NeoDesign.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Rotoye.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Solo.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_SUI.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Sum.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BattMonitor\AP_BattMonitor_UAVCAN.cpp">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon_Backend.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon_Marvelmind.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon_Nooploop.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon_Pozyx.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Beacon\AP_Beacon_SITL.cpp">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BoardConfig\AP_BoardConfig.cpp">
+      <Filter>libraries\AP_BoardConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BoardConfig\board_drivers.cpp">
+      <Filter>libraries\AP_BoardConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_BoardConfig\IMU_heater.cpp">
+      <Filter>libraries\AP_BoardConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Button\AP_Button.cpp">
+      <Filter>libraries\AP_Button</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANDriver.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANIfaceParams.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANManager.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANSensor.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANTester.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_CANTester_KDECAN.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_CANManager\AP_SLCANIface.cpp">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Camera\AP_Camera.cpp">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Camera\AP_Camera_Logging.cpp">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Camera\AP_Camera_SoloGimbal.cpp">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Camera\AP_RunCam.cpp">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\AP_Common.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\AP_ExpandingArray.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\AP_FWVersion.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\c++.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\ExpandingString.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\Location.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Common\NMEA.cpp">
+      <Filter>libraries\AP_Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_AK8963.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_AK09916.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_Backend.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_BMM150.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_Calibration.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_ExternalAHRS.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_HMC5843.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_IST8308.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_IST8310.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_LIS3MDL.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_LSM9DS1.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_LSM303D.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_MAG3110.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_MMC5xx3.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_MMC3416.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_MSP.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_QMC5883L.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_RM3100.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_SITL.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\AP_Compass_UAVCAN.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\Compass_learn.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\Compass_PerMotor.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Compass\CompassCalibrator.cpp">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_Airspeed.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_Baro.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_Beacon.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_Compass.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_GPS.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_InertialSensor.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_RangeFinder.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_DAL\AP_DAL_VisualOdom.cpp">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Declination\AP_Declination.cpp">
+      <Filter>libraries\AP_Declination</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Declination\tables.cpp">
+      <Filter>libraries\AP_Declination</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Devo_Telem\AP_Devo_Telem.cpp">
+      <Filter>libraries\AP_Devo_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_EFI\AP_EFI.cpp">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_EFI\AP_EFI_Backend.cpp">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_EFI\AP_EFI_NWPMU.cpp">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_EFI\AP_EFI_Serial_MS.cpp">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem.cpp">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem_Backend.cpp">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem_SITL.cpp">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS.cpp">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS_backend.cpp">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS_VectorNav.cpp">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_backend.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_FATFS.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_Mission.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_Param.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_posix.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_ROMFS.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\AP_Filesystem_Sys.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libraries\AP_Filesystem\posix_compat.cpp">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ArduCopter\afs_copter.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\AP_Arming.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\AP_Rally.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\APM_Config.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\avoidance_adsb.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\config.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\Copter.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\defines.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\GCS_Copter.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\GCS_Mavlink.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\mode.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\Parameters.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\RC_Channel.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\toy_mode.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\UserParameters.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\UserVariables.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ArduCopter\version.h">
+      <Filter>ArduCopter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Heli.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Multi.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Multi_6DoF.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_Sub.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_AttitudeControl_TS.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_PosControl.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AttitudeControl\AC_PosControl_Sub.h">
+      <Filter>libraries\AC_AttitudeControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_AutoTune\AC_AutoTune.h">
+      <Filter>libraries\AC_AutoTune</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Autorotation\AC_Autorotation.h">
+      <Filter>libraries\AC_Autorotation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AC_Avoid.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AP_OABendyRuler.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AP_OADatabase.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AP_OADijkstra.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AP_OAPathPlanner.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\AP_OAVisGraph.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Avoidance\LogStructure.h">
+      <Filter>libraries\AC_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Fence\AC_Fence.h">
+      <Filter>libraries\AC_Fence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Fence\AC_PolyFence_loader.h">
+      <Filter>libraries\AC_Fence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_InputManager\AC_InputManager.h">
+      <Filter>libraries\AC_InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_InputManager\AC_InputManager_Heli.h">
+      <Filter>libraries\AC_InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_HELI_PID.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_P.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_P_1D.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_P_2D.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_PI.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_PI_2D.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_PID.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_PID_2D.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PID\AC_PID_Basic.h">
+      <Filter>libraries\AC_PID</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Planck\AC_Planck.h">
+      <Filter>libraries\AC_Planck</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand_Backend.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand_Companion.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand_IRLock.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand_SITL.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\AC_PrecLand_SITL_Gazebo.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\LogStructure.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_PrecLand\PosVelEKF.h">
+      <Filter>libraries\AC_PrecLand</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_Sprayer\AC_Sprayer.h">
+      <Filter>libraries\AC_Sprayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_WPNav\AC_Circle.h">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_WPNav\AC_Loiter.h">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_WPNav\AC_WPNav.h">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AC_WPNav\AC_WPNav_OA.h">
+      <Filter>libraries\AC_WPNav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AP_AutoTune.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AP_PitchController.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AP_RollController.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AP_SteerController.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AP_YawController.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\APM_Control.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\APM_Control\AR_AttitudeControl.h">
+      <Filter>libraries\APM_Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ADC\AP_ADC_ADS1115.h">
+      <Filter>libraries\AP_ADC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ADSB\AP_ADSB.h">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ADSB\AP_ADSB_Backend.h">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ADSB\AP_ADSB_Sagetech.h">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ADSB\AP_ADSB_uAvionix_MAVLink.h">
+      <Filter>libraries\AP_ADSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AHRS\AP_AHRS.h">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AHRS\AP_AHRS_DCM.h">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AHRS\AP_AHRS_NavEKF.h">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AHRS\AP_AHRS_View.h">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AHRS\LogStructure.h">
+      <Filter>libraries\AP_AHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AccelCal\AccelCalibrator.h">
+      <Filter>libraries\AP_AccelCal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AccelCal\AP_AccelCal.h">
+      <Filter>libraries\AP_AccelCal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_AdvancedFailsafe\AP_AdvancedFailsafe.h">
+      <Filter>libraries\AP_AdvancedFailsafe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_analog.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_ASP5033.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_Backend.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_DLVR.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_MS4525.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_MS5525.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_MSP.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_NMEA.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_SDP3X.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Airspeed\AP_Airspeed_UAVCAN.h">
+      <Filter>libraries\AP_Airspeed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Arming\AP_Arming.h">
+      <Filter>libraries\AP_Arming</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Avoidance\AP_Avoidance.h">
+      <Filter>libraries\AP_Avoidance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BLHeli\AP_BLHeli.h">
+      <Filter>libraries\AP_BLHeli</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BLHeli\blheli_4way_protocol.h">
+      <Filter>libraries\AP_BLHeli</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_Backend.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_BMP085.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_BMP280.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_BMP388.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_DPS280.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_Dummy.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_ExternalAHRS.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_FBM320.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_ICM20789.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_KellerLD.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_LPS2XH.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_MS5611.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_MSP.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_SITL.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_SPL06.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\AP_Baro_UAVCAN.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Baro\LogStructure.h">
+      <Filter>libraries\AP_Baro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Analog.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Backend.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Bebop.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_ESC.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_FuelFlow.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_FuelLevel_PWM.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Generator.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_MPPT_PacketDigital.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Params.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Generic.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Maxell.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_NeoDesign.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Rotoye.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_Solo.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_SMBus_SUI.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_Sum.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\AP_BattMonitor_UAVCAN.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BattMonitor\LogStructure.h">
+      <Filter>libraries\AP_BattMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon_Backend.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon_Marvelmind.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon_Nooploop.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon_Pozyx.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Beacon\AP_Beacon_SITL.h">
+      <Filter>libraries\AP_Beacon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_BoardConfig\AP_BoardConfig.h">
+      <Filter>libraries\AP_BoardConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Button\AP_Button.h">
+      <Filter>libraries\AP_Button</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_CANDriver.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_CANManager.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_CANSensor.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_CANTester.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_CANTester_KDECAN.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_CANManager\AP_SLCANIface.h">
+      <Filter>libraries\AP_CANManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Camera\AP_Camera.h">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Camera\AP_Camera_SoloGimbal.h">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Camera\AP_RunCam.h">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Camera\LogStructure.h">
+      <Filter>libraries\AP_Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\AP_Common.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\AP_ExpandingArray.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\AP_FWVersion.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\AP_FWVersionDefine.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\AP_Test.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\Bitmask.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\ExpandingString.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\Location.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\NMEA.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Common\TSIndex.h">
+      <Filter>libraries\AP_Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_AK8963.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_AK09916.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_Backend.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_BMM150.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_ExternalAHRS.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_HMC5843.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_IST8308.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_IST8310.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_LIS3MDL.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_LSM9DS1.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_LSM303D.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_MAG3110.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_MMC5xx3.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_MMC3416.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_MSP.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_QMC5883L.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_RM3100.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_SITL.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\AP_Compass_UAVCAN.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\Compass_learn.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\Compass_PerMotor.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Compass\CompassCalibrator.h">
+      <Filter>libraries\AP_Compass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_Airspeed.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_Baro.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_Beacon.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_Compass.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_GPS.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_InertialSensor.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_RangeFinder.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\AP_DAL_VisualOdom.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_DAL\LogStructure.h">
+      <Filter>libraries\AP_DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Declination\AP_Declination.h">
+      <Filter>libraries\AP_Declination</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Devo_Telem\AP_Devo_Telem.h">
+      <Filter>libraries\AP_Devo_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_EFI\AP_EFI.h">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_EFI\AP_EFI_Backend.h">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_EFI\AP_EFI_NWPMU.h">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_EFI\AP_EFI_Serial_MS.h">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_EFI\AP_EFI_State.h">
+      <Filter>libraries\AP_EFI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem.h">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem_Backend.h">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ESC_Telem\AP_ESC_Telem_SITL.h">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ESC_Telem\LogStructure.h">
+      <Filter>libraries\AP_ESC_Telem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS.h">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS_backend.h">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_ExternalAHRS\AP_ExternalAHRS_VectorNav.h">
+      <Filter>libraries\AP_ExternalAHRS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_Available.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_backend.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_FATFS.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_Mission.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_Param.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_posix.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_ROMFS.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\AP_Filesystem_Sys.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libraries\AP_Filesystem\posix_compat.h">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ArduCopter\Makefile.waf">
+      <Filter>ArduCopter</Filter>
+    </None>
+    <None Include="..\ArduCopter\wscript">
+      <Filter>ArduCopter</Filter>
+    </None>
+    <None Include="..\libraries\AP_CANManager\README.md">
+      <Filter>libraries\AP_CANManager</Filter>
+    </None>
+    <None Include="..\libraries\AP_Filesystem\README.md">
+      <Filter>libraries\AP_Filesystem</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ArduCopter\ReleaseNotes.txt">
+      <Filter>ArduCopter</Filter>
+    </Text>
+    <Text Include="..\libraries\APM_Control\TuningGuide.txt">
+      <Filter>libraries\APM_Control</Filter>
+    </Text>
   </ItemGroup>
 </Project>
