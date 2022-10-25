@@ -2177,9 +2177,11 @@ void GCS::send_planck_stateinfo()
 
 void GCS_MAVLINK::send_planck_stateinfo()
 {
+	//hal.console->printf("send_planck_stateinfo()\n");
     //Sanity check
     uint64_t now = AP_HAL::millis64();
     if(now <= last_planck_stateinfo_sent_ms) {
+		//hal.console->printf("sanity check failed\n");
         last_planck_stateinfo_sent_ms = now;
         return;
     }
@@ -2188,11 +2190,13 @@ void GCS_MAVLINK::send_planck_stateinfo()
     uint64_t interval = get_interval_for_stream(STREAM_PLANCK);
     uint64_t dt = now - last_planck_stateinfo_sent_ms;
     if((interval == 0) || (dt < (interval - interval/10))) { //within 10%
+		//hal.console->printf("it's too soon to send  MAVLINK_MSG_ID_PLANCK_STATEINFO\n");
         return;
     }
 
     //Make sure theres space
     if(!HAVE_PAYLOAD_SPACE(chan,PLANCK_STATEINFO)) {
+		//hal.console->printf("no space to send MAVLINK_MSG_ID_PLANCK_STATEINFO\n");
         return;
     }
 
@@ -2245,6 +2249,14 @@ void GCS_MAVLINK::send_planck_stateinfo()
     }
 
     last_planck_stateinfo_sent_ms = now;
+
+	//hal.console->printf("sending MAVLINK_MSG_ID_PLANCK_STATEINFO\n");
+
+	/*
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "sending MAVLINK_MSG_ID_PLANCK_STATEINFO\n");
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "sysid: %u PLANCK_CTRL_COMP_ID: %u custom_mode: %lu \
+		status: %d", mavlink_system.sysid, PLANCK_CTRL_COMP_ID, gcs().custom_mode(), status);
+	*/
 
     mavlink_msg_planck_stateinfo_send(
       chan,

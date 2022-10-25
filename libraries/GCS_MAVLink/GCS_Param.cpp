@@ -182,6 +182,7 @@ void GCS_MAVLINK::handle_request_data_stream(const mavlink_message_t &msg)
         stream_id = STREAM_EXTRA3;
         break;
     case MAV_DATA_STREAM_PLANCK_STATEINFO:
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "MAV_DATA_STREAM_PLANCK_STATEINFO received\n");
         stream_id = STREAM_PLANCK;
         break;
     }
