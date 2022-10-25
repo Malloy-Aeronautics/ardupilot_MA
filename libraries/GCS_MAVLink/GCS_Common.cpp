@@ -2483,6 +2483,10 @@ void GCS_MAVLINK::send_planck_stateinfo()
 
     last_planck_stateinfo_sent_ms = now;
 
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "sending MAVLINK_MSG_ID_PLANCK_STATEINFO\n");
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "sysid: %u PLANCK_CTRL_COMP_ID: %u custom_mode: %lu \
+		status: %d", mavlink_system.sysid, PLANCK_CTRL_COMP_ID, gcs().custom_mode(), status);
+
     mavlink_msg_planck_stateinfo_send(
       	chan,
      	 mavlink_system.sysid,
@@ -3457,6 +3461,7 @@ void GCS_MAVLINK::handle_common_message(const mavlink_message_t &msg)
     switch (msg.msgid) {
 
     case MAVLINK_MSG_ID_HEARTBEAT: {
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "MAVLINK_MSG_ID_HEARTBEAT received\n");
         handle_heartbeat(msg);
         break;
     }
@@ -3590,6 +3595,7 @@ void GCS_MAVLINK::handle_common_message(const mavlink_message_t &msg)
         break;
 
     case MAVLINK_MSG_ID_REQUEST_DATA_STREAM:
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "MAVLINK_MSG_ID_REQUEST_DATA_STREAM  received\n");
         handle_request_data_stream(msg);
         break;
 
