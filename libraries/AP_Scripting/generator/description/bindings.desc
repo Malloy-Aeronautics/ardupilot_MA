@@ -1,15 +1,5 @@
 -- Location stuff (this is a commented line)
 
-include AP_NavEKF3/AP_NavEKF3.h
-
-userdata NavEKF3 method activeCores uint8_t
-userdata NavEKF3 method getPosD boolean int8_t 0 INS_MAX_INSTANCES float'Null
-userdata NavEKF3 method getVariances boolean float'Null float'Null float'Null Vector3f'Null float'Null Vector2f'Null 
-
-singleton AP_Baro method get_altitude float
-
-
-
 include AP_Common/Location.h
 
 userdata Location field lat int32_t read write -900000000 900000000
@@ -27,6 +17,16 @@ userdata Location method get_vector_from_origin_NEU boolean Vector3f'Null
 userdata Location method get_bearing float Location
 userdata Location method get_distance_NED Vector3f Location
 userdata Location method get_distance_NE Vector2f Location
+
+include AP_NavEKF2/AP_NavEKF2.h
+
+userdata NavEKF2 method activeCores uint8_t
+userdata NavEKF2 method getPosD boolean int8_t 0 INS_MAX_INSTANCES float'Null
+
+include AP_NavEKF3/AP_NavEKF3.h
+
+userdata NavEKF3 method activeCores uint8_t
+userdata NavEKF3 method getPosD boolean int8_t 0 INS_MAX_INSTANCES float'Null
 
 include AP_AHRS/AP_AHRS.h
 
@@ -263,6 +263,7 @@ singleton AP_Baro alias baro
 singleton AP_Baro method get_pressure float
 singleton AP_Baro method get_temperature float
 singleton AP_Baro method get_external_temperature float
+singleton AP_Baro method get_altitude float
 
 include AP_ESC_Telem/AP_ESC_Telem.h
 singleton AP_ESC_Telem depends HAL_WITH_ESC_TELEM == 1
@@ -355,6 +356,11 @@ singleton AC_AttitudeControl_Multi_6DoF method set_lateral_enable void boolean
 singleton AC_AttitudeControl_Multi_6DoF method set_forward_enable void boolean
 singleton AC_AttitudeControl_Multi_6DoF method set_offset_roll_pitch void float -FLT_MAX FLT_MAX float -FLT_MAX FLT_MAX
 
+include AC_AttitudeControl/AC_AttitudeControl.h depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
+singleton AC_AttitudeControl depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
+singleton AC_AttitudeControl method get_rpy_srate void float'Ref float'Ref float'Ref
+singleton AC_AttitudeControl method get_att_target_euler_cd Vector3f
+singleton AC_AttitudeControl method get_att_target_euler_rad Vector3f
 
 include AP_Motors/AP_MotorsMatrix_6DoF_Scripting.h  depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
 singleton AP_MotorsMatrix_6DoF_Scripting depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
@@ -391,18 +397,11 @@ singleton hal.analogin alias analog
 singleton hal.analogin literal
 singleton hal.analogin method channel AP_HAL::AnalogSource ANALOG_INPUT_NONE'literal
 singleton hal.analogin method board_voltage float
+
 singleton hal.rcout literal
 singleton hal.rcout method read uint16_t uint8_t 0 UINT8_MAX
 
 include AP_InertialSensor/AP_InertialSensor.h
-
 singleton AP_InertialSensor method get_temperature float uint8_t 0 INS_MAX_INSTANCES
 singleton AP_InertialSensor method get_accel_count uint8_t
 singleton AP_InertialSensor method get_vibration_levels Vector3f uint8_t 0 INS_MAX_INSTANCES
-
-include AC_AttitudeControl/AC_AttitudeControl.h
-
-singleton AC_AttitudeControl alias attitude_control
-singleton AC_AttitudeControl method get_rpy_srate void float'Ref float'Ref float'Ref
-singleton AC_AttitudeControl method get_att_target_euler_cd Vector3f
-singleton AC_AttitudeControl method get_att_target_euler_rad Vector3f
