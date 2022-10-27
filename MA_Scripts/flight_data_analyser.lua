@@ -7,7 +7,7 @@ max_roll_variance = 25.0
 max_pitch_variance = 25.0
 max_yaw_variance = 25.0
 n_sats_min = 25
-h_dop_max = 1.0
+h_dop_max = 100.0
 delta_ms_max = 5000.0
 delta_pd_max = 1.0
 
@@ -20,6 +20,16 @@ tick_interval = 500
 
 aircraft_top_speed = 25.0
 max_ds_per_tick_interval = aircraft_top_speed * tick_interval / 1000.0
+
+
+--voltage_issue = false
+--vibration_issue = false
+--attitude_issue = false
+--altitude_issue = false
+--gps_issue = false
+--rcout_issue = false
+--xkf4_issue = false
+--position_issue = false
 
 
 function message_to_gcs(msg)
@@ -110,6 +120,16 @@ function dist(lat_1, lng_1, lat_2, lng_2)
 	d = (math.acos(math.sin(to_rad(lat_1)) * math.sin(to_rad(lat_2)) + math.cos(to_rad(lat_1)) * math.cos(to_rad(lat_2)) * math.cos(to_rad(lng_2 - lng_1))) * 6371000.0)
 	return d
 end 
+
+
+cycle_count = 0
+function do_sanity_check()
+	cycle_count = cycle_count + 1
+	if (cycle_count >= 60) then
+		cycle_count = 0;
+		warning_to_gcs("Lua script is running...")
+	end
+end
 
 
 voltage_array = { }
@@ -224,12 +244,15 @@ function check_attitude()
 	local pitch_var = angle_variance_deg(achieved_pitch, target_pitch)
 	local yaw_var = angle_variance_deg(achieved_yaw, target_yaw)
 	if (roll_var > max_roll_variance) then
+		--warning_to_gcs("Achieved Roll - Target Roll difference was too big. (" .. roll_var .. "%)") 
 		warning_to_gcs("Roll variance: " .. roll_var .. "%")
 	end
 	if (pitch_var > max_pitch_variance) then
+		--warning_to_gcs("Achieved Pitch - Target Pitch difference was too big. (" .. pitch_var .. "%)") 
 		warning_to_gcs("Pitch variance: " .. pitch_var .. "%")
 	end
 	if (yaw_var > max_yaw_variance) then
+		--warning_to_gcs("Achieved Yaw - Target Yaw difference was too big. (" .. yaw_var .. "%)") 
 		warning_to_gcs("Yaw variance: " .. yaw_var .. "%")
 	end
 end
@@ -269,7 +292,7 @@ function check_gps()
 			local speed = gps:ground_speed(id - 1)
 			message_to_gcs("Speed-" .. id .. ": " .. speed)
 			local delta_ms = gps:last_message_time_ms(id - 1)
-			message_to_gcs("gps:last_message_time_ms(" .. id - 1 .. "): " .. delta_ms)
+			--message_to_gcs("gps:last_message_time_ms(" .. id - 1 .. "): " .. delta_ms)
 			if (n_sats < n_sats_min) then
 				warning_to_gcs("NSats was under the threshold of " .. n_sats_min .. " (" .. n_sats .. ")")
 			end
@@ -277,7 +300,7 @@ function check_gps()
 				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. " (" .. h_dop .. ")")
 			end
 			if (delta_ms > delta_ms_max) then
-				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. " (" .. delta_ms .. ")")
+				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max)
 			end
 		end
 	end
@@ -397,7 +420,9 @@ end
 
 function update()
 	
-	warning_to_gcs("Lua script is running...");
+	--warning_to_gcs("Lua script is running...");
+	
+	do_sanity_check();
 	
 	check_voltage()
 	check_vibe()
