@@ -292,17 +292,17 @@ function check_gps()
 			local speed = gps:ground_speed(id - 1)
 			message_to_gcs("Speed-" .. id .. ": " .. speed)
 			local delta_ms = gps:last_message_delta_time_ms(id - 1)
-			--message_to_gcs("gps:last_message_time_ms(" .. id - 1 .. "): " .. delta_ms)
+			message_to_gcs("GPA_delta: " .. delta_ms .. "ms")
+			message_to_gcs("NSats: " .. n_sats)
+			message_to_gcs("HDop: " .. h_dop)
 			if (n_sats < n_sats_min) then
 				warning_to_gcs("NSats was under the threshold of " .. n_sats_min .. " (" .. n_sats .. ")")
 			end
 			if (h_dop > h_dop_max) then
-				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. " (" .. h_dop .. ")")
+				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. "cm (" .. h_dop .. "cm)")
 			end
-			warning_to_gcs("GPA_delta: " .. delta_ms .. "ms")
 			if (delta_ms > delta_ms_max) then
-				--warning_to_gcs("GPA_delta: " .. delta_ms .. "ms")
-				--warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. " (" .. delta_ms .. ")")
+				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. "ms (" .. delta_ms .. "ms)")
 			end
 		end
 	end
@@ -341,17 +341,39 @@ function check_rcou()
 end
 
 
+ekf2_reported = false
+ekf2_cores_reported = false
+
+
+function report_ekf2_found()
+	if not (ekf2_reported == true) then
+		ekf2_reported = true
+		warning_to_gcs("EKF2 found!")
+	end
+end
+
+
+function report_ekf2_cores(n)
+	if not (ekf2_cores_reported == true) then
+		ekf2_cores_reported = true
+		warning_to_gcs("EKF2 cores found: " .. n) 
+	end
+end
+
+
 function check_xkf1()
 	if not (NavEKF2() == nil) then
+		report_ekf2_found()
 		NavEKF2_ud = NavEKF2()
 		local num_ekf2_cores = NavEKF2_ud:activeCores()
-		message_to_gcs("Number of EKF2 cores: " .. num_ekf2_cores)
+		report_ekf2_cores(num_ekf2_cores)
 		
 		if (num_ekf2_cores == 2) then
 			local pd_0 = 0.0
 			NavEKF2_ud:getPosD(0, pd_0)
 			local pd_1 = 0.0
-			NavEKF2_ud:getPosD(0, pd_1)
+			NavEKF2_ud:getPosD(1, pd_1)
+			warning_to_gcs("pd-0: " .. pd_0 .. " | pd-1: " .. pd_1)
 			if (math.abs(pd_1 - pd_0) > delta_pd_max) then
 				warning_to_gcs("XKF1.PD delta > " .. delta_pd_max)
 			end
@@ -421,8 +443,6 @@ end
 
 
 function update()
-	
-	--warning_to_gcs("Lua script is running...");
 	
 	do_sanity_check();
 	
