@@ -299,8 +299,10 @@ function check_gps()
 			if (h_dop > h_dop_max) then
 				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. " (" .. h_dop .. ")")
 			end
+			warning_to_gcs("GPA_delta: " .. delta_ms .. "ms")
 			if (delta_ms > delta_ms_max) then
-				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. " (" .. delta_ms .. ")")
+				--warning_to_gcs("GPA_delta: " .. delta_ms .. "ms")
+				--warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. " (" .. delta_ms .. ")")
 			end
 		end
 	end
