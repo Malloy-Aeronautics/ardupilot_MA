@@ -16,29 +16,30 @@ lng_prev = 0
 
 
 tick_interval = 500
+cycle_count = 0;
 
 
 aircraft_top_speed = 25.0
 max_ds_per_tick_interval = aircraft_top_speed * tick_interval / 1000.0
 
 
---voltage_issue = false
---vibration_issue = false
---attitude_issue = false
---altitude_issue = false
---gps_issue = false
---rcout_issue = false
---xkf4_issue = false
---position_issue = false
+debug_mode = true
+function debug_message_to_gcs(msg)
+	if (debug_mode == true) then
+		if (math.fmod(cycle_count, 10) == 0) then
+			gcs:send_text(6, "[MA_Script] " .. msg)
+		end
+	end
+end
 
 
 function message_to_gcs(msg)
-	--gcs:send_text(6, msg)
+	gcs:send_text(4, "[MA_Script] " .. msg)
 end
 
 
 function warning_to_gcs(msg)
-	gcs:send_text(4, "[MA_Script] " .. msg)
+	gcs:send_text(1, "[MA_Script] " .. msg)
 end
 
 
@@ -122,7 +123,6 @@ function dist(lat_1, lng_1, lat_2, lng_2)
 end 
 
 
-cycle_count = 0
 function do_sanity_check()
 	cycle_count = cycle_count + 1
 	if (cycle_count >= 60) then
@@ -207,7 +207,7 @@ function check_vibe()
 		local n_accel = ins:get_accel_count()
 		for id = 1, n_accel do
 			local vibe = ins:get_vibration_levels(id - 1)
-			message_to_gcs("Vibe-" .. id .. ": " .. vibe:x() .. " | " .. vibe:y() .. " | " .. vibe:z())	
+			debug_message_to_gcs("Vibe-" .. id .. ": " .. vibe:x() .. " | " .. vibe:y() .. " | " .. vibe:z())	
 			if (vibe:x() > max_vibe_x) then
 				warning_to_gcs("VibeX-" .. id .." was over the threshold of " .. max_vibe_x .. " (" .. vibe:x() .. ")")
 			end
@@ -233,7 +233,7 @@ function check_attitude()
 		achieved_roll = to_deg(ahrs:get_roll())
 		achieved_pitch = to_deg(ahrs:get_pitch())
 		achieved_yaw = to_deg(ahrs:get_yaw())
-		--message_to_gcs("Roll: " .. achieved_roll .. " Pitch: " .. achieved_pitch .. " Yaw: " .. achieved_yaw)
+		debug_message_to_gcs("Roll: " .. achieved_roll .. " Pitch: " .. achieved_pitch .. " Yaw: " .. achieved_yaw)
 	end
 	if not (AC_AttitudeControl == nil) then
 		target_roll = to_deg(AC_AttitudeControl:get_att_target_euler_rad():x())
@@ -244,15 +244,12 @@ function check_attitude()
 	local pitch_var = angle_variance_deg(achieved_pitch, target_pitch)
 	local yaw_var = angle_variance_deg(achieved_yaw, target_yaw)
 	if (roll_var > max_roll_variance) then
-		--warning_to_gcs("Achieved Roll - Target Roll difference was too big. (" .. roll_var .. "%)") 
 		warning_to_gcs("Roll variance: " .. roll_var .. "%")
 	end
 	if (pitch_var > max_pitch_variance) then
-		--warning_to_gcs("Achieved Pitch - Target Pitch difference was too big. (" .. pitch_var .. "%)") 
 		warning_to_gcs("Pitch variance: " .. pitch_var .. "%")
 	end
 	if (yaw_var > max_yaw_variance) then
-		--warning_to_gcs("Achieved Yaw - Target Yaw difference was too big. (" .. yaw_var .. "%)") 
 		warning_to_gcs("Yaw variance: " .. yaw_var .. "%")
 	end
 end
@@ -265,7 +262,7 @@ function check_altitude()
 		local alt_terrain = target:terrain_alt()
 		local alt_relative = target:relative_alt()
 		local alt_baro = baro:get_altitude()
-		message_to_gcs("Alt-Barometer: " .. alt_baro .. " Alt-Origin: " .. alt_origin .. " Alt-Terrain: " .. alt_terrain .. " Alt-Relative: " .. alt_relative)
+		debug_message_to_gcs("Alt-Barometer: " .. alt_baro .. " Alt-Origin: " .. alt_origin .. " Alt-Terrain: " .. alt_terrain .. " Alt-Relative: " .. alt_relative)
 	end
 end
 
@@ -283,23 +280,21 @@ end
 function check_gps()
 	if not (gps == nil) then
 		local num_sensors = gps:num_sensors()
-		message_to_gcs(5, "Number of GPS sensors: " .. num_sensors)
+		debug_message_to_gcs(5, "Number of GPS sensors: " .. num_sensors)
 		for id = 1, num_sensors do
 			local n_sats = gps:num_sats(id - 1)
-			message_to_gcs("NSats-" .. id .. ": " .. n_sats)
+			debug_message_to_gcs("NSats-" .. id .. ": " .. n_sats)
 			local h_dop = gps:get_hdop(id - 1)
-			message_to_gcs("HDop-" .. id .. ": " .. h_dop)
+			debug_message_to_gcs("HDop-" .. id .. ": " .. h_dop)
 			local speed = gps:ground_speed(id - 1)
-			message_to_gcs("Speed-" .. id .. ": " .. speed)
+			debug_message_to_gcs("Speed-" .. id .. ": " .. speed)
 			local delta_ms = gps:last_message_delta_time_ms(id - 1)
-			message_to_gcs("GPA_delta: " .. delta_ms .. "ms")
-			message_to_gcs("NSats: " .. n_sats)
-			message_to_gcs("HDop: " .. h_dop)
+			debug_message_to_gcs("GPA_delta-" .. id .. ": " .. delta_ms .. "ms")
 			if (n_sats < n_sats_min) then
 				warning_to_gcs("NSats was under the threshold of " .. n_sats_min .. " (" .. n_sats .. ")")
 			end
 			if (h_dop > h_dop_max) then
-				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. "cm (" .. h_dop .. "cm)")
+				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. " (" .. h_dop .. ")")
 			end
 			if (delta_ms > delta_ms_max) then
 				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. "ms (" .. delta_ms .. "ms)")
@@ -343,12 +338,14 @@ end
 
 ekf2_reported = false
 ekf2_cores_reported = false
+ekf3_reported = false
+ekf3_cores_reported = false
 
 
 function report_ekf2_found()
 	if not (ekf2_reported == true) then
 		ekf2_reported = true
-		warning_to_gcs("EKF2 found!")
+		message_to_gcs("EKF2 found!")
 	end
 end
 
@@ -356,7 +353,23 @@ end
 function report_ekf2_cores(n)
 	if not (ekf2_cores_reported == true) then
 		ekf2_cores_reported = true
-		warning_to_gcs("EKF2 cores found: " .. n) 
+		message_to_gcs("EKF2 cores found: " .. n) 
+	end
+end
+
+
+function report_ekf3_found()
+	if not (ekf3_reported == true) then
+		ekf3_reported = true
+		message_to_gcs("EKF3 found!")
+	end
+end
+
+
+function report_ekf3_cores(n)
+	if not (ekf3_cores_reported == true) then
+		ekf3_cores_reported = true
+		message_to_gcs("EKF3 cores found: " .. n) 
 	end
 end
 
@@ -378,26 +391,18 @@ function check_xkf1()
 				warning_to_gcs("XKF1.PD delta > " .. delta_pd_max)
 			end
 		end
+	else
+		warning_to_gcs("EKF2 not found!")
 	end
 	
 	if not (NavEKF3() == nil) then
+		report_ekf3_found()
 		NavEKF3_ud = NavEKF3()
 		local num_ekf3_cores = NavEKF3_ud:activeCores()
-		message_to_gcs("Number of EKF3 cores: " .. num_ekf3_cores)
+		report_ekf3_cores(num_ekf3_cores)
+	else
+		warning_to_gcs("EKF3 not found!")
 	end
-	
-	--local d = 0.0
-	--if (NavEKF3_ud:getPosD(0, d) then
-	--	warning_to_gcs("SUCCESS!")
-	--else
-	--	warning_to_gcs("FAILURE!")
-	--end
-	
-	--if (num_cores > 1) then
-	--	for id = 0, num_cores do
-	--	
-	--	end
-	--end
 end
 
 
@@ -405,7 +410,7 @@ function check_xkf4()
 	if not (ahrs == nil) then
 		vel_variance, pos_variance, height_variance, mag_variance, airspeed_variance = ahrs:get_variances()
 		if vel_variance then
-			message_to_gcs(string.format("Variances Pos:%.1f Vel:%.1f Hgt:%.1f Mag:%.1f", pos_variance, vel_variance, height_variance, mag_variance:length()))		
+			debug_message_to_gcs(string.format("Variances Pos:%.1f Vel:%.1f Hgt:%.1f Mag:%.1f", pos_variance, vel_variance, height_variance, mag_variance:length()))		
 			if (vel_variance > 1.0) then
 				warning_to_gcs("Vel. variance was over the threshold of 1.0 (" .. vel_variance .. ")")
 			end
@@ -419,7 +424,7 @@ function check_xkf4()
 				warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. airspeed_variance .. ")")
 			end
 		else
-			message_to_gcs(string.format("Failed to retrieve variances"))
+			debug_message_to_gcs(string.format("Failed to retrieve variances"))
 		end
 	end
 end
@@ -431,8 +436,7 @@ function check_pos()
 		local lat_curr = target:lat()
 		local lng_curr = target:lng()
 		ds = dist(lat_prev, lng_prev, lat_curr, lng_curr)
-		message_to_gcs("ds: " .. ds)
-		message_to_gcs(5, "ds: " .. ds)
+		--debug_message_to_gcs("ds: " .. ds)
 		if (ds > max_ds_per_tick_interval) then
 			warning_to_gcs("Speed calculated from lat-lng data was suspiciously high.")
 		end
