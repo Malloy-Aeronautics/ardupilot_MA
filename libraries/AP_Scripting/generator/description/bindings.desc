@@ -21,6 +21,7 @@ userdata Location method get_distance_NE Vector2f Location
 include AP_NavEKF2/AP_NavEKF2.h
 
 userdata NavEKF2 method activeCores uint8_t
+userdata NavEKF2 method healthy boolean
 userdata NavEKF2 method getPrimaryCoreIndex int8_t
 userdata NavEKF2 method getPrimaryCoreIMUIndex int8_t
 userdata NavEKF2 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
@@ -28,6 +29,7 @@ userdata NavEKF2 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
 include AP_NavEKF3/AP_NavEKF3.h
 
 userdata NavEKF3 method activeCores uint8_t
+userdata NavEKF3 method healthy boolean
 userdata NavEKF3 method getPrimaryCoreIndex int8_t
 userdata NavEKF3 method getPrimaryCoreIMUIndex int8_t
 userdata NavEKF3 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null

@@ -26,7 +26,7 @@ max_ds_per_tick_interval = aircraft_top_speed * tick_interval / 1000.0
 debug_mode = true
 function debug_message_to_gcs(msg)
 	if (debug_mode == true) then
-		if (math.fmod(cycle_count, 10) == 0) then
+		if (math.fmod(cycle_count, 20) == 0) then
 			gcs:send_text(6, "[MA_Script] " .. msg)
 		end
 	end
@@ -125,9 +125,12 @@ end
 
 function do_sanity_check()
 	cycle_count = cycle_count + 1
-	if (cycle_count >= 60) then
-		cycle_count = 0;
+	if (math.fmod(cycle_count, 60) == 0) then
 		warning_to_gcs("Lua script is running...")
+	end
+	if (cycle_count >= 600) then
+		cycle_count = 0;
+		--warning_to_gcs("Lua script is running...")
 	end
 end
 
@@ -281,7 +284,8 @@ gps_cores_reported = false
 
 
 function report_gps_cores(n)
-	if not (gps_cores_reported == true) then
+	--if not (gps_cores_reported == true) then
+	if (math.fmod(cycle_count, 20) == 0) then
 		--gps_cores_reported = true
 		message_to_gcs("GPS cores found: " .. n) 
 	end
@@ -356,46 +360,90 @@ ekf3_cores_reported = false
 
 
 function report_ekf2_found()
-	if not (ekf2_reported == true) then
-		ekf2_reported = true
+	--if not (ekf2_reported == true) then
+	if (math.fmod(cycle_count, 20) == 0) then
+		--ekf2_reported = true
 		message_to_gcs("EKF2 found!")
 	end
 end
 
 
+function report_ekf2_healthy()
+	if (math.fmod(cycle_count, 20) == 0) then
+		local is_ekf_healthy = NavEKF2_ud:healthy()
+		if (is_ekf_healthy == true) then
+			message_to_gcs("EKF2 is healthy.");
+		else
+			message_to_gcs("EKF2 is not healthy.");
+		end
+	end
+end
+
+
 function report_ekf2_cores(n)
-	if not (ekf2_cores_reported == true) then
+	--if not (ekf2_cores_reported == true) then
+	if (math.fmod(cycle_count, 20) == 0) then
 		--ekf2_cores_reported = true
 		message_to_gcs("EKF2 cores found: " .. n) 
 	end
 end
 
 
+function report_ekf2_primary_id(id)
+	if (math.fmod(cycle_count, 20) == 0) then
+		message_to_gcs("EKF2 primary core id: " .. id)
+	end	
+end
+
+
 function report_ekf3_found()
-	if not (ekf3_reported == true) then
-		ekf3_reported = true
+	--if not (ekf3_reported == true) then
+	if (math.fmod(cycle_count, 20) == 0) then
+		--ekf3_reported = true
 		message_to_gcs("EKF3 found!")
 	end
 end
 
 
+function report_ekf3_healthy()
+	if (math.fmod(cycle_count, 20) == 0) then
+		local is_ekf_healthy = NavEKF3_ud:healthy()
+		if (is_ekf_healthy == true) then
+			message_to_gcs("EKF3 is healthy.");
+		else
+			message_to_gcs("EKF3 is not healthy.");
+		end
+	end
+end
+
+
 function report_ekf3_cores(n)
-	if not (ekf3_cores_reported == true) then
+	--if not (ekf3_cores_reported == true) then
+	if (math.fmod(cycle_count, 20) == 0) then
 		--ekf3_cores_reported = true
 		message_to_gcs("EKF3 cores found: " .. n) 
 	end
 end
 
 
+function report_ekf3_primary_id(id)
+	if (math.fmod(cycle_count, 20) == 0) then
+		message_to_gcs("EKF3 primary core id: " .. id)
+	end	
+end
+
+
 function check_xkf1()
 	if not (NavEKF2() == nil) then
-		report_ekf2_found()
+		--report_ekf2_found()
+		report_ekf2_healthy()
 		NavEKF2_ud = NavEKF2()
 		local num_ekf2_cores = NavEKF2_ud:activeCores()
 		report_ekf2_cores(num_ekf2_cores)
 
-		local primary_id = NavEKF2_ud:getPrimaryCoreIMUIndex()
-		message_to_gcs("EKF2 primary core IMU ID: " .. primary_id) 
+		local primary_id_2 = NavEKF2_ud:getPrimaryCoreIMUIndex()
+		report_ekf2_primary_id(primary_id_2)
+		--message_to_gcs("EKF2 primary core IMU ID: " .. primary_id) 
 		
 		if (num_ekf2_cores == 2) then
 			local pd_0 = 0.0
@@ -416,13 +464,15 @@ function check_xkf1()
 	end
 	
 	if not (NavEKF3() == nil) then
-		report_ekf3_found()
+		--report_ekf3_found()
+		report_ekf3_healthy()
 		NavEKF3_ud = NavEKF3()
 		local num_ekf3_cores = NavEKF3_ud:activeCores()
 		report_ekf3_cores(num_ekf3_cores)
 
-		local primary_id = NavEKF3_ud:getPrimaryCoreIMUIndex()
-		message_to_gcs("EKF3 primary core IMU ID: " .. primary_id) 
+		local primary_id_3 = NavEKF3_ud:getPrimaryCoreIMUIndex()
+		report_ekf3_primary_id(primary_id_3)
+		--message_to_gcs("EKF3 primary core IMU ID: " .. primary_id) 
 	else
 		warning_to_gcs("EKF3 not found!")
 	end
