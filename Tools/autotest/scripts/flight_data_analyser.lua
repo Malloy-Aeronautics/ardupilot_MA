@@ -277,10 +277,23 @@ function check_barometric_altitude()
 end
 
 
+gps_cores_reported = false
+
+
+function report_gps_cores(n)
+	if not (gps_cores_reported == true) then
+		--gps_cores_reported = true
+		message_to_gcs("GPS cores found: " .. n) 
+	end
+end
+
+
+
 function check_gps()
 	if not (gps == nil) then
 		local num_sensors = gps:num_sensors()
-		debug_message_to_gcs(5, "Number of GPS sensors: " .. num_sensors)
+		report_gps_cores(num_sensors)
+		--debug_message_to_gcs(5, "Number of GPS sensors: " .. num_sensors)
 		for id = 1, num_sensors do
 			local n_sats = gps:num_sats(id - 1)
 			debug_message_to_gcs("NSats-" .. id .. ": " .. n_sats)
@@ -352,7 +365,7 @@ end
 
 function report_ekf2_cores(n)
 	if not (ekf2_cores_reported == true) then
-		ekf2_cores_reported = true
+		--ekf2_cores_reported = true
 		message_to_gcs("EKF2 cores found: " .. n) 
 	end
 end
@@ -368,7 +381,7 @@ end
 
 function report_ekf3_cores(n)
 	if not (ekf3_cores_reported == true) then
-		ekf3_cores_reported = true
+		--ekf3_cores_reported = true
 		message_to_gcs("EKF3 cores found: " .. n) 
 	end
 end
@@ -380,6 +393,9 @@ function check_xkf1()
 		NavEKF2_ud = NavEKF2()
 		local num_ekf2_cores = NavEKF2_ud:activeCores()
 		report_ekf2_cores(num_ekf2_cores)
+
+		local primary_id = NavEKF2_ud:getPrimaryCoreIMUIndex()
+		message_to_gcs("EKF2 primary core IMU ID: " .. primary_id) 
 		
 		if (num_ekf2_cores == 2) then
 			local pd_0 = 0.0
@@ -390,6 +406,10 @@ function check_xkf1()
 			if (math.abs(pd_1 - pd_0) > delta_pd_max) then
 				warning_to_gcs("XKF1.PD delta > " .. delta_pd_max)
 			end
+		else
+			--local pd_0 = 0.0
+			--NavEKF2_ud:getPosD(primary_id, pd_0)
+			--message_to_gcs("pd-0: " .. pd_0)
 		end
 	else
 		warning_to_gcs("EKF2 not found!")
@@ -400,6 +420,9 @@ function check_xkf1()
 		NavEKF3_ud = NavEKF3()
 		local num_ekf3_cores = NavEKF3_ud:activeCores()
 		report_ekf3_cores(num_ekf3_cores)
+
+		local primary_id = NavEKF3_ud:getPrimaryCoreIMUIndex()
+		message_to_gcs("EKF3 primary core IMU ID: " .. primary_id) 
 	else
 		warning_to_gcs("EKF3 not found!")
 	end
@@ -408,6 +431,8 @@ end
 
 function check_xkf4()
 	if not (ahrs == nil) then
+		local primary_id = ahrs:get_primary_core_index()
+		debug_message_to_gcs("AHRS primary core index: " .. primary_id)
 		vel_variance, pos_variance, height_variance, mag_variance, airspeed_variance = ahrs:get_variances()
 		if vel_variance then
 			debug_message_to_gcs(string.format("Variances Pos:%.1f Vel:%.1f Hgt:%.1f Mag:%.1f", pos_variance, vel_variance, height_variance, mag_variance:length()))		

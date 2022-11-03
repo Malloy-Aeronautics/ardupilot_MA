@@ -21,12 +21,16 @@ userdata Location method get_distance_NE Vector2f Location
 include AP_NavEKF2/AP_NavEKF2.h
 
 userdata NavEKF2 method activeCores uint8_t
-userdata NavEKF2 method getPosD boolean int8_t 0 INS_MAX_INSTANCES float'Null
+userdata NavEKF2 method getPrimaryCoreIndex int8_t
+userdata NavEKF2 method getPrimaryCoreIMUIndex int8_t
+userdata NavEKF2 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
 
 include AP_NavEKF3/AP_NavEKF3.h
 
 userdata NavEKF3 method activeCores uint8_t
-userdata NavEKF3 method getPosD boolean int8_t 0 INS_MAX_INSTANCES float'Null
+userdata NavEKF3 method getPrimaryCoreIndex int8_t
+userdata NavEKF3 method getPrimaryCoreIMUIndex int8_t
+userdata NavEKF3 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
 
 include AP_AHRS/AP_AHRS.h
 
@@ -57,6 +61,7 @@ singleton AP_AHRS method set_posvelyaw_source_set void uint8_t 0 2
 singleton AP_AHRS method get_vel_innovations_and_variances_for_source boolean uint8_t 3 6 Vector3f'Null Vector3f'Null
 singleton AP_AHRS method set_home boolean Location
 singleton AP_AHRS method get_origin boolean Location'Null
+singleton AP_AHRS method get_primary_core_index int8_t
 
 include AP_Arming/AP_Arming.h
 
