@@ -1082,6 +1082,7 @@ void NavEKF3::setPosVelYawSourceSet(uint8_t source_set_idx)
 bool NavEKF3::healthy(void) const
 {
     if (!core) {
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NavEKF3 core was nullptr...");
         return false;
     }
     return core[primary].healthy();

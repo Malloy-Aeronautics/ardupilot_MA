@@ -47,6 +47,8 @@ void NavEKF3_core::Log_Write_XKF1(uint64_t time_us) const
         originHgt : originLLH.alt // WGS-84 altitude of EKF origin in cm
     };
     AP::logger().WriteBlock(&pkt, sizeof(pkt));
+
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "XKF1 packet written...");
 }
 
 void NavEKF3_core::Log_Write_XKF2(uint64_t time_us) const

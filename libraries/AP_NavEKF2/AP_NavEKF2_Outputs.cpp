@@ -10,9 +10,11 @@ extern const AP_HAL::HAL& hal;
 // Check basic filter health metrics and return a consolidated health status
 bool NavEKF2_core::healthy(void) const
 {
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "Checking EKF core health...");
     uint16_t faultInt;
     getFilterFaults(faultInt);
     if (faultInt > 0) {
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NOT HEALTHY - getFilterFaults() > 0");
         return false;
     }
     if (velTestRatio > 1 && posTestRatio > 1 && hgtTestRatio > 1) {

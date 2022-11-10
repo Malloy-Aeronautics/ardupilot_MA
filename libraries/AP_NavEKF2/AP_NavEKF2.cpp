@@ -607,10 +607,12 @@ NavEKF2::NavEKF2()
 // Initialise the filter
 bool NavEKF2::InitialiseFilter(void)
 {
+	//GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NavEKF2::InitialiseFilter()");
     AP::dal().start_frame(AP_DAL::FrameType::InitialiseFilterEKF2);
 
     // Return immediately if there is insufficient memory
     if (core_malloc_failed) {
+		//GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "core_malloc_failed");
         return false;
     }
 
@@ -619,6 +621,7 @@ bool NavEKF2::InitialiseFilter(void)
         if (AP::dal().get_ekf_type() == 2) {
             initFailure = InitFailures::NO_ENABLE;
         }
+		//GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "_enable == 0");
         return false;
     }
     const auto &ins = AP::dal().ins();
@@ -628,6 +631,7 @@ bool NavEKF2::InitialiseFilter(void)
     // remember expected frame time
     const float loop_rate = ins.get_loop_rate_hz();
     if (!is_positive(loop_rate)) {
+		//GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "!is_positive(loop_rate)");
         return false;
     }
     _frameTimeUsec = 1e6 / loop_rate;
@@ -651,6 +655,7 @@ bool NavEKF2::InitialiseFilter(void)
             } else {
                 initFailure = InitFailures::NO_MASK;
             }
+			GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "num_cores == 0");
             return false;
         }
 
@@ -860,6 +865,7 @@ void NavEKF2::checkLaneSwitch(void)
 bool NavEKF2::healthy(void) const
 {
     if (!core) {
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NavEKF2 core was nullptr...");
         return false;
     }
     return core[primary].healthy();
