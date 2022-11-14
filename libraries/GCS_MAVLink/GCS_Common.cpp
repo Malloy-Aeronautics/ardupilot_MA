@@ -2236,6 +2236,7 @@ void GCS_MAVLINK::handle_set_mode(const mavlink_message_t &msg)
     const uint32_t _custom_mode = packet.custom_mode;
 
     const MAV_RESULT result = _set_mode_common(_base_mode, _custom_mode);
+	
 
     // send ACK or NAK.  Note that this is extraodinarily improper -
     // we are sending a command-ack for a message which is not a

@@ -206,9 +206,6 @@ void Copter::mode_change_failed(const Mode *mode, const char *reason)
 // ACRO, STABILIZE, ALTHOLD, LAND, DRIFT and SPORT can always be set successfully but the return state of other flight modes should be checked and the caller should deal with failures appropriately
 bool Copter::set_mode(Mode::Number mode, ModeReason reason)
 {
-	uint8_t mode_num = static_cast<uint8_t>(mode);
-	gcs().send_text(MAV_SEVERITY_WARNING, "Attempting to change mode to %hhu", mode_num);
-
     // return immediately if we are already in the desired mode
     if (mode == flightmode->mode_number()) {
         control_mode_reason = reason;

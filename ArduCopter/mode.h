@@ -1760,6 +1760,7 @@ public:
 
     // inherit constructor
     using ModeGuided::Mode;
+	Number mode_number() const override { return Number::PLANCKTRACK; }
 
     bool init(bool ignore_checks) override;
     bool init_without_RTB_request(bool ignore_checks);
@@ -1787,6 +1788,7 @@ public:
 
     // inherit constructor
     using ModeGuided::Mode;
+	Number mode_number() const override { return Number::PLANCKRTB; }
 
     bool init(bool ignore_checks) override;
     void run() override;
@@ -1810,6 +1812,7 @@ public:
 
     // inherit constructor
     using ModeGuided::Mode;
+	Number mode_number() const override { return Number::PLANCKLAND; }
 
     bool init(bool ignore_checks) override;
     void run() override;
@@ -1831,6 +1834,7 @@ public:
 
     // inherit constructor
     using ModeGuided::Mode;
+	Number mode_number() const override { return Number::PLANCKWINGMAN; }
 
     bool init(bool ignore_checks) override;
     void run() override;
