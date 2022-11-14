@@ -348,10 +348,12 @@ void NavEKF3::Log_Write()
 {
     // only log if enabled
     if (activeCores() <= 0) {
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "activeCores() <= 0\n");
         return;
     }
     if (lastLogWrite_us == imuSampleTime_us) {
         // vehicle is doubling up on logging
+		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "lastLogWrite_us == imuSampleTime_us\n");
         return;
     }
     lastLogWrite_us = imuSampleTime_us;
