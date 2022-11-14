@@ -1,6 +1,7 @@
 #include <AC_Planck/AC_Planck.h>
 #include <AP_HAL/AP_HAL.h>
 #include "../ArduCopter/defines.h"
+#include <GCS_MAVLink/GCS.h>
 
 void AC_Planck::handle_planck_mavlink_msg(const mavlink_channel_t &chan, const mavlink_message_t *mav_msg,
     AP_AHRS &ahrs)
@@ -125,6 +126,7 @@ void AC_Planck::handle_planck_mavlink_msg(const mavlink_channel_t &chan, const m
 
 void AC_Planck::request_takeoff(const float alt)
 {
+	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "Requesting Planck takeoff...");
   	//Send a takeoff command message to planck
   	mavlink_msg_planck_cmd_request_send(
     	_chan,
