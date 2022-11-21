@@ -47,8 +47,6 @@ void NavEKF3_core::Log_Write_XKF1(uint64_t time_us) const
         originHgt : originLLH.alt // WGS-84 altitude of EKF origin in cm
     };
     AP::logger().WriteBlock(&pkt, sizeof(pkt));
-
-	GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "XKF1 packet written...");
 }
 
 void NavEKF3_core::Log_Write_XKF2(uint64_t time_us) const
@@ -348,12 +346,10 @@ void NavEKF3::Log_Write()
 {
     // only log if enabled
     if (activeCores() <= 0) {
-		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "activeCores() <= 0\n");
         return;
     }
     if (lastLogWrite_us == imuSampleTime_us) {
         // vehicle is doubling up on logging
-		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "lastLogWrite_us == imuSampleTime_us\n");
         return;
     }
     lastLogWrite_us = imuSampleTime_us;
@@ -365,6 +361,17 @@ void NavEKF3::Log_Write()
     }
 
     AP::dal().start_frame(AP_DAL::FrameType::LogWriteEKF3);
+}
+
+// Return difference in posD between readings on EKF3 cores
+float NavEKF3::get_delta_posd()
+{
+	return 0.0f;
+}
+
+float NavEKF3_core::get_posd()
+{
+	return 333.333f;
 }
 
 void NavEKF3_core::Log_Write(uint64_t time_us)

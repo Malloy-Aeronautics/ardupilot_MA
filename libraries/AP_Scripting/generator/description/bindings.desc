@@ -38,6 +38,8 @@ include AP_AHRS/AP_AHRS.h
 
 singleton AP_AHRS alias ahrs
 singleton AP_AHRS semaphore
+singleton AP_AHRS method get_num_ekf3_cores uint8_t
+singleton AP_AHRS method is_ekf3_healthy boolean
 singleton AP_AHRS method get_roll float
 singleton AP_AHRS method get_pitch float
 singleton AP_AHRS method get_yaw float

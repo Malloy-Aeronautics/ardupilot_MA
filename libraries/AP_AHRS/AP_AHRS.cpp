@@ -176,6 +176,23 @@ void AP_AHRS::init()
 #endif
 }
 
+// Test function to access EKF3 readings
+uint8_t AP_AHRS::get_num_ekf3_cores()
+{
+	const AP_AHRS_NavEKF &ahrs = AP::ahrs_navekf();
+	const NavEKF3 &nav_ekf3 = ahrs.get_NavEKF3_const();
+	uint8_t num_ekf3_cores = nav_ekf3.activeCores();
+	return num_ekf3_cores;
+}
+
+
+bool AP_AHRS::is_ekf3_healthy()
+{
+	const AP_AHRS_NavEKF &ahrs = AP::ahrs_navekf();
+	const NavEKF3 &nav_ekf3 = ahrs.get_NavEKF3_const();
+	return nav_ekf3.healthy();
+}
+
 // return a smoothed and corrected gyro vector using the latest ins data (which may not have been consumed by the EKF yet)
 Vector3f AP_AHRS::get_gyro_latest(void) const
 {

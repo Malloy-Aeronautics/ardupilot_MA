@@ -779,7 +779,7 @@ bool NavEKF3::InitialiseFilter(void)
 
         // check if there is enough memory to create the EKF cores
         if (AP::dal().available_memory() < sizeof(NavEKF3_core)*num_cores + 4096) {
-            GCS_SEND_TEXT(MAV_SEVERITY_CRITICAL, "EKF3 not enough memory");
+            GCS_SEND_TEXT(MAV_SEVERITY_CRITICAL, "NavEKF3: not enough memory available");
             _enable.set(0);
             return false;
         }
@@ -788,7 +788,7 @@ bool NavEKF3::InitialiseFilter(void)
         core = (NavEKF3_core*)AP::dal().malloc_type(sizeof(NavEKF3_core)*num_cores, AP::dal().MEM_FAST);
         if (core == nullptr) {
             _enable.set(0);
-            GCS_SEND_TEXT(MAV_SEVERITY_CRITICAL, "EKF3 allocation failed");
+            GCS_SEND_TEXT(MAV_SEVERITY_CRITICAL, "NavEKF3: memory allocation failed");
             return false;
         }
 
@@ -1082,7 +1082,6 @@ void NavEKF3::setPosVelYawSourceSet(uint8_t source_set_idx)
 bool NavEKF3::healthy(void) const
 {
     if (!core) {
-		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NavEKF3 core was nullptr...");
         return false;
     }
     return core[primary].healthy();

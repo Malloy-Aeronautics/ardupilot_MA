@@ -185,6 +185,9 @@ public:
     // set position, velocity and yaw sources to either 0=primary, 1=secondary, 2=tertiary
     virtual void set_posvelyaw_source_set(uint8_t source_set_idx) {}
 
+	uint8_t get_num_ekf3_cores();
+	bool is_ekf3_healthy();
+
     // Euler angles (radians)
     float roll;
     float pitch;

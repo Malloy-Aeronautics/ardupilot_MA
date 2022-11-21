@@ -865,7 +865,6 @@ void NavEKF2::checkLaneSwitch(void)
 bool NavEKF2::healthy(void) const
 {
     if (!core) {
-		GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "NavEKF2 core was nullptr...");
         return false;
     }
     return core[primary].healthy();

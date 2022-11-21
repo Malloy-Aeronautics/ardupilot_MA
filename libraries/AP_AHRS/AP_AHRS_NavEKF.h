@@ -308,6 +308,8 @@ public:
 
     void Log_Write();
 
+	float get_delta_posd();
+
     // check whether external navigation is providing yaw.  Allows compass pre-arm checks to be bypassed
     bool is_ext_nav_used_for_yaw(void) const override;
 
