@@ -2,10 +2,10 @@ tick_interval = 10
 debug_mode = true
 
 
-min_voltage = 4.8
-max_vibe_x = 5.0
-max_vibe_y = 5.0
-max_vibe_z = 10.0
+min_voltage = 4.6
+max_vibe_x = 2.0
+max_vibe_y = 2.0
+max_vibe_z = 5.0
 max_roll_variance = 25.0
 max_roll_variance = 25.0
 max_pitch_variance = 25.0
@@ -60,7 +60,7 @@ function check_average_voltage()
 	result = 0
 	count = sizeof(voltage_array)
 	if (count == 0) then
-		return result
+		return
 	end
 	for i = 1, count do
 		result = result + voltage_array[i]
@@ -72,32 +72,109 @@ function check_average_voltage()
 end
 
 
-function check_vibe()
+vibe_array = { }
+vibe_end = 1
+vibe_1_array = { }
+vibe_1_end = 1
+vibe_2_array = { }
+vibe_2_end = 1
+vibe_len = 10
+
+
+function put_vibe()
 	if not (ins == nil) then
 		local n_accel = ins:get_accel_count()
 		for id = 1, n_accel do
 			local vibe = ins:get_vibration_levels(id - 1)
-			if (vibe:x() > max_vibe_x) then
-				warning_to_gcs("VibeX-" .. id .." > " .. max_vibe_x .. " (" .. vibe:x() .. ")")
+			if (id == 1) then
+				vibe_1_array[vibe_1_end] = vibe
+				vibe_1_end = vibe_1_end + 1
+				if (vibe_1_end > vibe_len) then
+					vibe_1_end = 1
+				end
 			end
-			if (vibe:y() > max_vibe_y) then
-				warning_to_gcs("VibeY-" .. id .." > " .. max_vibe_y .. " (" .. vibe:y() .. ")")
-			end
-			if (vibe:z() > max_vibe_z) then
-				warning_to_gcs("VibeZ-" .. id .." > " .. max_vibe_z .. " (" .. vibe:z() .. ")")
+			if (id == 2) then
+				vibe_2_array[vibe_2_end] = vibe
+				vibe_2_end = vibe_2_end + 1
+				if (vibe_2_end > vibe_len) then
+					vibe_2_end = 1
+				end
 			end
 		end
 	else
 		if not (ahrs == nil) then
 			local vibe = ahrs:get_vibration()
-			if (vibe:x() > max_vibe_x) then
-				warning_to_gcs("VibeX > " .. max_vibe_x .. " (" .. vibe:x() .. ")")
+			vibe_array[vibe_end] = vibe
+			vibe_end = vibe_end + 1
+			if (vibe_end > vibe_len) then
+				vibe_end = 1
 			end
-			if (vibe:y() > max_vibe_y) then
-				warning_to_gcs("VibeY > " .. max_vibe_y .. " (" .. vibe:y() .. ")")
+		end
+	end
+end
+
+
+function check_average_vibe()
+	if not (ins == nil) then
+		local n_accel = ins:get_accel_count()
+		for id = 1, n_accel do
+			local result_x = 0
+			local result_y = 0
+			local result_z = 0
+			count = sizeof(vibe_1_array)
+			if (count == 0) then
+				return
 			end
-			if (vibe:z() > max_vibe_z) then
-				warning_to_gcs("VibeZ > " .. max_vibe_z .. " (" .. vibe:z() .. ")")
+			for i = 1, count do
+				if (id == 1) then
+					result_x = result_x + vibe_1_array[i]:x()
+					result_y = result_y + vibe_1_array[i]:y()
+					result_z = result_z + vibe_1_array[i]:z()
+				end
+				if (id == 2) then
+					result_x = result_x + vibe_2_array[i]:x()
+					result_y = result_y + vibe_2_array[i]:y()
+					result_z = result_z + vibe_2_array[i]:z()
+				end
+			end
+			result_x = result_x / count
+			result_y = result_y / count
+			result_z = result_z / count
+			if (result_x > max_vibe_x) then
+				warning_to_gcs("Vibe-X-0 high: " .. result_x)
+			end
+			if (result_y > max_vibe_y) then
+				warning_to_gcs("Vibe-Y-0 high: " .. result_y)
+			end
+			if (result_z > max_vibe_z) then
+				warning_to_gcs("Vibe-Z-0 high: " .. result_z)
+			end			
+		end
+	else
+		if not (ahrs == nil) then
+			local result_x = 0
+			local result_y = 0
+			local result_z = 0
+			count = sizeof(vibe_array)
+			if (count == 0) then
+				return
+			end
+			for i = 1, count do
+				result_x = result_x + vibe_array[i]:x()
+				result_y = result_y + vibe_array[i]:y()
+				result_z = result_z + vibe_array[i]:z()
+			end
+			result_x = result_x / count
+			result_y = result_y / count
+			result_z = result_z / count
+			if (result_x > max_vibe_x) then
+				warning_to_gcs("Vibe-X high: " .. result_x)
+			end
+			if (result_y > max_vibe_y) then
+				warning_to_gcs("Vibe-Y high: " .. result_y)
+			end
+			if (result_z > max_vibe_z) then
+				warning_to_gcs("Vibe-Z high: " .. result_z)
 			end
 		end
 	end
@@ -263,6 +340,7 @@ function run_10Hz_loop()
 	debug_output = debug_output .. "*"
 	--check_vibe()
 	put_voltage()
+	put_vibe()
 end
 
 
@@ -285,6 +363,7 @@ function run_1Hz_loop()
 	--ekf_test()
 	--check_xkf4()
 	check_average_voltage()
+	check_average_vibe()
 end
 
 
