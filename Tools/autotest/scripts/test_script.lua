@@ -2,7 +2,7 @@ tick_interval = 10
 debug_mode = true
 
 
-min_voltage = 4.6
+min_voltage = 4.8
 max_vibe_x = 5.0
 max_vibe_y = 5.0
 max_vibe_z = 10.0
@@ -41,40 +41,33 @@ end
 
 
 voltage_array = { }
-voltage_len = 20
+voltage_len = 10
 voltage_end = 1
 
 
-function put_voltage(v)
-	voltage_array[voltage_end] = v
-	voltage_end = voltage_end + 1
-	if (voltage_end > voltage_len) then
-		voltage_end = 1
+function put_voltage()
+	if not (analog == nil) then
+		voltage_array[voltage_end] = analog:board_voltage()
+		voltage_end = voltage_end + 1
+		if (voltage_end > voltage_len) then
+			voltage_end = 1
+		end
 	end
 end
 
 
 function check_average_voltage()
 	result = 0
-	if not (analog == nil) then
-		put_voltage(analog:board_voltage())
-		count = sizeof(voltage_array)
-		if (count == 0) then
-			return result
-		end
-		for i = 1, count do
-			result = result + voltage_array[i]
-		end
-		return (result / count)
+	count = sizeof(voltage_array)
+	if (count == 0) then
+		return result
 	end
-	return result
-end
-
-
-function check_voltage()
-	local average_u = check_average_voltage()
-	if (average_u < min_voltage) then
-		warning_to_gcs("Board voltage: " .. average_u .. "V")
+	for i = 1, count do
+		result = result + voltage_array[i]
+	end
+	result = result / count
+	if (result < min_voltage) then
+		warning_to_gcs("Board voltage low: " .. result .. "V")
 	end
 end
 
@@ -205,7 +198,51 @@ end
 function ekf_test()
 	if not (ahrs == nil) then
 		local n_ekf3_cores = ahrs:get_num_ekf3_cores()
-		warning_to_gcs("num_ekf3_cores: " .. n_ekf3_cores)
+		warning_to_gcs("Active EKF3 cores: " .. n_ekf3_cores)
+		if ahrs:is_ekf3_healthy() then
+			warning_to_gcs("EKF3 is healthy!")
+		else
+			warning_to_gcs("EKF3 is NOT healthy!")
+		end
+		local d_posd = ahrs:get_delta_posd()
+		warning_to_gcs("Delta posD: " .. d_posd)
+	else
+		warning_to_gcs("AHRS was nil...")
+	end
+end
+
+
+function check_xkf4()
+	if not (ahrs == nil) then
+		local n_ekf3_cores = ahrs:get_num_ekf3_cores()
+		if (n_ekf3_cores == 2) then
+			for core_id = 1, n_ekf3_cores do
+				vel_var, pos_var, hgt_var, mag_var, tas_var, offset = ahrs:get_ekf3_variances(core_id - 1)
+				warning_to_gcs("XKF4-" .. (core_id - 1) .. " SV: " .. vel_var .. " SP: " .. pos_var .. " SH: " .. hgt_var .. " SM: " .. mag_var:length() .. " SVT: " .. tas_var)
+			end
+		end
+		
+		--local primary_id = ahrs:get_primary_core_index()
+		--debug_message_to_gcs("AHRS primary core index: " .. primary_id)
+		--vel_variance, pos_variance, height_variance, mag_variance, airspeed_variance = ahrs:get_variances()
+		--if vel_variance then
+		--	debug_message_to_gcs(string.format("Variances Pos:%.1f Vel:%.1f Hgt:%.1f Mag:%.1f", pos_variance, vel_variance, height_variance, mag_variance:length()))		
+		--	if (vel_variance > 1.0) then
+		--		warning_to_gcs("Vel. variance was over the threshold of 1.0 (" .. vel_variance .. ")")
+		--	end
+		--	if (pos_variance > 1.0) then
+		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. pos_variance .. ")")
+		--	end
+		--	if (height_variance > 1.0) then
+		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. height_variance .. ")")
+		--	end
+		--	if (airspeed_variance > 1.0) then
+		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. airspeed_variance .. ")")
+		--	end
+		--else
+		--	debug_message_to_gcs(string.format("Failed to retrieve variances"))
+		--end
+		
 	else
 		warning_to_gcs("AHRS was nil...")
 	end
@@ -224,7 +261,8 @@ end
 
 function run_10Hz_loop()
 	debug_output = debug_output .. "*"
-	check_vibe()
+	--check_vibe()
+	put_voltage()
 end
 
 
@@ -237,14 +275,16 @@ function run_2Hz_loop()
 	debug_output = debug_output .. "o"
 	--check_xkf1()
 	--check_posd()
-	--check_voltage()
 end
 
 
 function run_1Hz_loop()
+	debug_output = debug_output .. "O"
 	--check_num_ekf2_cores()
 	--check_num_ekf3_cores()
-	ekf_test()
+	--ekf_test()
+	--check_xkf4()
+	check_average_voltage()
 end
 
 

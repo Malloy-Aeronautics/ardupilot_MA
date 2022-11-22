@@ -336,7 +336,17 @@ public:
     // write EKF information to on-board logs
     void Log_Write();
 
-	float get_delta_posd();
+	float delta_posd() const;
+
+	bool get_variances(
+		uint8_t core_id,
+		float &velVar,
+		float &posVar,
+		float &hgtVar,
+		Vector3f &magVar,
+		float &tasVar,
+		Vector2f &offset
+	) const;
 
     // are we using an external yaw source? This is needed by AHRS attitudes_consistent check
     bool using_external_yaw(void) const;

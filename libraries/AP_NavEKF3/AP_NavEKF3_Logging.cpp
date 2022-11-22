@@ -364,14 +364,39 @@ void NavEKF3::Log_Write()
 }
 
 // Return difference in posD between readings on EKF3 cores
-float NavEKF3::get_delta_posd()
+float NavEKF3::delta_posd() const
 {
-	return 0.0f;
+	float posd_min = 0.0f;
+	float posd_max = 0.0f;
+	for (uint8_t i=0; i<activeCores(); i++) {
+		float pos = 0.0f;
+		if (core[i].getPosD(pos)) {
+			if (pos < posd_min) {
+				posd_min = pos;
+			}
+			if (pos > posd_max) {
+				posd_max = pos;
+			}
+		}
+    }
+	return (posd_max - posd_min);
 }
 
-float NavEKF3_core::get_posd()
+bool NavEKF3::get_variances(
+	uint8_t core_id,
+	float &velVar,
+	float &posVar,
+	float &hgtVar,
+	Vector3f &magVar,
+	float &tasVar,
+	Vector2f &offset
+) const
 {
-	return 333.333f;
+	if (activeCores() != 2) {
+		return false;
+	}
+
+	return core[core_id].getVariances(velVar, posVar, hgtVar, magVar, tasVar, offset);
 }
 
 void NavEKF3_core::Log_Write(uint64_t time_us)

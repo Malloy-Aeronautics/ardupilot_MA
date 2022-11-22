@@ -2821,11 +2821,6 @@ void AP_AHRS_NavEKF::Log_Write()
 #endif
 }
 
-float AP_AHRS_NavEKF::get_delta_posd()
-{
-	return get_NavEKF3().get_delta_posd();
-}
-
 AP_AHRS_NavEKF &AP::ahrs_navekf()
 {
     return static_cast<AP_AHRS_NavEKF&>(*AP_AHRS::get_singleton());

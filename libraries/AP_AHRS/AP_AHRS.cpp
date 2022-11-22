@@ -185,12 +185,35 @@ uint8_t AP_AHRS::get_num_ekf3_cores()
 	return num_ekf3_cores;
 }
 
-
 bool AP_AHRS::is_ekf3_healthy()
 {
 	const AP_AHRS_NavEKF &ahrs = AP::ahrs_navekf();
 	const NavEKF3 &nav_ekf3 = ahrs.get_NavEKF3_const();
 	return nav_ekf3.healthy();
+}
+
+float AP_AHRS::get_delta_posd() const
+{
+	const AP_AHRS_NavEKF &ahrs = AP::ahrs_navekf();
+	const NavEKF3 &nav_ekf3 = ahrs.get_NavEKF3_const();
+	float d =  nav_ekf3.delta_posd();
+	return d;
+}
+
+bool AP_AHRS::get_ekf3_variances(
+	uint8_t core_id,
+	float &velVar,
+	float &posVar,
+	float &hgtVar,
+	Vector3f &magVar,
+	float &tasVar,
+	Vector2f &offset
+) const
+{
+	const AP_AHRS_NavEKF &ahrs = AP::ahrs_navekf();
+	const NavEKF3 &nav_ekf3 = ahrs.get_NavEKF3_const();
+	
+	return nav_ekf3.get_variances(core_id, velVar, posVar, hgtVar, magVar, tasVar, offset);
 }
 
 // return a smoothed and corrected gyro vector using the latest ins data (which may not have been consumed by the EKF yet)

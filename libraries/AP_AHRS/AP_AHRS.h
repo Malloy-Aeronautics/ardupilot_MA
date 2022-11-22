@@ -187,6 +187,16 @@ public:
 
 	uint8_t get_num_ekf3_cores();
 	bool is_ekf3_healthy();
+	float get_delta_posd() const;
+	bool get_ekf3_variances(
+		uint8_t core_id,
+		float &velVar,
+		float &posVar,
+		float &hgtVar,
+		Vector3f &magVar,
+		float &tasVar,
+		Vector2f &offset
+	) const;
 
     // Euler angles (radians)
     float roll;

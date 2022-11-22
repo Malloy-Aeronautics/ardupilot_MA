@@ -40,6 +40,7 @@ singleton AP_AHRS alias ahrs
 singleton AP_AHRS semaphore
 singleton AP_AHRS method get_num_ekf3_cores uint8_t
 singleton AP_AHRS method is_ekf3_healthy boolean
+singleton AP_AHRS method get_delta_posd float
 singleton AP_AHRS method get_roll float
 singleton AP_AHRS method get_pitch float
 singleton AP_AHRS method get_yaw float
@@ -60,7 +61,7 @@ singleton AP_AHRS method get_vibration Vector3f
 singleton AP_AHRS method earth_to_body Vector3f Vector3f
 singleton AP_AHRS method body_to_earth Vector3f Vector3f
 singleton AP_AHRS method get_EAS2TAS float
-singleton AP_AHRS method get_variances boolean float'Null float'Null float'Null Vector3f'Null float'Null
+singleton AP_AHRS method get_ekf3_variances boolean uint8_t 0 1 float'Null float'Null float'Null Vector3f'Null float'Null Vector2f'Null
 singleton AP_AHRS method set_posvelyaw_source_set void uint8_t 0 2
 singleton AP_AHRS method get_vel_innovations_and_variances_for_source boolean uint8_t 3 6 Vector3f'Null Vector3f'Null
 singleton AP_AHRS method set_home boolean Location
