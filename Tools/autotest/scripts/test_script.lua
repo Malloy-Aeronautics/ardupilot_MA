@@ -182,11 +182,11 @@ end
 
 
 function check_attitude()
-	if not (AC_AttitudeControl == nil) then
-		local target_att = AC_AttitudeControl:get_att_target_euler_cd()
-		warning_to_gcs("target_roll: " .. target_att.x .. " target_pitch: " .. target_att.y .. " target_yaw: " .. target_att.z) 
+	if not (attitude_control_multi == nil) then
+		local target_att = attitude_control_multi:get_att_target_euler_cd()	
+		warning_to_gcs("target_roll: " .. target_att:x() .. " target_pitch: " .. target_att:y() .. " target_yaw: " .. target_att:z()) 
 	else
-		warning_to_gcs("AC_AttitudeControl was nil...")
+		warning_to_gcs("attitude_control was nil...")
 	end
 end
 

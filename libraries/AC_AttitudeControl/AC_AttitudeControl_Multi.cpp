@@ -245,7 +245,7 @@ AC_AttitudeControl_Multi::AC_AttitudeControl_Multi(AP_AHRS_View &ahrs, const AP_
     AP_Param::setup_object_defaults(this, var_info);
 
 	if (_singleton != nullptr) {
-            AP_HAL::panic("Can only be one AC_AttitudeControl_Multi_6DoF");
+            AP_HAL::panic("Can only be one AC_AttitudeControl_Multi");
     }
     _singleton = this;
 }
