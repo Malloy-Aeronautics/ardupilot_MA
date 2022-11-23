@@ -14,6 +14,11 @@ n_sats_min = 25
 h_dop_max = 100.0
 delta_ms_max = 5000.0
 delta_pd_max = 1.0
+vel_var_max = 10.0
+pos_var_max = 10.0
+hgt_var_max = 10.0
+mag_var_max = 10.0
+tas_var_max = 10.0
 
 
 debug_output = ""
@@ -31,23 +36,44 @@ function warning_to_gcs(msg)
 end
 
 
-function sizeof(arr)
+function sizeof(buff)
 	local count = 0
-	for i in ipairs(arr) do
+	for i in ipairs(buff) do
 		count = count + 1
 	end
 	return count
 end
 
 
-voltage_array = { }
+--from libraries/AP_Math/AP_Math.cpp:
+--
+--float wrap_360_cd(const float angle)
+--{
+--    float res = fmodf(angle, 36000.0f);
+--    if (res < 0) {
+--        res += 36000.0f;
+--    }
+--    return res;
+--}
+
+
+function wrap_360_cd(angle)
+	local res = math.fmod(angle, 36000.0)
+	if (res < 0.0) then
+		res = res + 36000.0
+	end
+	return res
+end
+
+
+voltage_buffer = { }
 voltage_len = 10
 voltage_end = 1
 
 
 function put_voltage()
 	if not (analog == nil) then
-		voltage_array[voltage_end] = analog:board_voltage()
+		voltage_buffer[voltage_end] = analog:board_voltage()
 		voltage_end = voltage_end + 1
 		if (voltage_end > voltage_len) then
 			voltage_end = 1
@@ -58,12 +84,12 @@ end
 
 function check_average_voltage()
 	result = 0
-	count = sizeof(voltage_array)
+	count = sizeof(voltage_buffer)
 	if (count == 0) then
 		return
 	end
 	for i = 1, count do
-		result = result + voltage_array[i]
+		result = result + voltage_buffer[i]
 	end
 	result = result / count
 	if (result < min_voltage) then
@@ -72,11 +98,11 @@ function check_average_voltage()
 end
 
 
-vibe_array = { }
+vibe_buffer = { }
 vibe_end = 1
-vibe_1_array = { }
+vibe_1_buffer = { }
 vibe_1_end = 1
-vibe_2_array = { }
+vibe_2_buffer = { }
 vibe_2_end = 1
 vibe_len = 10
 
@@ -87,14 +113,14 @@ function put_vibe()
 		for id = 1, n_accel do
 			local vibe = ins:get_vibration_levels(id - 1)
 			if (id == 1) then
-				vibe_1_array[vibe_1_end] = vibe
+				vibe_1_buffer[vibe_1_end] = vibe
 				vibe_1_end = vibe_1_end + 1
 				if (vibe_1_end > vibe_len) then
 					vibe_1_end = 1
 				end
 			end
 			if (id == 2) then
-				vibe_2_array[vibe_2_end] = vibe
+				vibe_2_buffer[vibe_2_end] = vibe
 				vibe_2_end = vibe_2_end + 1
 				if (vibe_2_end > vibe_len) then
 					vibe_2_end = 1
@@ -104,7 +130,7 @@ function put_vibe()
 	else
 		if not (ahrs == nil) then
 			local vibe = ahrs:get_vibration()
-			vibe_array[vibe_end] = vibe
+			vibe_buffer[vibe_end] = vibe
 			vibe_end = vibe_end + 1
 			if (vibe_end > vibe_len) then
 				vibe_end = 1
@@ -121,33 +147,33 @@ function check_average_vibe()
 			local result_x = 0
 			local result_y = 0
 			local result_z = 0
-			count = sizeof(vibe_1_array)
+			count = sizeof(vibe_1_buffer)
 			if (count == 0) then
 				return
 			end
 			for i = 1, count do
 				if (id == 1) then
-					result_x = result_x + vibe_1_array[i]:x()
-					result_y = result_y + vibe_1_array[i]:y()
-					result_z = result_z + vibe_1_array[i]:z()
+					result_x = result_x + vibe_1_buffer[i]:x()
+					result_y = result_y + vibe_1_buffer[i]:y()
+					result_z = result_z + vibe_1_buffer[i]:z()
 				end
 				if (id == 2) then
-					result_x = result_x + vibe_2_array[i]:x()
-					result_y = result_y + vibe_2_array[i]:y()
-					result_z = result_z + vibe_2_array[i]:z()
+					result_x = result_x + vibe_2_buffer[i]:x()
+					result_y = result_y + vibe_2_buffer[i]:y()
+					result_z = result_z + vibe_2_buffer[i]:z()
 				end
 			end
 			result_x = result_x / count
 			result_y = result_y / count
 			result_z = result_z / count
 			if (result_x > max_vibe_x) then
-				warning_to_gcs("Vibe-X-0 high: " .. result_x)
+				warning_to_gcs("Vibe-X-" .. id .. " high: " .. result_x)
 			end
 			if (result_y > max_vibe_y) then
-				warning_to_gcs("Vibe-Y-0 high: " .. result_y)
+				warning_to_gcs("Vibe-Y-" .. id .. " high: " .. result_y)
 			end
 			if (result_z > max_vibe_z) then
-				warning_to_gcs("Vibe-Z-0 high: " .. result_z)
+				warning_to_gcs("Vibe-Z-" .. id .. " high: " .. result_z)
 			end			
 		end
 	else
@@ -155,14 +181,14 @@ function check_average_vibe()
 			local result_x = 0
 			local result_y = 0
 			local result_z = 0
-			count = sizeof(vibe_array)
+			count = sizeof(vibe_buffer)
 			if (count == 0) then
 				return
 			end
 			for i = 1, count do
-				result_x = result_x + vibe_array[i]:x()
-				result_y = result_y + vibe_array[i]:y()
-				result_z = result_z + vibe_array[i]:z()
+				result_x = result_x + vibe_buffer[i]:x()
+				result_y = result_y + vibe_buffer[i]:y()
+				result_z = result_z + vibe_buffer[i]:z()
 			end
 			result_x = result_x / count
 			result_y = result_y / count
@@ -184,7 +210,7 @@ end
 function check_attitude()
 	if not (attitude_control_multi == nil) then
 		local target_att = attitude_control_multi:get_att_target_euler_cd()	
-		warning_to_gcs("target_roll: " .. target_att:x() .. " target_pitch: " .. target_att:y() .. " target_yaw: " .. target_att:z()) 
+		warning_to_gcs("target_roll: " .. target_att:x() .. " target_pitch: " .. target_att:y() .. " target_yaw: " .. wrap_360_cd(target_att:z())) 
 	else
 		warning_to_gcs("attitude_control was nil...")
 	end
@@ -213,6 +239,8 @@ function check_gps()
 				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. "ms (" .. delta_ms .. "ms)")
 			end
 		end
+	else
+		warning_to_gcs("gps was nil...")
 	end
 end
 
@@ -299,37 +327,159 @@ function ekf_test()
 end
 
 
-function check_xkf4()
+vel_1_buffer = { }
+vel_2_buffer = { }
+vel_1_end = 1
+vel_2_end = 1
+vel_len = 10
+pos_1_buffer = { }
+pos_2_buffer = { }
+pos_1_end = 1
+pos_2_end = 1
+pos_len = 10
+hgt_1_buffer = { }
+hgt_2_buffer = { }
+hgt_1_end = 1
+hgt_2_end = 1
+hgt_len = 10
+mag_1_buffer = { }
+mag_2_buffer = { }
+mag_1_end = 1
+mag_2_end = 1
+mag_len = 10
+tas_1_buffer = { }
+tas_2_buffer = { }
+tas_1_end = 1
+tas_2_end = 1
+tas_len = 10
+
+
+function put_xkf4()
+	local sc = 100.0
 	if not (ahrs == nil) then
 		local n_ekf3_cores = ahrs:get_num_ekf3_cores()
 		if (n_ekf3_cores == 2) then
-			for core_id = 1, n_ekf3_cores do
-				vel_var, pos_var, hgt_var, mag_var, tas_var, offset = ahrs:get_ekf3_variances(core_id - 1)
-				warning_to_gcs("XKF4-" .. (core_id - 1) .. " SV: " .. vel_var .. " SP: " .. pos_var .. " SH: " .. hgt_var .. " SM: " .. mag_var:length() .. " SVT: " .. tas_var)
+			for id = 1, 2 do
+				vel_var, pos_var, hgt_var, mag_var, tas_var, offset = ahrs:get_ekf3_variances(id - 1)
+				local tmp_var = math.max(math.max(mag_var:x(), mag_var:y()), mag_var:z())
+				if (id == 1) then
+					vel_1_buffer[vel_1_end] = math.floor(vel_var * sc)
+					vel_1_end = vel_1_end + 1
+					if (vel_1_end > vel_len) then
+						vel_1_end = 1
+					end
+					pos_1_buffer[pos_1_end] = math.floor(pos_var * sc)
+					pos_1_end = pos_1_end + 1
+					if (pos_1_end > pos_len) then
+						pos_1_end = 1
+					end
+					hgt_1_buffer[hgt_1_end] = math.floor(hgt_var * sc)
+					hgt_1_end = hgt_1_end + 1
+					if (hgt_1_end > hgt_len) then
+						hgt_1_end = 1
+					end
+					mag_1_buffer[mag_1_end] = math.floor(tmp_var * sc)
+					mag_1_end = mag_1_end + 1
+					if (mag_1_end > mag_len) then
+						mag_1_end = 1
+					end
+					tas_1_buffer[tas_1_end] = math.floor(tas_var * sc)
+					tas_1_end = tas_1_end + 1
+					if (tas_1_end > tas_len) then
+						tas_1_end = 1
+					end
+				end
+				if (id == 2) then
+					vel_2_buffer[vel_2_end] = math.floor(vel_var * sc)
+					vel_2_end = vel_2_end + 1
+					if (vel_2_end > vel_len) then
+						vel_2_end = 1
+					end
+					pos_2_buffer[pos_2_end] = math.floor(pos_var * sc)
+					pos_2_end = pos_2_end + 1
+					if (pos_2_end > pos_len) then
+						pos_2_end = 1
+					end
+					hgt_2_buffer[hgt_2_end] = math.floor(hgt_var * sc)
+					hgt_2_end = hgt_2_end + 1
+					if (hgt_2_end > hgt_len) then
+						hgt_2_end = 1
+					end
+					mag_2_buffer[mag_2_end] = math.floor(tmp_var * sc)
+					mag_2_end = mag_2_end + 1
+					if (mag_2_end > mag_len) then
+						mag_2_end = 1
+					end
+					tas_2_buffer[tas_2_end] = math.floor(tas_var * sc)
+					tas_2_end = tas_2_end + 1
+					if (tas_2_end > tas_len) then
+						tas_2_end = 1
+					end
+				end
+			end
+		end	
+	end
+end
+
+
+function check_average_exkf4()
+	if not (ahrs == nil) then
+		local n_ekf3_cores = ahrs:get_num_ekf3_cores()
+		if (n_ekf3_cores == 2) then
+			for id = 1, 2 do
+				local vel_result = 0
+				local pos_result = 0
+				local hgt_result = 0
+				local mag_result = 0
+				local tas_result = 0
+				local count = sizeof(vel_1_buffer)
+				if (count == 10) then
+					for i = 1, 10 do
+						if (id == 1) then
+							vel_result = vel_result + vel_1_buffer[i]
+							pos_result = pos_result + pos_1_buffer[i]
+							hgt_result = hgt_result + hgt_1_buffer[i]
+							mag_result = mag_result + mag_1_buffer[i]
+							tas_result = tas_result + tas_1_buffer[i]
+						end
+						if (id == 2) then
+							vel_result = vel_result + vel_2_buffer[i]
+							pos_result = pos_result + pos_2_buffer[i]
+							hgt_result = hgt_result + hgt_2_buffer[i]
+							mag_result = mag_result + mag_2_buffer[i]
+							tas_result = tas_result + tas_2_buffer[i]
+						end
+					end	
+					vel_result = vel_result / count
+					pos_result = pos_result / count
+					hgt_result = hgt_result / count
+					mag_result = mag_result / count
+					tas_result = tas_result / count
+					warning_to_gcs("Vel. variance " .. id .. ": " .. vel_result)
+					warning_to_gcs("Pos. variance " .. id .. ": " .. pos_result)
+					warning_to_gcs("Hgt. variance " .. id .. ": " .. hgt_result)
+					warning_to_gcs("Mag. variance " .. id .. ": " .. mag_result)
+					warning_to_gcs("Tas. variance " .. id .. ": " .. tas_result)
+					if (vel_result > vel_var_max) then
+						warning_to_gcs("Vel. variance " .. id .. " high: " .. vel_result)
+					end
+					if (pos_result > pos_var_max) then
+						warning_to_gcs("Pos. variance " .. id .. " high: " .. pos_result)
+					end
+					if (hgt_result >hgt_var_max) then
+						warning_to_gcs("Hgt. variance " .. id .. " high: " .. hgt_result)
+					end
+					if (mag_result > mag_var_max) then
+						warning_to_gcs("Mag. variance " .. id .. " high: " .. mag_result)
+					end
+					if (tas_result > tas_var_max) then
+						warning_to_gcs("Tas. variance " .. id .. " high: " .. tas_result)
+					end
+				else
+					warning_to_gcs("XKF4 buffer size: " .. count)
+				end
 			end
 		end
-		
-		--local primary_id = ahrs:get_primary_core_index()
-		--debug_message_to_gcs("AHRS primary core index: " .. primary_id)
-		--vel_variance, pos_variance, height_variance, mag_variance, airspeed_variance = ahrs:get_variances()
-		--if vel_variance then
-		--	debug_message_to_gcs(string.format("Variances Pos:%.1f Vel:%.1f Hgt:%.1f Mag:%.1f", pos_variance, vel_variance, height_variance, mag_variance:length()))		
-		--	if (vel_variance > 1.0) then
-		--		warning_to_gcs("Vel. variance was over the threshold of 1.0 (" .. vel_variance .. ")")
-		--	end
-		--	if (pos_variance > 1.0) then
-		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. pos_variance .. ")")
-		--	end
-		--	if (height_variance > 1.0) then
-		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. height_variance .. ")")
-		--	end
-		--	if (airspeed_variance > 1.0) then
-		--		warning_to_gcs("Pos. variance was over the threshold of 1.0 (" .. airspeed_variance .. ")")
-		--	end
-		--else
-		--	debug_message_to_gcs(string.format("Failed to retrieve variances"))
-		--end
-		
 	else
 		warning_to_gcs("AHRS was nil...")
 	end
@@ -348,9 +498,9 @@ end
 
 function run_10Hz_loop()
 	debug_output = debug_output .. "*"
-	--check_vibe()
 	put_voltage()
 	put_vibe()
+	put_xkf4()
 end
 
 
@@ -371,10 +521,10 @@ function run_1Hz_loop()
 	--check_num_ekf2_cores()
 	--check_num_ekf3_cores()
 	--ekf_test()
-	--check_xkf4()
 	check_average_voltage()
 	check_average_vibe()
-	check_attitude()
+	check_average_exkf4()
+	--check_attitude()
 end
 
 
