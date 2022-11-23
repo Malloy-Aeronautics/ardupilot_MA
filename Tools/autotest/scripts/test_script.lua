@@ -181,6 +181,16 @@ function check_average_vibe()
 end
 
 
+function check_attitude()
+	if not (AC_AttitudeControl == nil) then
+		local target_att = AC_AttitudeControl:get_att_target_euler_cd()
+		warning_to_gcs("target_roll: " .. target_att.x .. " target_pitch: " .. target_att.y .. " target_yaw: " .. target_att.z) 
+	else
+		warning_to_gcs("AC_AttitudeControl was nil...")
+	end
+end
+
+
 function check_gps()
 	if not (gps == nil) then
 		local num_sensors = gps:num_sensors()
@@ -364,6 +374,7 @@ function run_1Hz_loop()
 	--check_xkf4()
 	check_average_voltage()
 	check_average_vibe()
+	check_attitude()
 end
 
 

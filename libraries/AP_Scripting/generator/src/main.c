@@ -2007,7 +2007,7 @@ void emit_argcheck_helper(void) {
 
 void emit_not_supported_helper(void) {
   fprintf(source, "static int not_supported_error(lua_State *L, int arg, const char* name) {\n");
-  fprintf(source, "    char error_msg[50];\n");
+  fprintf(source, "    char error_msg[64];\n");
   fprintf(source, "    snprintf(error_msg, sizeof(error_msg), \"%%s not supported on this firmware\", name);\n");
   fprintf(source, "    return luaL_argerror(L, arg, error_msg);\n");
   fprintf(source, "}\n\n");

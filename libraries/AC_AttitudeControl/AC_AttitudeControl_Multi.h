@@ -46,6 +46,10 @@ public:
 	// empty destructor to suppress compiler warning
 	virtual ~AC_AttitudeControl_Multi() {}
 
+	static AC_AttitudeControl_Multi *get_singleton() {
+        return _singleton;
+    }
+
     // pid accessors
     AC_PID& get_rate_roll_pid() override { return _pid_rate_roll; }
     AC_PID& get_rate_pitch_pid() override { return _pid_rate_pitch; }
@@ -97,4 +101,8 @@ protected:
     AP_Float              _thr_mix_man;     // throttle vs attitude control prioritisation used when using manual throttle (higher values mean we prioritise attitude control over throttle)
     AP_Float              _thr_mix_min;     // throttle vs attitude control prioritisation used when landing (higher values mean we prioritise attitude control over throttle)
     AP_Float              _thr_mix_max;     // throttle vs attitude control prioritisation used during active flight (higher values mean we prioritise attitude control over throttle)
+
+private:
+
+	static AC_AttitudeControl_Multi *_singleton;
 };

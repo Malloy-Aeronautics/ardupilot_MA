@@ -367,6 +367,12 @@ singleton AC_AttitudeControl_Multi_6DoF method set_lateral_enable void boolean
 singleton AC_AttitudeControl_Multi_6DoF method set_forward_enable void boolean
 singleton AC_AttitudeControl_Multi_6DoF method set_offset_roll_pitch void float -FLT_MAX FLT_MAX float -FLT_MAX FLT_MAX
 
+include AC_AttitudeControl/AC_AttitudeControl_Multi.h depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
+
+singleton AC_AttitudeControl_Multi depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
+singleton AC_AttitudeControl_Multi alias attitude_control_multi
+singleton AC_AttitudeControl_Multi method get_att_target_euler_cd Vector3f
+
 include AC_AttitudeControl/AC_AttitudeControl.h depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
 singleton AC_AttitudeControl depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
 singleton AC_AttitudeControl method get_rpy_srate void float'Ref float'Ref float'Ref

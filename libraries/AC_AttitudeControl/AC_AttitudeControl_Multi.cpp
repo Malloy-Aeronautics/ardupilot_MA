@@ -243,6 +243,11 @@ AC_AttitudeControl_Multi::AC_AttitudeControl_Multi(AP_AHRS_View &ahrs, const AP_
     _pid_rate_yaw(AC_ATC_MULTI_RATE_YAW_P, AC_ATC_MULTI_RATE_YAW_I, AC_ATC_MULTI_RATE_YAW_D, 0.0f, AC_ATC_MULTI_RATE_YAW_IMAX, AC_ATC_MULTI_RATE_RP_FILT_HZ, AC_ATC_MULTI_RATE_YAW_FILT_HZ, 0.0f, dt)
 {
     AP_Param::setup_object_defaults(this, var_info);
+
+	if (_singleton != nullptr) {
+            AP_HAL::panic("Can only be one AC_AttitudeControl_Multi_6DoF");
+    }
+    _singleton = this;
 }
 
 // Update Alt_Hold angle maximum
@@ -372,3 +377,5 @@ void AC_AttitudeControl_Multi::parameter_sanity_check()
         _thr_mix_max.set_and_save(AC_ATTITUDE_CONTROL_MAX_DEFAULT);
     }
 }
+
+AC_AttitudeControl_Multi *AC_AttitudeControl_Multi::_singleton = nullptr;
