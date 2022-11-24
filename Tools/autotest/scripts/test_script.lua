@@ -6,19 +6,18 @@ min_voltage = 4.6
 max_vibe_x = 2.0
 max_vibe_y = 2.0
 max_vibe_z = 5.0
-max_roll_variance = 25.0
-max_roll_variance = 25.0
-max_pitch_variance = 25.0
-max_yaw_variance = 25.0
-min_nsats = 25
+max_roll_variance = 1.25
+max_pitch_variance = 1.25
+max_yaw_variance = 2.5
+min_nsats = 25.0
 max_hdop = 100.0
 max_gpa_delta = 5000.0
 max_delta_posd = 1.0
-max_vel_var = 10
-max_pos_var = 10
-max_hgt_var = 10
-max_mag_var = 10
-max_tas_var = 10
+max_vel_var = 10.0
+max_pos_var = 10.0
+max_hgt_var = 10.0
+max_mag_var = 10.0
+max_tas_var = 10.0
 
 
 debug_output = ""
@@ -45,24 +44,30 @@ function sizeof(buff)
 end
 
 
---from libraries/AP_Math/AP_Math.cpp:
---
---float wrap_360_cd(const float angle)
---{
---    float res = fmodf(angle, 36000.0f);
---    if (res < 0) {
---        res += 36000.0f;
---    }
---    return res;
---}
+function to_deg(value)
+	d = value * 180.0 / 3.1416
+	return d
+end
 
 
 function wrap_360_cd(angle)
-	local res = math.fmod(angle, 36000.0)
+	local res = math.fmod(angle, 360.0)
 	if (res < 0.0) then
-		res = res + 36000.0
+		res = res + 360.0
 	end
 	return res
+end
+
+
+function angle_variance_deg(ang_a, ang_b)
+	a = ang_a + 360.0
+	b = ang_b + 360.0
+	diff = math.abs(a - b)
+	while (diff > 180) do
+		diff = diff - 180
+	end
+	percentage = diff / 180.0 * 100.0
+	return percentage
 end
 
 
@@ -83,7 +88,7 @@ end
 
 
 function check_average_voltage()
-	result = 0
+	result = 0.0
 	count = sizeof(voltage_buffer)
 	if (count == 0) then
 		return
@@ -144,9 +149,9 @@ function check_average_vibe()
 	if not (ins == nil) then
 		local n_accel = ins:get_accel_count()
 		for id = 1, n_accel do
-			local result_x = 0
-			local result_y = 0
-			local result_z = 0
+			local result_x = 0.0
+			local result_y = 0.0
+			local result_z = 0.0
 			count = sizeof(vibe_1_buffer)
 			if (count == 0) then
 				return
@@ -178,9 +183,9 @@ function check_average_vibe()
 		end
 	else
 		if not (ahrs == nil) then
-			local result_x = 0
-			local result_y = 0
-			local result_z = 0
+			local result_x = 0.0
+			local result_y = 0.0
+			local result_z = 0.0
 			count = sizeof(vibe_buffer)
 			if (count == 0) then
 				return
@@ -207,12 +212,80 @@ function check_average_vibe()
 end
 
 
-function check_attitude()
+delta_roll_buffer = { }
+delta_roll_end = 1
+delta_pitch_buffer = { }
+delta_pitch_end = 1
+delta_yaw_buffer = { }
+delta_yaw_end = 1
+att_len = 10
+
+
+function put_attitude()
 	if not (attitude_control_multi == nil) then
 		local target_att = attitude_control_multi:get_att_target_euler_cd()	
-		warning_to_gcs("target_roll: " .. target_att:x() .. " target_pitch: " .. target_att:y() .. " target_yaw: " .. wrap_360_cd(target_att:z())) 
+		local des_roll = target_att:x() * 0.01
+		local des_pitch = target_att:y() * 0.01
+		local des_yaw = wrap_360_cd(target_att:z() * 0.01)
+		if not (ahrs == nil) then
+			local achieved_roll = to_deg(ahrs:get_roll())
+			local achieved_pitch = to_deg(ahrs:get_pitch())
+			local achieved_yaw = wrap_360_cd(to_deg(ahrs:get_yaw()))
+			delta_roll_buffer[delta_roll_end] = angle_variance_deg(des_roll, achieved_roll)
+			delta_roll_end = delta_roll_end + 1
+			if (delta_roll_end > att_len) then
+				delta_roll_end = 1
+			end
+			delta_pitch_buffer[delta_pitch_end] = angle_variance_deg(des_pitch, achieved_pitch)
+			delta_pitch_end = delta_pitch_end + 1
+			if (delta_pitch_end > att_len) then
+				delta_pitch_end = 1
+			end
+			delta_yaw_buffer[delta_yaw_end] = angle_variance_deg(des_yaw, achieved_yaw)
+			delta_yaw_end = delta_yaw_end + 1
+			if (delta_yaw_end > att_len) then
+				delta_yaw_end = 1
+			end
+		else
+			warning_to_gcs("ahrs was nil...")
+		end
 	else
-		warning_to_gcs("attitude_control was nil...")
+		warning_to_gcs("attitude_control_multi was nil...")
+	end
+end
+
+
+function check_average_attitude()
+	if not (ahrs == nil) then
+		if not (attitude_control_multi == nil) then
+			delta_roll_result = 0.0
+			delta_pitch_result = 0.0
+			delta_yaw_result = 0.0
+			count = sizeof(delta_roll_buffer)
+			if (count == 0) then
+				return
+			end
+			for i = 1, count do
+				delta_roll_result = delta_roll_result + delta_roll_buffer[i]
+				delta_pitch_result = delta_pitch_result + delta_pitch_buffer[i]
+				delta_yaw_result = delta_yaw_result + delta_yaw_buffer[i]
+			end
+			delta_roll_result = delta_roll_result / count
+			delta_pitch_result = delta_pitch_result / count
+			delta_yaw_result = delta_yaw_result / count
+			print_debug("Roll delta: " .. delta_roll_result .. "%")
+			print_debug("Pitch delta: " .. delta_pitch_result .. "%")
+			print_debug("Yaw delta: " .. delta_yaw_result .. "%")
+			if (delta_roll_result > max_roll_variance) then
+				warning_to_gcs("Roll delta > 1.0% (" .. delta_roll_result .. "%)")
+			end
+			if (delta_pitch_result > max_pitch_variance) then
+				warning_to_gcs("Pitch delta > 1.0% (" .. delta_pitch_result .. "%)")
+			end
+			if (delta_yaw_result > max_yaw_variance) then
+				warning_to_gcs("Yaw delta > 1.0% (" .. delta_yaw_result .. "%)")
+			end
+		end
 	end
 end
 
@@ -563,6 +636,7 @@ function run_10Hz_loop()
 	debug_output = debug_output .. "*"
 	put_voltage()
 	put_vibe()
+	put_attitude()
 	put_gps()
 	put_delta_posd()
 	put_xkf4()
@@ -576,6 +650,7 @@ end
 
 function run_2Hz_loop()
 	debug_output = debug_output .. "o"
+	--check_attitude()
 end
 
 
@@ -583,6 +658,7 @@ function run_1Hz_loop()
 	debug_output = debug_output .. "O"
 	check_average_voltage()
 	check_average_vibe()
+	check_average_attitude()
 	check_average_gps()
 	check_average_delta_posd()
 	check_average_exkf4()
