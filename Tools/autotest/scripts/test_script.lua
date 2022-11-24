@@ -1,5 +1,5 @@
 tick_interval = 10
-debug_mode = true
+debug_mode = false
 
 
 min_voltage = 4.6
@@ -10,15 +10,15 @@ max_roll_variance = 25.0
 max_roll_variance = 25.0
 max_pitch_variance = 25.0
 max_yaw_variance = 25.0
-n_sats_min = 25
-h_dop_max = 100.0
-delta_ms_max = 5000.0
-delta_pd_max = 1.0
-vel_var_max = 10.0
-pos_var_max = 10.0
-hgt_var_max = 10.0
-mag_var_max = 10.0
-tas_var_max = 10.0
+min_nsats = 25
+max_hdop = 100.0
+max_gpa_delta = 5000.0
+max_delta_posd = 1.0
+max_vel_var = 10
+max_pos_var = 10
+max_hgt_var = 10
+max_mag_var = 10
+max_tas_var = 10
 
 
 debug_output = ""
@@ -93,7 +93,7 @@ function check_average_voltage()
 	end
 	result = result / count
 	if (result < min_voltage) then
-		warning_to_gcs("Board voltage low: " .. result .. "V")
+		warning_to_gcs("Board voltage < " .. min_voltage .. "V (" .. result .. "V)")
 	end
 end
 
@@ -167,13 +167,13 @@ function check_average_vibe()
 			result_y = result_y / count
 			result_z = result_z / count
 			if (result_x > max_vibe_x) then
-				warning_to_gcs("Vibe-X-" .. id .. " high: " .. result_x)
+				warning_to_gcs("Vibe-X-" .. id .. " > " .. max_vibe_x .. " (" .. result_x .. ")")
 			end
 			if (result_y > max_vibe_y) then
-				warning_to_gcs("Vibe-Y-" .. id .. " high: " .. result_y)
+				warning_to_gcs("Vibe-Y-" .. id .. " > " .. max_vibe_y .. " (" .. result_y .. ")")
 			end
 			if (result_z > max_vibe_z) then
-				warning_to_gcs("Vibe-Z-" .. id .. " high: " .. result_z)
+				warning_to_gcs("Vibe-Z-" .. id .. " > " .. max_vibe_z .. " (" .. result_z .. ")")
 			end			
 		end
 	else
@@ -194,13 +194,13 @@ function check_average_vibe()
 			result_y = result_y / count
 			result_z = result_z / count
 			if (result_x > max_vibe_x) then
-				warning_to_gcs("Vibe-X high: " .. result_x)
+				warning_to_gcs("Vibe-X > " .. max_vibe_x .. " (" .. result_x .. ")")
 			end
 			if (result_y > max_vibe_y) then
-				warning_to_gcs("Vibe-Y high: " .. result_y)
+				warning_to_gcs("Vibe-Y > " .. max_vibe_y .. " (" .. result_y .. ")")
 			end
 			if (result_z > max_vibe_z) then
-				warning_to_gcs("Vibe-Z high: " .. result_z)
+				warning_to_gcs("Vibe-Z > " .. max_vibe_z .. " (" .. result_z .. ")")
 			end
 		end
 	end
@@ -217,26 +217,60 @@ function check_attitude()
 end
 
 
-function check_gps()
+nsats_1_buffer = { }
+nsats_1_end = 1
+hdop_1_buffer = { }
+hdop_1_end = 1
+gpa_1_buffer = { }
+gpa_1_end = 1
+nsats_2_buffer = { }
+nsats_2_end = 1
+hdop_2_buffer = { }
+hdop_2_end = 1
+gpa_2_buffer = { }
+gpa_2_end = 1
+gps_len = 10
+
+
+function put_gps()
 	if not (gps == nil) then
 		local num_sensors = gps:num_sensors()
-		for id = 1, num_sensors do
-			local n_sats = gps:num_sats(id - 1)
-			print_debug("NSats-" .. id .. ": " .. n_sats)
-			local h_dop = gps:get_hdop(id - 1)
-			print_debug("HDop-" .. id .. ": " .. h_dop)
-			local speed = gps:ground_speed(id - 1)
-			print_debug("Speed-" .. id .. ": " .. speed)
-			local delta_ms = gps:last_message_delta_time_ms(id - 1)
-			print_debug("GPA_delta-" .. id .. ": " .. delta_ms .. "ms")
-			if (n_sats < n_sats_min) then
-				warning_to_gcs("NSats was under the threshold of " .. n_sats_min .. " (" .. n_sats .. ")")
-			end
-			if (h_dop > h_dop_max) then
-				warning_to_gcs("HDop was over the threshold of " .. h_dop_max .. " (" .. h_dop .. ")")
-			end
-			if (delta_ms > delta_ms_max) then
-				warning_to_gcs("GPA_delta was over the threshold of " .. delta_ms_max .. "ms (" .. delta_ms .. "ms)")
+		if (num_sensors > 0) then
+			for id = 1, num_sensors do
+				if (id == 1) then
+					nsats_1_buffer[nsats_1_end] = gps:num_sats(id - 1)
+					nsats_1_end = nsats_1_end + 1
+					if (nsats_1_end > gps_len) then
+						nsats_1_end = 1
+					end
+					hdop_1_buffer[hdop_1_end] = gps:get_hdop(id - 1)
+					hdop_1_end = hdop_1_end + 1
+					if (hdop_1_end > gps_len) then
+						hdop_1_end = 1
+					end
+					gpa_1_buffer[gpa_1_end] = gps:last_message_delta_time_ms(id - 1)
+					gpa_1_end = gpa_1_end + 1
+					if (gpa_1_end > gps_len) then
+						gpa_1_end = 1
+					end
+				end
+				if (id == 2) then
+					nsats_2_buffer[nsats_2_end] = gps:num_sats(id - 1)
+					nsats_2_end = nsats_2_end + 1
+					if (nsats_2_end > gps_len) then
+						nsats_2_end = 1
+					end
+					hdop_2_buffer[hdop_2_end] = gps:get_hdop(id - 1)
+					hdop_2_end = hdop_2_end + 1
+					if (hdop_2_end > gps_len) then
+						hdop_2_end = 1
+					end
+					gpa_2_buffer[gpa_2_end] = gps:last_message_delta_time_ms(id - 1)
+					gpa_2_end = gpa_2_end + 1
+					if (gpa_2_end > gps_len) then
+						gpa_2_end = 1
+					end
+				end
 			end
 		end
 	else
@@ -245,84 +279,113 @@ function check_gps()
 end
 
 
-function check_xkf1()
-	if not (NavEKF2() == nil) then
-		NavEKF2_ud = NavEKF2()
-		local ekf2_healthy = NavEKF2_ud:healthy()
-		--report_ekf_healthy(2, healthy)
-		local num_ekf2_cores = NavEKF2_ud:activeCores()
-		--report_ekf_cores(2, num_ekf2_cores)
-		local primary_id_2 = NavEKF2_ud:getPrimaryCoreIMUIndex()
-		--report_ekf_primary_id(2, primary_id_2)
-		
-		if (num_ekf2_cores == 2) then
-			local pd_0 = 0.0
-			NavEKF2_ud:getPosD(0, pd_0)
-			local pd_1 = 0.0
-			NavEKF2_ud:getPosD(1, pd_1)
-			print_debug("pd-0: " .. pd_0 .. " | pd-1: " .. pd_1)
-			if (math.abs(pd_1 - pd_0) > delta_pd_max) then
-				warning_to_gcs("XKF1.PD delta > " .. delta_pd_max)
+function check_average_gps()
+	if not (gps == nil) then
+		local num_sensors = gps:num_sensors()
+		if (num_sensors > 0) then
+			for id = 1, num_sensors do
+				if (id == 1) then
+					local nsats_result = 0
+					local hdop_result = 0
+					local gpa_result = 0
+					local count = sizeof(nsats_1_buffer)
+					if (count == 10) then
+						for i = 1, 10 do
+							nsats_result = nsats_result + nsats_1_buffer[i]
+							hdop_result = hdop_result + hdop_1_buffer[i]
+							gpa_result = gpa_result + gpa_1_buffer[i]
+						end	
+						nsats_result = nsats_result / count
+						hdop_result = hdop_result / count
+						gpa_result = gpa_result / count
+						print_debug("NSats " .. id .. ": " .. nsats_result)
+						print_debug("HDop " .. id .. ": " .. hdop_result)
+						print_debug("GPA delta " .. id .. ": " .. gpa_result)
+						if (nsats_result < min_nsats) then
+							warning_to_gcs("NSats 1 < " .. min_nsats .. " (" .. nsats_result .. ")")
+						end
+						if (hdop_result > max_hdop) then
+							warning_to_gcs("HDop 1 > " .. max_hdop .. " (" .. hdop_result .. ")")
+						end
+						if (gpa_result > max_gpa_delta) then
+							warning_to_gcs("GPA delta 1 > " .. max_gpa_delta .. " (" .. gpa_result .. ")")
+						end
+					else
+						warning_to_gcs("GPS-1 buffer size: " .. count)
+					end
+				end
+				if (id == 2) then
+					local nsats_result = 0
+					local hdop_result = 0
+					local gpa_result = 0
+					local count = sizeof(nsats_2_buffer)
+					if (count == 10) then
+						for i = 1, 10 do
+							nsats_result = nsats_result + nsats_2_buffer[i]
+							hdop_result = hdop_result + hdop_2_buffer[i]
+							gpa_result = gpa_result + gpa_2_buffer[i]
+						end	
+						nsats_result = nsats_result / count
+						hdop_result = hdop_result / count
+						gpa_result = gpa_result / count
+						print_debug("NSats " .. id .. ": " .. nsats_result)
+						print_debug("HDop " .. id .. ": " .. hdop_result)
+						print_debug("GPA delta " .. id .. ": " .. gpa_result)
+						if (nsats_result < min_nsats) then
+							warning_to_gcs("NSats 2 < " .. min_nsats .. " (" .. nsats_result .. ")")
+						end
+						if (hdop_result > max_hdop) then
+							warning_to_gcs("HDop 2 > " .. max_hdop .. " (" .. hdop_result .. ")")
+						end
+						if (gpa_result > max_gpa_delta) then
+							warning_to_gcs("GPA delta 2 > " .. max_gpa_delta .. " (" .. gpa_result .. ")")
+						end
+					else
+						warning_to_gcs("GPS-2 buffer size: " .. count)
+					end
+				end
 			end
 		end
 	else
-		warning_to_gcs("EKF2 not found!")
-	end
-	
-	if not (NavEKF3() == nil) then
-		NavEKF3_ud = NavEKF3()
-		local ekf3_healthy = NavEKF3_ud:healthy()
-		--report_ekf_healthy(3, healthy)
-		local num_ekf3_cores = NavEKF3_ud:activeCores()
-		--report_ekf_cores(3, num_ekf3_cores)
-		local primary_id_3 = NavEKF3_ud:getPrimaryCoreIMUIndex()
-		--report_ekf_primary_id(3, primary_id_3)
-	else
-		warning_to_gcs("EKF3 not found!")
+		warning_to_gcs("gps was nil...")
 	end
 end
 
 
-function check_posd()
-	if not (AP_AHRS_NavEKF() == nil) then
-		AP_AHRS_NavEKF_ud = AP_AHRS_NavEKF()
-		local delta_posd = AP_AHRS_NavEKF_ud:get_delta_posd()
-		warning_to_gcs("delta_posd: " .. delta_posd)
-	end
-end
+delta_posd_buffer = { }
+delta_posd_end = 1
+delta_posd_len = 10
 
 
-function check_num_ekf2_cores()
-	if not (NavEKF2() == nil) then
-		NavEKF2_ud = NavEKF2()
-		local num_ekf2_cores = NavEKF2_ud:activeCores()
-		warning_to_gcs("Active EKF2 cores: " .. num_ekf2_cores)
-	end
-end
-
-
-function check_num_ekf3_cores()
-	if not (NavEKF3() == nil) then
-		NavEKF3_ud = NavEKF3()
-		local num_ekf3_cores = NavEKF3_ud:activeCores()
-		warning_to_gcs("Active EKF3 cores: " .. num_ekf3_cores)
-	end
-end
-
-
-function ekf_test()
+function put_delta_posd()
 	if not (ahrs == nil) then
 		local n_ekf3_cores = ahrs:get_num_ekf3_cores()
-		warning_to_gcs("Active EKF3 cores: " .. n_ekf3_cores)
-		if ahrs:is_ekf3_healthy() then
-			warning_to_gcs("EKF3 is healthy!")
-		else
-			warning_to_gcs("EKF3 is NOT healthy!")
+		if (n_ekf3_cores == 2) then
+			delta_posd_buffer[delta_posd_end] = ahrs:get_delta_posd()
+			delta_posd_end = delta_posd_end + 1
+			if (delta_posd_end > delta_posd_len) then
+				delta_posd_end = 1
+			end
 		end
-		local d_posd = ahrs:get_delta_posd()
-		warning_to_gcs("Delta posD: " .. d_posd)
 	else
-		warning_to_gcs("AHRS was nil...")
+		warning_to_gcs("ahrs was nil...")
+	end
+end
+
+
+function check_average_delta_posd()
+	result = 0
+	count = sizeof(delta_posd_buffer)
+	if (count == 0) then
+		return
+	end
+	for i = 1, count do
+		result = result + delta_posd_buffer[i]
+	end
+	result = result / count
+	print_debug("Delta posD: " .. result)
+	if (result > max_delta_posd) then
+		warning_to_gcs("Delta posD > " .. max_delta_posd .. " (" .. result .. ")")
 	end
 end
 
@@ -455,25 +518,25 @@ function check_average_exkf4()
 					hgt_result = hgt_result / count
 					mag_result = mag_result / count
 					tas_result = tas_result / count
-					warning_to_gcs("Vel. variance " .. id .. ": " .. vel_result)
-					warning_to_gcs("Pos. variance " .. id .. ": " .. pos_result)
-					warning_to_gcs("Hgt. variance " .. id .. ": " .. hgt_result)
-					warning_to_gcs("Mag. variance " .. id .. ": " .. mag_result)
-					warning_to_gcs("Tas. variance " .. id .. ": " .. tas_result)
-					if (vel_result > vel_var_max) then
-						warning_to_gcs("Vel. variance " .. id .. " high: " .. vel_result)
+					print_debug("Vel. variance " .. id .. ": " .. vel_result)
+					print_debug("Pos. variance " .. id .. ": " .. pos_result)
+					print_debug("Hgt. variance " .. id .. ": " .. hgt_result)
+					print_debug("Mag. variance " .. id .. ": " .. mag_result)
+					print_debug("Tas. variance " .. id .. ": " .. tas_result)
+					if (vel_result > max_vel_var) then
+						warning_to_gcs("Vel. variance " .. id .. " > " .. max_vel_var .. " (" .. vel_result .. ")")
 					end
-					if (pos_result > pos_var_max) then
-						warning_to_gcs("Pos. variance " .. id .. " high: " .. pos_result)
+					if (pos_result > max_pos_var) then
+						warning_to_gcs("Pos. variance " .. id .. " > " .. max_pos_var .. " (" .. pos_result .. ")")
 					end
-					if (hgt_result >hgt_var_max) then
-						warning_to_gcs("Hgt. variance " .. id .. " high: " .. hgt_result)
+					if (hgt_result >max_hgt_var) then
+						warning_to_gcs("Hgt. variance " .. id .. " > " .. max_hgt_var .. " (" .. hgt_result .. ")")
 					end
-					if (mag_result > mag_var_max) then
-						warning_to_gcs("Mag. variance " .. id .. " high: " .. mag_result)
+					if (mag_result > max_mag_var) then
+						warning_to_gcs("Mag. variance " .. id .. " > " .. max_mag_var .. " (" .. mag_result .. ")")
 					end
-					if (tas_result > tas_var_max) then
-						warning_to_gcs("Tas. variance " .. id .. " high: " .. tas_result)
+					if (tas_result > max_tas_var) then
+						warning_to_gcs("Tas. variance " .. id .. " > " .. max_tas_var .. " (" .. tas_result .. ")")
 					end
 				else
 					warning_to_gcs("XKF4 buffer size: " .. count)
@@ -481,18 +544,18 @@ function check_average_exkf4()
 			end
 		end
 	else
-		warning_to_gcs("AHRS was nil...")
+		warning_to_gcs("ahrs was nil...")
 	end
 end
 
 
 function run_50Hz_loop()
-	debug_output = debug_output .. "-"
+	--debug_output = debug_output .. "-"
 end
 
 
 function run_20Hz_loop()
-	debug_output = debug_output .. "^"
+	--debug_output = debug_output .. "^"
 end
 
 
@@ -500,6 +563,8 @@ function run_10Hz_loop()
 	debug_output = debug_output .. "*"
 	put_voltage()
 	put_vibe()
+	put_gps()
+	put_delta_posd()
 	put_xkf4()
 end
 
@@ -511,18 +576,15 @@ end
 
 function run_2Hz_loop()
 	debug_output = debug_output .. "o"
-	--check_xkf1()
-	--check_posd()
 end
 
 
 function run_1Hz_loop()
 	debug_output = debug_output .. "O"
-	--check_num_ekf2_cores()
-	--check_num_ekf3_cores()
-	--ekf_test()
 	check_average_voltage()
 	check_average_vibe()
+	check_average_gps()
+	check_average_delta_posd()
 	check_average_exkf4()
 	--check_attitude()
 end
@@ -531,13 +593,13 @@ end
 cycle_count = 0
 function update()
 
-	--if (math.fmod(cycle_count, 2) == 0) then
-	--	run_50Hz_loop()
-	--end
+	if (math.fmod(cycle_count, 2) == 0) then
+		run_50Hz_loop()
+	end
 
-	--if (math.fmod(cycle_count, 5) == 0) then
-	--	run_20Hz_loop()
-	--end
+	if (math.fmod(cycle_count, 5) == 0) then
+		run_20Hz_loop()
+	end
 
 	if (math.fmod(cycle_count, 10) == 0) then
 		run_10Hz_loop()
