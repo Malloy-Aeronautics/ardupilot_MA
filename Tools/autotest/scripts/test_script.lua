@@ -18,6 +18,7 @@ max_pos_var = 10.0
 max_hgt_var = 10.0
 max_mag_var = 10.0
 max_tas_var = 10.0
+max_speed = 10.0
 
 
 debug_output = ""
@@ -44,12 +45,6 @@ function sizeof(buff)
 end
 
 
-function to_deg(value)
-	d = value * 180.0 / 3.1416
-	return d
-end
-
-
 function wrap_360_cd(angle)
 	local res = math.fmod(angle, 360.0)
 	if (res < 0.0) then
@@ -69,6 +64,12 @@ function angle_variance_deg(ang_a, ang_b)
 	percentage = diff / 180.0 * 100.0
 	return percentage
 end
+
+
+function dist(lat_1, lng_1, lat_2, lng_2)
+	d = (math.acos(math.sin(math.rad(lat_1)) * math.sin(math.rad(lat_2)) + math.cos(math.rad(lat_1)) * math.cos(math.rad(lat_2)) * math.cos(math.rad(lng_2 - lng_1))) * 6371000.0)
+	return d
+end 
 
 
 voltage_buffer = { }
@@ -228,9 +229,9 @@ function put_attitude()
 		local des_pitch = target_att:y() * 0.01
 		local des_yaw = wrap_360_cd(target_att:z() * 0.01)
 		if not (ahrs == nil) then
-			local achieved_roll = to_deg(ahrs:get_roll())
-			local achieved_pitch = to_deg(ahrs:get_pitch())
-			local achieved_yaw = wrap_360_cd(to_deg(ahrs:get_yaw()))
+			local achieved_roll = math.deg(ahrs:get_roll())
+			local achieved_pitch = math.deg(ahrs:get_pitch())
+			local achieved_yaw = wrap_360_cd(math.deg(ahrs:get_yaw()))
 			delta_roll_buffer[delta_roll_end] = angle_variance_deg(des_roll, achieved_roll)
 			delta_roll_end = delta_roll_end + 1
 			if (delta_roll_end > att_len) then
@@ -622,6 +623,74 @@ function check_average_exkf4()
 end
 
 
+lat_prev = 0.0
+lng_prev = 0.0
+function check_speed()
+	if not (ahrs == nil) then
+		local current_pos = ahrs:get_position()
+		if current_pos then
+			local lat_curr = wrap_360_cd(current_pos:lat() * 0.0000001)
+			local lng_curr = wrap_360_cd(current_pos:lng() * 0.0000001)
+			local delta_lat = lat_curr - lat_prev
+			local delta_lng = lng_curr - lng_prev
+			local ds = 0.0
+			if (math.abs(delta_lat) > 0.00000001) and (math.abs(delta_lng) > 0.00000001) then
+				if (math.abs(delta_lat) < 0.01) or (math.abs(delta_lng) < 0.01) then
+					--
+					-- This scaling is necessary because the floating point
+					-- precision seems to be insufficient to do trigonometry
+					-- with such tiny angles. This is an ugly hack, there must
+					-- be a more elegant solution
+					--
+					local delta_lat_scaled = delta_lat * 1000.0
+					local delta_lng_scaled = delta_lat * 1000.0
+					local lat_curr_scaled = lat_prev + delta_lat_scaled
+					local lng_curr_scaled = lng_prev + delta_lng_scaled
+					ds = dist(wrap_360_cd(lat_prev), wrap_360_cd(lng_prev), wrap_360_cd(lat_curr_scaled), wrap_360_cd(lng_curr_scaled)) * 0.001
+				else
+					ds = dist(wrap_360_cd(lat_prev), wrap_360_cd(lng_prev), wrap_360_cd(lat_curr), wrap_360_cd(lng_curr))
+				end
+			end
+			print_debug("lat_prev: " .. lat_prev .. " | lng_prev: " .. lng_prev)
+			print_debug("lat_curr: " .. lat_curr .. " | lng_curr: " .. lng_curr)
+			print_debug("ds: " .. ds)
+			if (ds > max_speed) then
+				warning_to_gcs("Calculated speed > " .. max_speed .. "m/s (" .. ds .. "m/s)")
+			end
+			lat_prev = lat_curr
+			lng_prev = lng_curr
+		end
+	else
+		warning_to_gcs("ahrs was nil...")
+	end
+end
+
+
+function test_dist()
+	local test_lat_1 = 0.0
+	local test_lng_1 = 0.0
+	local test_lat_2 = 0.002
+	local test_lng_2 = 0.002
+	
+	local delta_lat = test_lat_2 - test_lat_1
+	local delta_lng = test_lng_2 - test_lng_1
+	
+	local d = 0.0
+	
+	if (math.abs(delta_lat) < 0.01) or (math.abs(delta_lng) < 0.01) then
+		local delta_lat_scaled = delta_lat * 1000.0
+		local delta_lng_scaled = delta_lat * 1000.0
+		test_lat_2 = test_lat_1 + delta_lat_scaled
+		test_lng_2 = test_lng_1 + delta_lng_scaled
+		d = dist(wrap_360_cd(test_lat_1), wrap_360_cd(test_lng_1), wrap_360_cd(test_lat_2), wrap_360_cd(test_lng_2)) * 0.001
+	else
+		d = dist(wrap_360_cd(test_lat_1), wrap_360_cd(test_lng_1), wrap_360_cd(test_lat_2), wrap_360_cd(test_lng_2))
+	end
+
+	warning_to_gcs("Distance: " .. d .. "m")
+end
+
+
 function run_50Hz_loop()
 	--debug_output = debug_output .. "-"
 end
@@ -662,7 +731,8 @@ function run_1Hz_loop()
 	check_average_gps()
 	check_average_delta_posd()
 	check_average_exkf4()
-	--check_attitude()
+	check_speed()
+	--test_dist()
 end
 
 
