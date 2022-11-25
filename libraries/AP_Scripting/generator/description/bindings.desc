@@ -18,22 +18,6 @@ userdata Location method get_bearing float Location
 userdata Location method get_distance_NED Vector3f Location
 userdata Location method get_distance_NE Vector2f Location
 
-include AP_NavEKF2/AP_NavEKF2.h
-
-userdata NavEKF2 method activeCores uint8_t
-userdata NavEKF2 method healthy boolean
-userdata NavEKF2 method getPrimaryCoreIndex int8_t
-userdata NavEKF2 method getPrimaryCoreIMUIndex int8_t
-userdata NavEKF2 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
-
-include AP_NavEKF3/AP_NavEKF3.h
-
-userdata NavEKF3 method activeCores uint8_t
-userdata NavEKF3 method healthy boolean
-userdata NavEKF3 method getPrimaryCoreIndex int8_t
-userdata NavEKF3 method getPrimaryCoreIMUIndex int8_t
-userdata NavEKF3 method getPosD boolean int8_t -1 INS_MAX_INSTANCES float'Null
-
 include AP_AHRS/AP_AHRS.h
 
 singleton AP_AHRS alias ahrs
@@ -372,12 +356,6 @@ include AC_AttitudeControl/AC_AttitudeControl_Multi.h depends APM_BUILD_TYPE(APM
 singleton AC_AttitudeControl_Multi depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
 singleton AC_AttitudeControl_Multi alias attitude_control_multi
 singleton AC_AttitudeControl_Multi method get_att_target_euler_cd Vector3f
-
-include AC_AttitudeControl/AC_AttitudeControl.h depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
-singleton AC_AttitudeControl depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
-singleton AC_AttitudeControl method get_rpy_srate void float'Ref float'Ref float'Ref
-singleton AC_AttitudeControl method get_att_target_euler_cd Vector3f
-singleton AC_AttitudeControl method get_att_target_euler_rad Vector3f
 
 include AP_Motors/AP_MotorsMatrix_6DoF_Scripting.h  depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
 singleton AP_MotorsMatrix_6DoF_Scripting depends APM_BUILD_TYPE(APM_BUILD_ArduCopter)
